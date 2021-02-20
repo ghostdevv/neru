@@ -1,0 +1,12 @@
+{
+    "name": "router",
+    "version": "0.0.0",
+    "private": true,
+    "main": "src/index.js",
+    "author": "GHOST",
+    "license": "MIT",
+    "dependencies": {
+        "polka": "^0.5.2",
+        "recursive-readdir-async": "^1.1.8"
+    }
+}
