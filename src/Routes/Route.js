@@ -10,10 +10,11 @@ module.exports = class Route {
         const route = sanitisedPath
             .match(/(?=routes)([^\n])+/g)[0]
             .slice(6)
-            .replace(/(\/)?index$/gm, '');
+            .replace(/(\/)?index$/gm, '')
+            .trim();
 
         this.path = path.normalize(fullname).replace(/\\/g, '/');
-        this.route = route;
+        this.route = route == '' ? '/' : route;
         this.directoryRoute = !!this.path.match(/(?:(index)(\.(\w)*)?)$/gm);
     }
 };
