@@ -11,7 +11,7 @@ module.exports = class Router {
         this.routes = await generateRoutes();
         const routes = this.routes.values();
 
-        for (const { route, path, methods } of routes) {
+        for (const { route, methods } of routes) {
             const { get } = methods;
 
             if (get) this.server.get(route, get);
