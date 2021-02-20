@@ -1,4 +1,4 @@
-const Router = require('./core/Router.js');
+const Router = require('./Router/Router.js');
 const polka = require('polka');
 
 module.exports = (options = {}) => {
