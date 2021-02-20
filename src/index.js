@@ -1,8 +1,8 @@
 const Router = require('./Router/Router.js');
-const polka = require('polka');
+const express = require('express');
 
 module.exports = (options = {}) => {
-    const server = polka(options);
+    const server = express(options);
     const router = new Router(server, options);
 
     return router;

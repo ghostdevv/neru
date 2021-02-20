@@ -14,5 +14,4 @@ Run nodemon in the dev dir and reload when testing is needed
 - [ ] Middlewear support
 - [ ] Pass custom data to routes
 
-# Powered by Polka, not express
-View the differences [here](https://github.com/lukeed/polka/tree/master/packages/polka#comparisons), they a minor for a lot of benefit ;)
+# Powered by Express
