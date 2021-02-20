@@ -1,1 +1,7 @@
-module.exports = (req, res) => res.end('/');
+function get(req, res) {
+    res.end('/');
+}
+
+module.exports = {
+    get,
+};
