@@ -10,7 +10,7 @@ module.exports = class Route {
         const route = sanitisedPath
             .match(/(?=routes)([^\n])+/g)[0]
             .slice(6)
-            .replace(/(\/)?index/g, '');
+            .replace(/(\/)?index$/gm, '');
 
         this.path = path.normalize(fullname).replace(/\\/g, '/');
         this.route = route;
