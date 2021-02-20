@@ -10,6 +10,5 @@ Run nodemon in the dev dir and reload when testing is needed
 - [ ] Dynamic Routing
 - [ ] All types of requests: GET, POST etc
 - [ ] Open API cli
-- [ ] Full protocol support
 - [ ] Method exports support array of functions
 - [ ] Middlewear support
