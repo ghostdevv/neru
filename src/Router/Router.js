@@ -11,8 +11,10 @@ module.exports = class Router {
         this.routes = await generateRoutes();
         const routes = this.routes.values();
 
-        for (const { route, path } of routes) {
-            this.server.get(route, require(path));
+        for (const { route, path, methods } of routes) {
+            const { get } = methods;
+
+            if (get) this.server.get(route, get);
         }
 
         return this.server.listen(port, cb);
