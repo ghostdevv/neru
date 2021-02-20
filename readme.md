@@ -7,5 +7,5 @@ Start off by cloning the repository and opening one terminal window in the dir a
 Run nodemon in the dev dir and reload when testing is needed
 
 # ToDo
-- [] Dynamic Routing
-- [] All types of requests: GET, POST etc
+- [ ] Dynamic Routing
+- [ ] All types of requests: GET, POST etc
