@@ -5,6 +5,17 @@
     "main": "src/index.js",
     "author": "GHOST",
     "license": "MIT",
+    "exports": {
+        ".": {
+            "require": "./src/index.js"
+        },
+        "./app": {
+            "require": "./src/App/index.js"
+        },
+        "./router": {
+            "require": "./src/Router/index.js"
+        }
+    },
     "dependencies": {
         "express": "^4.x",
         "recursive-readdir-async": "^1.1.8"
