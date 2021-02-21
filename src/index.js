@@ -1,9 +1,4 @@
-const Router = require('./Router/Router.js');
-const express = require('express');
-
-module.exports = (options = {}) => {
-    const server = express(options);
-    const router = new Router(server, options);
-
-    return router;
+module.exports = {
+    router: require('./Router/index.js'),
+    app: require('./App/App.js'),
 };
