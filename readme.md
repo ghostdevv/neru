@@ -8,7 +8,7 @@ Run nodemon in the dev dir and reload when testing is needed
 
 # ToDo
 - [ ] Dynamic Routing
-- [ ] All types of requests: GET, POST etc
+- [x] All types of requests: GET, POST etc
 - [ ] Open API cli
 - [ ] Method exports support array of functions
 - [ ] Middlewear support
