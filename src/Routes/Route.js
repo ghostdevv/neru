@@ -25,13 +25,28 @@ module.exports = class Route {
                 `[ROUTER] [FATAL] Recieved type ${typeof module} expected object`,
             );
 
-        const { get } = module;
+        const methods = [
+            'get',
+            'head',
+            'post',
+            'put',
+            'delete',
+            'trace',
+            'options',
+            'connect',
+            'patch',
+        ];
 
-        if (typeof get != 'function')
-            throw new Error(
-                `[ROUTER] [FATAL] Recieved type ${typeof get} expected function`,
-            );
+        for (const [method, fn] of Object.entries(module)) {
+            if (!methods.includes(method))
+                throw new Error(
+                    `Method ${method} not supported, must be a valid HTTP request method`,
+                );
 
-        this.methods.get = get;
+            if (typeof fn != 'function')
+                throw new Error(`Recieved type ${typeof fn} expected function`);
+
+            this.methods[method] = fn;
+        }
     }
 };
