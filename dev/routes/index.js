@@ -1,7 +1,12 @@
 function get(req, res) {
-    res.end('/');
+    res.end('/ (get)');
+}
+
+function post(req, res) {
+    res.end('/ (post)');
 }
 
 module.exports = {
     get,
+    post,
 };
