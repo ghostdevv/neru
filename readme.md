@@ -21,14 +21,10 @@ Run nodemon in the dev dir and reload when testing is needed
     HTTP Methods
 
     [
-        'get',
-        'head',
-        'post',
-        'put',
-        'delete',
-        'trace',
-        'options',
-        'connect',
-        'patch',
-    ];
+    'connect', 'delete',
+    'get',     'head',
+    'options', 'patch',
+    'post',    'put',
+    'trace'
+    ]
 -->
