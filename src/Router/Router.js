@@ -11,9 +11,15 @@ module.exports = class Router {
         this.routes = await generateRoutes();
         const routes = this.routes.values();
 
+        // Loop over all the routes collected
         for (const { route, methods } of routes) {
-            for (const [method, fn] of Object.entries(methods)) {
-                this.server[method](route, fn);
+            // Loop over each type of method (get, post, etc)
+            for (const [method, handlers] of Object.entries(methods)) {
+                // Loop over each method handler (there may be multiple get handlers for example)
+                for (const fns of handlers) {
+                    // Bind the method to route with handlers
+                    this.server[method](route, ...fns);
+                }
             }
         }
 
