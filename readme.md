@@ -15,3 +15,20 @@ Run nodemon in the dev dir and reload when testing is needed
 - [ ] Pass custom data to routes
 
 # Powered by Express
+
+
+<!--
+    HTTP Methods
+
+    [
+        'get',
+        'head',
+        'post',
+        'put',
+        'delete',
+        'trace',
+        'options',
+        'connect',
+        'patch',
+    ];
+-->
