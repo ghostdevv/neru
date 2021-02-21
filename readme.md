@@ -10,8 +10,7 @@ Run nodemon in the dev dir and reload when testing is needed
 - [ ] Dynamic Routing
 - [x] All types of requests: GET, POST etc
 - [ ] Open API cli
-- [ ] Method exports support array of functions
-- [ ] Middlewear support
+- [x] Middlewear support
 - [ ] Pass custom data to routes
 
 # Powered by Express
