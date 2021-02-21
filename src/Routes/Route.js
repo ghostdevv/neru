@@ -1,4 +1,5 @@
 const path = require('path');
+const App = require('../App/App.js');
 
 module.exports = class Route {
     constructor({ fullname }) {
@@ -17,36 +18,10 @@ module.exports = class Route {
         this.route = route == '' ? '/' : route;
         this.directoryRoute = !!this.path.match(/(?:(index)(\.(\w)*)?)$/gm);
 
-        this.methods = {};
-
         const module = require(this.path);
-        if (typeof module != 'object')
-            throw new Error(
-                `[ROUTER] [FATAL] Recieved type ${typeof module} expected object`,
-            );
+        if (!(module instanceof App))
+            throw new Error(`Recieved type ${typeof module} expected app`);
 
-        const methods = [
-            'get',
-            'head',
-            'post',
-            'put',
-            'delete',
-            'trace',
-            'options',
-            'connect',
-            'patch',
-        ];
-
-        for (const [method, fn] of Object.entries(module)) {
-            if (!methods.includes(method))
-                throw new Error(
-                    `Method ${method} not supported, must be a valid HTTP request method`,
-                );
-
-            if (typeof fn != 'function')
-                throw new Error(`Recieved type ${typeof fn} expected function`);
-
-            this.methods[method] = fn;
-        }
+        this.methods = module.methods;
     }
 };
