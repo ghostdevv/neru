@@ -12,9 +12,9 @@ module.exports = class Router {
         const routes = this.routes.values();
 
         for (const { route, methods } of routes) {
-            const { get } = methods;
-
-            if (get) this.server.get(route, get);
+            for (const [method, fn] of Object.entries(methods)) {
+                this.server[method](route, fn);
+            }
         }
 
         return this.server.listen(port, cb);
