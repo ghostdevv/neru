@@ -2,6 +2,7 @@ const Router = require('./Router.js');
 const config = require('../helpers/config.js');
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 
 module.exports = (options = {}) => {
     const cnf = config(options);
