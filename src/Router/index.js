@@ -7,9 +7,9 @@ const path = require('path');
 module.exports = (options = {}) => {
     const cnf = config(options);
 
-    if (!fs.existsSync(path.resolve(options.routesDir)))
+    if (!fs.existsSync(path.resolve(cnf.routesDir)))
         throw new Error(
-            `The given routes dir ( ${options.routesDir} ) was unable to be found`,
+            `The given routes dir ( ${cnf.routesDir} ) was unable to be found`,
         );
 
     const server = express(options);
