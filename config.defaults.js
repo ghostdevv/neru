@@ -1,3 +1,3 @@
 module.exports = {
-    routes: 'src/pages',
+    routesDir: 'src/pages',
 };
