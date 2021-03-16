@@ -1,5 +1,6 @@
 module.exports = class App {
     #wares = [];
+    #runtime = false;
 
     // HTTP Methods
     #connect = [];
@@ -28,12 +29,19 @@ module.exports = class App {
         };
     }
 
+    runtime() {
+        this.#runtime = true;
+    }
+
     use(ware) {
         this.#wares.push(ware);
     }
 
     // Used to validate middlewear and merge middlewear added with app.use
     updateMethod(current, next) {
+        if (this.#runtime)
+            throw new Error('You are unable to add conditional routes.');
+
         if (!(Array.isArray(current) || Array.isArray(next)))
             throw new TypeError('updateMethod expects two arrays');
 
