@@ -1,33 +1,3 @@
-# Unnamed File Router
-This is currently __not__ published to npm since it's unnamed and not ready for production
+# GHRouter
 
-# Development testing
-Start off by cloning the repository and opening one terminal window in the dir and one in the dev dir
-
-Run nodemon in the dev dir and reload when testing is needed
-
-# ToDo
-- [ ] Dynamic Routing
-- [x] All types of requests: GET, POST etc
-- [ ] Open API cli
-- [x] Middlewear support
-- [ ] Pass custom data to routes
-
-# Powered by Express
-
-
-<!--
-    HTTP Methods
-
-    [
-        'connect',
-        'delete',
-        'get',
-        'head',
-        'options',
-        'patch',
-        'post',
-        'put',
-        'trace'
-    ]
--->
+This is currently **not** production ready and shouldn't be used, if you find this please come back later.
