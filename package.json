@@ -19,6 +19,7 @@
         }
     },
     "dependencies": {
+        "configent": "^2.2.0",
         "express": "^4.x",
         "recursive-readdir-async": "^1.1.8"
     },
