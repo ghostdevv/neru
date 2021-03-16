@@ -1,8 +1,8 @@
 const resolveFiles = require('../helpers/resolveFiles.js');
 const Route = require('./Route.js');
 
-module.exports = async () => {
-    const files = (await resolveFiles()).filter((x) => !x.isDirectory);
+module.exports = async ({ routesDir }) => {
+    const files = (await resolveFiles(routesDir)).filter((x) => !x.isDirectory);
     const routes = new Map();
 
     for (const routeData of files) {
