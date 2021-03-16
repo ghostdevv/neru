@@ -9,7 +9,7 @@ module.exports = class Router {
     }
 
     async listen(port, cb) {
-        if (typeof Number(port) != 'number')
+        if (isNaN(Number(port)))
             throw new TypeError('Please give a valid port');
 
         this.routes = await generateRoutes({
