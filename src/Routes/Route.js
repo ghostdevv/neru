@@ -2,6 +2,8 @@ const path = require('path');
 const App = require('../App/App.js');
 
 module.exports = class Route {
+    #methods;
+
     constructor({ fullname }) {
         const sanitisedPath = path
             .normalize(fullname)
@@ -22,6 +24,10 @@ module.exports = class Route {
         if (!(module instanceof App))
             throw new Error(`Recieved type ${typeof module} expected app`);
 
-        this.methods = module.methods;
+        this.#methods = module.methods;
+    }
+
+    get methods() {
+        return this.#methods;
     }
 };
