@@ -8,6 +8,9 @@ module.exports = class Router {
     }
 
     async listen(port, cb) {
+        if (typeof Number(port) != 'number')
+            throw new TypeError('Please give a valid port');
+
         this.routes = await generateRoutes();
         const routes = this.routes.values();
 
