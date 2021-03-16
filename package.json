@@ -5,7 +5,7 @@
     "author": "GHOST",
     "license": "MIT",
     "scripts": {
-        "test": "jest --verbose"
+        "test": "jest --verbose --testPathIgnorePatterns dev"
     },
     "exports": {
         ".": {
