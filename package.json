@@ -1,6 +1,6 @@
 {
     "name": "ghrouter",
-    "version": "0.1.2",
+    "version": "0.2.2",
     "main": "src/index.js",
     "author": "GHOST",
     "license": "MIT",
