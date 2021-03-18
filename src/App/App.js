@@ -1,6 +1,7 @@
 module.exports = class App {
     #wares = [];
     #runtime = false;
+    #router;
 
     // HTTP Methods
     #connect = [];
@@ -29,12 +30,32 @@ module.exports = class App {
         };
     }
 
-    runtime() {
+    runtime(router) {
+        if (this.#runtime === true)
+            throw new Error('Unable to call this function twice');
+
+        this.#router = router;
         this.#runtime = true;
     }
 
     use(ware) {
         this.#wares.push(ware);
+    }
+
+    // Context
+
+    setContext(key, value) {
+        if (!this.#runtime)
+            throw new Error('Unable to call this function outside runtime');
+
+        this.#router.setContext(key, value);
+    }
+
+    getContext(key) {
+        if (!this.#runtime)
+            throw new Error('Unable to call this function outside runtime');
+
+        return this.#router.getContext(key);
     }
 
     // Used to validate middlewear and merge middlewear added with app.use

@@ -17,6 +17,8 @@ module.exports = class Route {
         if (!(module instanceof App))
             throw new Error(`Recieved type ${typeof module} expected App`);
 
+        module.runtime(router);
+
         this.#methods = module.methods;
     }
 

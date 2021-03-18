@@ -6,6 +6,7 @@ module.exports = class Router {
     #server;
     #options;
     #routes = new Map();
+    #context = new Map();
 
     constructor(server, options) {
         this.#server = server;
@@ -20,6 +21,24 @@ module.exports = class Router {
 
     get routes() {
         return this.#routes;
+    }
+
+    setContext(key, value) {
+        if (typeof key != 'string')
+            throw new TypeError(
+                `Expected type string for key, recieved ${typeof key}`,
+            );
+
+        this.#context.set(key, value);
+    }
+
+    getContext(key) {
+        if (typeof key != 'string')
+            throw new TypeError(
+                `Expected type string for key, recieved ${typeof key}`,
+            );
+
+        return this.#context.get(key);
     }
 
     async #generateRoutes({ routesDir }) {
