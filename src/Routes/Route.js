@@ -22,7 +22,7 @@ module.exports = class Route {
 
         const module = require(this.path);
         if (!(module instanceof App))
-            throw new Error(`Recieved type ${typeof module} expected app`);
+            throw new Error(`Recieved type ${typeof module} expected App`);
 
         this.#methods = module.methods;
     }
