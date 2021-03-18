@@ -1,8 +1,11 @@
-const generateRoutes = require('../Routes/generate.js');
+const resolveFiles = require('../helpers/resolveFiles.js');
+const Route = require('../Routes/Route.js');
+const np = require('path');
 
 module.exports = class Router {
-    #options;
     #server;
+    #options;
+    #routes = new Map();
 
     constructor(server, options) {
         this.#server = server;
@@ -15,11 +18,41 @@ module.exports = class Router {
         return this.#options;
     }
 
+    get routes() {
+        return this.#routes;
+    }
+
+    async #generateRoutes({ routesDir }) {
+        const routes = new Map();
+        const files = await resolveFiles(routesDir);
+
+        for (const { fullname } of files) {
+            const path = np
+                .normalize(fullname)
+                .replace(/\\/g, '/')
+                .replace(/(\.[^\n.]*)$/gm, '');
+
+            const route = new Route(path, this);
+
+            if (routes.has(route.route)) {
+                console.log(
+                    `[ROUTES] [WARN] You have a route conflict for the route ${route.route}, directory\'s take priority.`,
+                );
+
+                if (!route.directoryRoute) continue;
+            }
+
+            routes.set(route.route, route);
+        }
+
+        return routes;
+    }
+
     async listen(port, cb) {
         if (isNaN(Number(port)))
             throw new TypeError('Please give a valid port');
 
-        this.routes = await generateRoutes({
+        this.#routes = await this.#generateRoutes({
             routesDir: this.#options.routesDir,
         });
 
