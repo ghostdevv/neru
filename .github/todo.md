@@ -4,8 +4,8 @@
 -   [x] All types of requests: GET, POST etc
 -   [ ] Open API cli
 -   [x] Middlewear support
--   [ ] Pass custom data to routes
--   [x] Fallback route
+-   [x] Pass custom data to routes
+-   [ ] Fallback route
 
 <!--
     HTTP Methods
