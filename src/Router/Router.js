@@ -46,6 +46,8 @@ module.exports = class Router {
         const files = await resolveFiles(routesDir);
 
         for (const { fullname } of files) {
+            if (!fullname.endsWith('.js')) continue;
+
             const path = np
                 .normalize(fullname)
                 .replace(/\\/g, '/')
