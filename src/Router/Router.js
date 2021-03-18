@@ -1,11 +1,18 @@
 const generateRoutes = require('../Routes/generate.js');
 
 module.exports = class Router {
-    constructor(server, options) {
-        this.server = server;
-        this.options = options;
+    #options;
+    #server;
 
-        this.use = server.use.bind(server);
+    constructor(server, options) {
+        this.#server = server;
+        this.#options = options;
+
+        this.use = this.#server.use.bind(server);
+    }
+
+    get options() {
+        return this.#options;
     }
 
     async listen(port, cb) {
@@ -13,7 +20,7 @@ module.exports = class Router {
             throw new TypeError('Please give a valid port');
 
         this.routes = await generateRoutes({
-            routesDir: this.options.routesDir,
+            routesDir: this.#options.routesDir,
         });
 
         const routes = this.routes.values();
@@ -25,11 +32,11 @@ module.exports = class Router {
                 // Loop over each method handler (there may be multiple get handlers for example)
                 for (const fns of handlers) {
                     // Bind the method to route with handlers
-                    this.server[method](route, ...fns);
+                    this.#server[method](route, ...fns);
                 }
             }
         }
 
-        return this.server.listen(port, cb);
+        return this.#server.listen(port, cb);
     }
 };
