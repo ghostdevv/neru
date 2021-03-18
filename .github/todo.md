@@ -5,6 +5,7 @@
 -   [ ] Open API cli
 -   [x] Middlewear support
 -   [ ] Pass custom data to routes
+-   [ ] Fallback route
 
 <!--
     HTTP Methods
