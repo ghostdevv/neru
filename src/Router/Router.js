@@ -1,17 +1,21 @@
 const generateRoutes = require('../Routes/generate.js');
 
 module.exports = class Router {
-    constructor(server) {
+    constructor(server, options) {
         this.server = server;
+        this.options = options;
 
         this.use = server.use.bind(server);
     }
 
     async listen(port, cb) {
-        if (typeof Number(port) != 'number')
+        if (isNaN(Number(port)))
             throw new TypeError('Please give a valid port');
 
-        this.routes = await generateRoutes();
+        this.routes = await generateRoutes({
+            routesDir: this.options.routesDir,
+        });
+
         const routes = this.routes.values();
 
         // Loop over all the routes collected
