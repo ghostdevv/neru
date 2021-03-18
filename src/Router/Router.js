@@ -51,6 +51,8 @@ module.exports = class Router {
                 .replace(/\\/g, '/')
                 .replace(/(\.[^\n.]*)$/gm, '');
 
+            if (np.basename(path).startsWith('_')) continue;
+
             const route = new Route(path, this);
 
             if (routes.has(route.route)) {
