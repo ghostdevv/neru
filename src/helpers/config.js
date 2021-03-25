@@ -3,5 +3,5 @@ const defaults = require('../../config.defaults');
 
 module.exports = (inp) =>
     configent(defaults, inp, {
-        name: 'ghrouter',
+        name: 'neru',
     });
