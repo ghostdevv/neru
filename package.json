@@ -1,9 +1,9 @@
 {
     "name": "neru",
     "version": "0.2.2",
-    "main": "src/index.js",
     "author": "GHOST",
-    "license": "MIT",
+    "main": "src/index.js",
+    "description": "Neru is the file router for rest.",
     "scripts": {
         "test": "jest --verbose --testPathIgnorePatterns dev"
     },
@@ -25,5 +25,30 @@
     },
     "devDependencies": {
         "jest": "^26.6.3"
-    }
+    },
+    "contributors": [
+        {
+            "name": "GHOST",
+            "email": "ghostdevbusiness@gmail.com",
+            "web": "https://ghostdev.xyz/"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "GHOST",
+            "email": "ghostdevbusiness@gmail.com",
+            "web": "https://ghostdev.xyz/"
+        }
+    ],
+    "bugs": {
+        "web": "https://github.com/ghostdevv/neru/issues"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ghostdevv/neru.git"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/ghostdevv/neru"
 }
