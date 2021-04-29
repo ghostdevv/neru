@@ -4,9 +4,6 @@
     "author": "GHOST",
     "main": "src/index.js",
     "description": "Neru is the file router for rest.",
-    "scripts": {
-        "test": "jest --verbose --testPathIgnorePatterns dev"
-    },
     "exports": {
         ".": {
             "require": "./src/index.js"
@@ -22,9 +19,6 @@
         "configent": "^2.2.0",
         "express": "^4.x",
         "recursive-readdir-async": "^1.1.8"
-    },
-    "devDependencies": {
-        "jest": "^26.6.3"
     },
     "contributors": [
         {
