@@ -1,11 +1,14 @@
+# NPM
 node_modules
 
+# Development Files
 dev
-
 *.rest
 
+# Config files
 .github
 .vscode
 .prettierrc
 
+# Tests
 tests
