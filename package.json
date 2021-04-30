@@ -19,8 +19,11 @@
     "dependencies": {
         "configent": "^2.2.0"
     },
+    "devDependencies": {
+        "express": "*"
+    },
     "peerDependencies": {
-        "express": "^4.x"
+        "express": "^4.17.1"
     },
     "license": "MIT",
     "homepage": "https://github.com/ghostdevv/neru",
