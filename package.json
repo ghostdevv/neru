@@ -17,8 +17,7 @@
         }
     },
     "dependencies": {
-        "configent": "^2.2.0",
-        "recursive-readdir-async": "^1.1.8"
+        "configent": "^2.2.0"
     },
     "peerDependencies": {
         "express": "^4.x"
