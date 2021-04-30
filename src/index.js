@@ -1,6 +1,6 @@
 import Router from './core/Router.js';
 import { createConfig } from './helpers/config.js';
-import { createRoutesMap } from './core/files/index.js';
+import { createRoutesMap } from './core/mapper/index.js';
 
 export function router(app, options = {}) {
     const config = createConfig(options);
