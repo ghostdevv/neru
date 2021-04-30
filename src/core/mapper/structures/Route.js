@@ -20,6 +20,7 @@ export default class Route {
 
     static parseExpressPath(route) {
         const matches = route.match(/\[(\w|\d)+\]/gi);
+        if (!matches) return route;
 
         for (const match of matches) {
             const key = match.slice(1, -1);
