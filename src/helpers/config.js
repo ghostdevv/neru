@@ -1,7 +1,7 @@
-const { configent } = require('configent');
-const defaults = require('../../config.defaults');
+import { configent } from 'configent';
+import defaults from '../config.defaults.js';
 
-module.exports = (inp) =>
+export const createConfig = (inp) =>
     configent(defaults, inp, {
         name: 'neru',
     });

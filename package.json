@@ -3,52 +3,38 @@
     "version": "0.2.2",
     "author": "GHOST",
     "main": "src/index.js",
-    "description": "Neru is the file router for rest.",
+    "type": "module",
+    "description": "Neru is the file router for express.",
     "scripts": {
-        "test": "jest --verbose --testPathIgnorePatterns dev"
+        "dev": "nodemon dev/index.js"
     },
     "exports": {
+        "./package.json": "./package.json",
         ".": {
             "require": "./src/index.js"
-        },
-        "./app": {
-            "require": "./src/App/index.js"
-        },
-        "./router": {
-            "require": "./src/Router/index.js"
         }
     },
     "dependencies": {
         "configent": "^2.2.0",
-        "express": "^4.x",
-        "recursive-readdir-async": "^1.1.8"
+        "readdirp": "^3.5.0"
     },
     "devDependencies": {
-        "jest": "^26.6.3"
+        "express": "*",
+        "nodemon": "^2.0.7"
     },
-    "contributors": [
-        {
-            "name": "GHOST",
-            "email": "ghostdevbusiness@gmail.com",
-            "web": "https://ghostdev.xyz/"
-        }
-    ],
-    "maintainers": [
-        {
-            "name": "GHOST",
-            "email": "ghostdevbusiness@gmail.com",
-            "web": "https://ghostdev.xyz/"
-        }
-    ],
-    "bugs": {
-        "web": "https://github.com/ghostdevv/neru/issues"
+    "peerDependencies": {
+        "express": "^4.17.1"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/ghostdevv/neru.git"
-        }
-    ],
     "license": "MIT",
-    "homepage": "https://github.com/ghostdevv/neru"
+    "homepage": "https://github.com/ghostdevv/neru",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ghostdevv/neru"
+    },
+    "bugs": {
+        "url": "https://github.com/ghostdevv/neru"
+    },
+    "engines": {
+        "node": ">=12"
+    }
 }
