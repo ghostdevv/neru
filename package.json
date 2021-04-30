@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "configent": "^2.2.0",
-        "readdirp": "^3.5.0"
+        "recursive-readdir-sync": "^1.0.6"
     },
     "devDependencies": {
         "express": "^4.17.1",
