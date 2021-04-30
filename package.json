@@ -15,7 +15,8 @@
         }
     },
     "dependencies": {
-        "configent": "^2.2.0"
+        "configent": "^2.2.0",
+        "readdirp": "^3.5.0"
     },
     "devDependencies": {
         "express": "*",

@@ -1,11 +1,12 @@
 import Router from './core/Router.js';
 import { createConfig } from './helpers/config.js';
+import { createRoutesMap } from './core/files/index.js';
 
 export function router(app, options = {}) {
     const config = createConfig(options);
-    const router = new Router(app, config);
+    const routes = createRoutesMap(config.routesDir);
 
-    return router;
+    return new Router(app, routes, config);
 }
 
 export default {
