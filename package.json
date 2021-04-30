@@ -3,6 +3,7 @@
     "version": "0.2.2",
     "author": "GHOST",
     "main": "src/index.js",
+    "type": "module",
     "description": "Neru is the file router for express.",
     "exports": {
         "./package.json": "./package.json",
