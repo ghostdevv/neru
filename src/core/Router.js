@@ -36,7 +36,6 @@ export default class Router {
         this.#routesLoaded = true;
 
         for (const route of routes.values()) {
-            console.log(route);
             try {
                 const data = await import(route.fileUrl);
 
