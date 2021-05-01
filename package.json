@@ -28,13 +28,13 @@
         "express": "^4.17.1"
     },
     "license": "MIT",
-    "homepage": "https://github.com/ghostdevv/neru",
+    "homepage": "https://github.com/NeruJS/neru",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ghostdevv/neru"
+        "url": "git+https://github.com/NeruJS/neru"
     },
     "bugs": {
-        "url": "https://github.com/ghostdevv/neru"
+        "url": "https://github.com/NeruJS/neru"
     },
     "engines": {
         "node": ">=12"
