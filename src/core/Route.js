@@ -4,6 +4,7 @@ import { relative } from 'path';
 export default class Route {
     constructor(file, routesDir) {
         this.filePath = file.path;
+        this.fileUrl = file.url;
         this.routesDir = routesDir;
 
         this.route = Route.cleanRoute(
