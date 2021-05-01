@@ -14,6 +14,17 @@ Neru is the file router for Express, build your express apps faster with a easy 
 -   [ ] Custom data to routes
 -   [ ] Fallback routes
 -   [ ] Events
+-   [ ] Files begining with \_ are ignored
+
+# Possible Features
+
+-   [ ] Plugin system
+-   [ ] Code Editor Snippets (Built into CLI)
+
+# Support
+
+-   [ ] CJS
+-   [ ] TypeScript
 
 # Getting Started
 
