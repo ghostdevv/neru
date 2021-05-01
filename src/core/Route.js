@@ -11,7 +11,7 @@ export default class Route {
 
             // Setup the function on this class
             this[method] = (...wares) =>
-                (this.#methods[method] = this.updateMethod(method, wares));
+                (this.#methods[method] = this.#updateMethod(method, wares));
         }
     }
 
@@ -19,11 +19,8 @@ export default class Route {
         return this.#methods;
     }
 
-    updateMethod(method, next) {
+    #updateMethod(method, next) {
         const current = this.#methods[method];
-
-        if (!(Array.isArray(current) || Array.isArray(next)))
-            throw new TypeError('updateMethod expects two arrays');
 
         if (!next.every((x) => typeof x == 'function'))
             throw new TypeError('All middlewear provided should be a function');
