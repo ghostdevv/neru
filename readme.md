@@ -18,7 +18,7 @@ Neru is the file router for Express, build your express apps faster with a easy 
 
 Neru is easy to insert into existing projects, you just create your express app then pass that to the router method. This will create a new instance of the neru router.
 
-> If you try to run the router function on the same express app twice it will throw a error
+> If you try to run the router function on the same express app twice it will throw an error.
 
 ```js
 const express = require('express');
