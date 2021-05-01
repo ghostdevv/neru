@@ -6,6 +6,11 @@ export function router(app, options = {}) {
     const config = createConfig(options);
     const routes = createRoutesMap(config.routesDir);
 
+    if (app.neru && app.neru instanceof Router)
+        throw new Error(
+            'Unable to bind to your express app as neru is already detected on this app',
+        );
+
     return new Router(app, routes, config);
 }
 

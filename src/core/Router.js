@@ -11,6 +11,8 @@ export default class Router {
         if (!(routes instanceof Map))
             throw new TypeError(`Expected a map for routes`);
 
+        server.neru = this;
+
         this.loadRoutes(routes);
     }
 
