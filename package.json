@@ -6,7 +6,8 @@
     "type": "module",
     "description": "Neru is the file router for express.",
     "scripts": {
-        "dev": "nodemon dev/index.js"
+        "dev": "nodemon dev/index.js",
+        "test": "uvu tests -b -c"
     },
     "exports": {
         "./package.json": "./package.json",
