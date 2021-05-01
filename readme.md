@@ -43,3 +43,26 @@ route.get('/', (req, res) => res.send('Hello World'));
 
 module.exports = route;
 ```
+
+# Parameters
+
+Parameters can be given in file names, unlike express they are given wrapped in `[]`, for example in express you could write `/:id` in express and in neru it would be `[id]`.
+
+> **Important**<br>This only effects file names, using router.get, router.post etc uses standard [express syntax](https://expressjs.com/en/guide/routing.html#route-parameters).
+
+---
+
+## Parameters
+
+A route can have as many dynamic parameters as you like, for example: `[id]/[key]/[value].js`, you could even do `[id]/[key]-[value].js`.
+
+## Spread Parameters
+
+A route can also have spread parameters, like in javascript when spreading something we use `...`. For example if you had `[project]/[...files]` and made a request like this `/neru/src/index.js` that would return:
+
+```js
+{
+    project: 'neru',
+    files: 'src/index.js'
+}
+```
