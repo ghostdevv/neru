@@ -1,5 +1,5 @@
 import readdir from 'recursive-readdir-sync';
-import { resolve } from 'path';
+import { resolve, parse } from 'path';
 
 import File from './File.js';
 import RouteFile from './RouteFile.js';
