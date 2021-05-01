@@ -20,6 +20,7 @@ Neru is the file router for Express, build your express apps faster with a easy 
 
 -   [ ] Plugin system
 -   [ ] Code Editor Snippets (Built into CLI)
+-   [ ] Case insensitive option
 
 # Support
 
@@ -46,9 +47,32 @@ app.listen(3000, () => console.log('Online'));
 
 # Route Files
 
-Route files are simple to use, if you are familliar with `express.Router` then you will find this easy. Neru does not use `express.Router` but it does support the same [methods](<(https://expressjs.com/en/4x/api.html#routing-methods)>)
+Route files are simple to use, the boilerplate for a route file is 1 - 2 lines depending on whether you use esm or cjs, we recommend defining it like this:
 
-> This part of neru has been changed a lot and might change again before 1.0, please keep that in mind.
+-   ### CJS
+
+    ```js
+    const router = require('neru/route')();
+
+    // Code
+
+    module.exports = router;
+    ```
+
+-   ### Esm
+
+    ```js
+    import { route } from 'neru';
+    export const router = route();
+
+    // Code
+    ```
+
+Currently Neru does not block characters in route file names, but this is subject to change. You need to be careful when using special characters as some aren't [safe for a url](https://abramillar.com/2018/01/15/special-characters-short-words-urls/), also some are used by express for extended dynamic routing as seen [here](https://expressjs.com/en/4x/api.html#path-examples) so could cause unexpected behaviour.
+
+> **Important Notes**<br>- Route files that begin with `_` are ignored by Neru.<br>- Route files are case sensitive
+
+Example:
 
 ```js
 import { route } from 'neru';
