@@ -54,7 +54,7 @@ Route files are simple to use, if you are familliar with `express.Router` then y
 import { route } from 'neru';
 export const router = route();
 
-router.get('/', (req, res) => res.send('Hello World'));
+router.get((req, res) => res.send('Hello World'));
 ```
 
 # Parameters
