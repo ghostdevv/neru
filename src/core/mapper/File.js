@@ -1,4 +1,4 @@
-import { clean } from '../index.js';
+import { clean } from '../../helpers/file.js';
 import { parse } from 'path';
 
 export default class File {

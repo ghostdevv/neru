@@ -1,4 +1,4 @@
-import { clean } from '../index.js';
+import { clean } from '../helpers/file.js';
 import { relative } from 'path';
 
 export default class Route {

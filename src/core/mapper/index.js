@@ -1,8 +1,8 @@
 import readdir from 'recursive-readdir-sync';
-import { normalize, resolve } from 'path';
+import { resolve } from 'path';
 
-import File from './structures/File.js';
-import Route from './structures/Route.js';
+import File from './File.js';
+import Route from '../Route.js';
 
 export function createRoutesMap(dir) {
     const files = readdir(resolve(dir));
@@ -16,8 +16,4 @@ export function createRoutesMap(dir) {
     }
 
     return routes;
-}
-
-export function clean(path) {
-    return normalize(path).replace(/\\/g, '/');
 }
