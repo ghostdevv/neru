@@ -1,17 +1,17 @@
-import { clean } from '../helpers/file.js';
+import { clean } from '../../helpers/file.js';
 import { relative } from 'path';
 
-export default class Route {
+export default class RouteFile {
     constructor(file, routesDir) {
         this.filePath = file.path;
         this.fileUrl = file.url;
         this.routesDir = routesDir;
 
-        this.route = Route.cleanRoute(
+        this.route = RouteFile.cleanRoute(
             relative(routesDir, file.path).slice(0, -file.ext.length),
         );
 
-        this.expressPath = Route.parseExpressPath(this.route);
+        this.expressPath = RouteFile.parseExpressPath(this.route);
     }
 
     static cleanRoute(route) {

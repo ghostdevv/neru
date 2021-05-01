@@ -2,7 +2,7 @@ import readdir from 'recursive-readdir-sync';
 import { resolve } from 'path';
 
 import File from './File.js';
-import Route from '../Route.js';
+import RouteFile from './RouteFile.js';
 
 export function createRoutesMap(dir) {
     const files = readdir(resolve(dir));
@@ -10,7 +10,7 @@ export function createRoutesMap(dir) {
 
     for (const path of files) {
         const file = new File(path);
-        const route = new Route(file, dir);
+        const route = new RouteFile(file, dir);
 
         routes.set(route.route, route);
     }
