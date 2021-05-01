@@ -28,13 +28,15 @@ Neru is the file router for Express, build your express apps faster with a easy 
 
 # Getting Started
 
+> All of these examples use [esm](https://maximorlov.com/es-modules-in-nodejs/), if you don't know what that is then click [here](https://maximorlov.com/es-modules-in-nodejs/). You can use cjs (i.e. require) but it's recommended to use esm
+
 Neru is easy to insert into existing projects, you just create your express app then pass that to the router method. This will create a new instance of the neru router.
 
 > If you try to run the router function on the same express app twice it will throw an error.
 
 ```js
-const express = require('express');
-const { router } = require('neru');
+import express from 'express';
+import { router } from 'neru';
 
 const app = express();
 const neru = router(app);
@@ -49,11 +51,10 @@ Route files are simple to use, if you are familliar with `express.Router` then y
 > This part of neru has been changed a lot and might change again before 1.0, please keep that in mind.
 
 ```js
-const router = require('neru/route');
+import { route } from 'neru';
+export const router = route();
 
 router.get('/', (req, res) => res.send('Hello World'));
-
-module.exports = router;
 ```
 
 # Parameters
