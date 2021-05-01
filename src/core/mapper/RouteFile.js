@@ -20,7 +20,7 @@ export default class RouteFile {
     }
 
     static parseExpressPath(route) {
-        const matches = route.match(/\[(\w|\d)+\]/gi);
+        const matches = route.match(/\[([.\-_A-Za-z0-9])+\]/gi);
         if (!matches) return route;
 
         for (const match of matches) {
