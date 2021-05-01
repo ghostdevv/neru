@@ -7,10 +7,10 @@ Neru is the file router for Express, build your express apps faster with a easy 
 # Core Features
 
 -   [x] Dynamic Routing
--   [ ] All types of requests: GET, POST
--   [ ] Route files based on express.router
+-   [x] All types of requests: [express request support](https://expressjs.com/en/4x/api.html#routing-methods)
+-   [x] Route files based on express.Router
 -   [ ] Cli tools
--   [ ] Middlewear support
+-   [x] Middlewear support
 -   [ ] Custom data to routes
 -   [ ] Fallback routes
 
@@ -32,16 +32,16 @@ app.listen(3000, () => console.log('Online'));
 
 # Route Files
 
-Route files are simple to use, if you are familliar with `express.router` then you will find this easy.
+Route files are simple to use, if you are familliar with `express.Router` then you will find this easy. Neru does not use `express.Router` but it does support the same [methods](<(https://expressjs.com/en/4x/api.html#routing-methods)>)
 
 > This part of neru has been changed a lot and might change again before 1.0, please keep that in mind.
 
 ```js
-const route = require('neru/route');
+const router = require('neru/route');
 
-route.get('/', (req, res) => res.send('Hello World'));
+router.get('/', (req, res) => res.send('Hello World'));
 
-module.exports = route;
+module.exports = router;
 ```
 
 # Parameters
