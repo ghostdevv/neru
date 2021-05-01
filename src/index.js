@@ -1,4 +1,6 @@
 import Router from './core/Router.js';
+import Route from './core/Route.js';
+
 import { createConfig } from './helpers/config.js';
 import { createRoutesMap } from './core/mapper/index.js';
 
@@ -14,6 +16,11 @@ export function router(app, options = {}) {
     return new Router(app, routes, config);
 }
 
+export function route() {
+    return new Route();
+}
+
 export default {
     router,
+    route,
 };
