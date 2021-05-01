@@ -13,6 +13,7 @@ Neru is the file router for Express, build your express apps faster with a easy 
 -   [x] Middlewear support
 -   [ ] Custom data to routes
 -   [ ] Fallback routes
+-   [ ] Events
 
 # Getting Started
 
