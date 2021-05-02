@@ -20,6 +20,7 @@ Neru is the file router for Express, build your express apps faster with a easy 
 
 -   [ ] Plugin system
 -   [ ] Code Editor Snippets (Built into CLI)
+-   [ ] Case insensitive option
 
 # Support
 
@@ -28,13 +29,15 @@ Neru is the file router for Express, build your express apps faster with a easy 
 
 # Getting Started
 
+> All of these examples use [esm](https://maximorlov.com/es-modules-in-nodejs/), if you don't know what that is then click [here](https://maximorlov.com/es-modules-in-nodejs/). You can use cjs (i.e. require) but it's recommended to use esm
+
 Neru is easy to insert into existing projects, you just create your express app then pass that to the router method. This will create a new instance of the neru router.
 
 > If you try to run the router function on the same express app twice it will throw an error.
 
 ```js
-const express = require('express');
-const { router } = require('neru');
+import express from 'express';
+import { router } from 'neru';
 
 const app = express();
 const neru = router(app);
@@ -44,16 +47,38 @@ app.listen(3000, () => console.log('Online'));
 
 # Route Files
 
-Route files are simple to use, if you are familliar with `express.Router` then you will find this easy. Neru does not use `express.Router` but it does support the same [methods](<(https://expressjs.com/en/4x/api.html#routing-methods)>)
+Route files are simple to use, the boilerplate for a route file is 1 - 2 lines depending on whether you use esm or cjs, we recommend defining it like this:
 
-> This part of neru has been changed a lot and might change again before 1.0, please keep that in mind.
+-   ### CJS
+
+    ```js
+    const router = require('neru/route')();
+
+    // Code
+
+    module.exports = router;
+    ```
+
+-   ### Esm
+
+    ```js
+    import { route } from 'neru';
+    export const router = route();
+
+    // Code
+    ```
+
+Currently Neru does not block characters in route file names, but this is subject to change. You need to be careful when using special characters as some aren't [safe for a url](https://abramillar.com/2018/01/15/special-characters-short-words-urls/), also some are used by express for extended dynamic routing as seen [here](https://expressjs.com/en/4x/api.html#path-examples) so could cause unexpected behaviour.
+
+> **Important Notes**<br>- Route files that begin with `_` are ignored by Neru.<br>- Route files are case sensitive
+
+Example:
 
 ```js
-const router = require('neru/route');
+import { route } from 'neru';
+export const router = route();
 
-router.get('/', (req, res) => res.send('Hello World'));
-
-module.exports = router;
+router.get((req, res) => res.send('Hello World'));
 ```
 
 # Parameters

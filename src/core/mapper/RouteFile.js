@@ -12,6 +12,8 @@ export default class RouteFile {
 
     static cleanRoute(route) {
         route = clean(route);
+        route = route == 'index' ? '/' : route;
+
         return route.startsWith('/') ? route : `/${route}`;
     }
 
