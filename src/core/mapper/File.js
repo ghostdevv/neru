@@ -4,7 +4,7 @@ import { parse } from 'path';
 
 export default class File {
     constructor(path) {
-        const { dir, base, ext, name } = parse(path);
+        const { dir, base, ext, name } = parse(clean(path));
 
         this.path = clean(path);
         this.url = pathToFileURL(this.path).href;
