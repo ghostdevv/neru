@@ -1,5 +1,4 @@
 import { clean } from '../../helpers/file.js';
-import { relative } from 'path';
 
 export default class RouteFile {
     constructor(file, routesDir) {
