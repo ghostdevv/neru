@@ -10,11 +10,11 @@ Neru is the file router for Express, build your express apps faster with a easy 
 -   [x] All types of requests: [express request support](https://expressjs.com/en/4x/api.html#routing-methods)
 -   [x] Route files based on express.Router
 -   [ ] Cli tools
--   [x] Middlewear support
+-   [x] Middleware support
 -   [ ] Custom data to routes
 -   [ ] Fallback routes
 -   [ ] Events
--   [ ] Files begining with \_ are ignored
+-   [ ] Files begining with \_ are ignored, this should be configuable in the config
 
 # Possible Features
 
