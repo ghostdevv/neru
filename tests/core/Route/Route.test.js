@@ -22,7 +22,7 @@ routes('providing non function throws error', () => {
     try {
         router.get('test');
     } catch (error) {
-        if (error.message != 'All middlewear provided should be a function')
+        if (error.message != 'All middleware provided should be a function')
             throw new Error('Failed');
     }
 });
