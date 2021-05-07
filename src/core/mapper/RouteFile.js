@@ -19,9 +19,8 @@ export default class RouteFile {
 
     static resolveRoute(file, routesDir) {
         const route = file.path
-            .match(new RegExp(`(?<=${routesDir})([^\n])+`, 'gi'))[0]
-            .replace(new RegExp(routesDir, 'gim'), '')
-            .slice(0, -file.ext.length);
+            .match(new RegExp(`(${routesDir})([^\n])+`, 'gi'))[0]
+            .slice(0 + routesDir.length, -file.ext.length);
 
         return route.endsWith('index') ? route.slice(0, -5) : route;
     }
