@@ -6,7 +6,7 @@ import { createRoutesMap } from './core/mapper/index.js';
 
 export function router(app, options = {}) {
     const config = createConfig(options);
-    const routes = createRoutesMap(config.routesDir);
+    const routes = createRoutesMap(config);
 
     if (app.neru && app.neru instanceof Router)
         throw new Error(

@@ -4,10 +4,10 @@ import { resolve, parse } from 'path';
 import File from './File.js';
 import RouteFile from './RouteFile.js';
 
-export function createRoutesMap(dir) {
-    const files = readdir(resolve(dir)).filter((x) => {
+export function createRoutesMap({ routesDir, extensions }) {
+    const files = readdir(resolve(routesDir)).filter((x) => {
         const { name, ext } = parse(x);
-        return !name.startsWith('_') && ['.js'].includes(ext);
+        return !name.startsWith('_') && extensions.includes(ext);
     });
 
     const routes = new Map();
