@@ -69,3 +69,17 @@ dynamic('routes express paths are being parsed correctly', () => {
 });
 
 dynamic.run();
+
+const misc = suite('misc');
+
+misc("don't replace all occuences of routesdir", () => {
+    const f = new File(
+        '/home/ghost/Desktop/project/src/routes/src/routes/index.js',
+    );
+
+    const r = new RouteFile(f, 'src/routes');
+
+    assert.is(r.route, '/src/routes/');
+});
+
+misc.run();
