@@ -19,7 +19,7 @@ export default class RouteFile {
 
     static resolveRoute(file, routesDir) {
         const route = file.path
-            .match(new RegExp(`(${routesDir})([^\n])+`, 'gi'))[0]
+            .match(new RegExp(`(?<=${routesDir})([^\n])+`, 'gi'))[0]
             .replace(new RegExp(routesDir, 'gim'), '')
             .slice(0, -file.ext.length);
 
