@@ -11,9 +11,7 @@
     },
     "exports": {
         "./package.json": "./package.json",
-        ".": {
-            "require": "./src/index.js"
-        }
+        ".": "./src/index.js"
     },
     "dependencies": {
         "configent": "^2.2.0",
