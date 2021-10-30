@@ -1,28 +1,36 @@
 {
     "name": "neru",
     "version": "0.3.0",
-    "author": "GHOST",
-    "main": "src/index.js",
-    "type": "module",
     "description": "Neru is the file router for express.",
-    "scripts": {
-        "dev": "nodemon dev/index.js",
-        "test": "uvu tests -b -c"
-    },
+    "author": "GHOST",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
     "exports": {
-        "./package.json": "./package.json",
-        ".": "./src/index.js"
+        ".": {
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
+        }
     },
-    "dependencies": {
-        "configent": "^2.2.0",
-        "recursive-readdir-sync": "^1.0.6"
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "dev": "run-p dev:*",
+        "dev:ts": "tsup-node --watch src",
+        "dev:nodemon": "nodemon dev/index.js",
+        "build": "tsup-node"
     },
     "devDependencies": {
-        "axios": "^0.21.1",
-        "nodemon": "^2.0.7",
-        "uvu": "^0.5.1"
+        "@types/node": "^16.11.4",
+        "discord.js": "^13.0.0",
+        "nodemon": "^2.0.14",
+        "npm-run-all": "^4.1.5",
+        "tsup": "^5.5.0",
+        "typescript": "^4.4.4"
     },
-    "license": "MIT",
     "homepage": "https://github.com/NeruJS/neru",
     "repository": {
         "type": "git",
