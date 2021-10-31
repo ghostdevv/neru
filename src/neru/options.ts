@@ -19,5 +19,5 @@ export interface NeruOptions<AdapterType extends Adapter> {
     /**
      * Enable debug messages
      */
-    debug: boolean;
+    debug?: boolean;
 }
