@@ -1,4 +1,3 @@
-import { createLogger } from '../utils/logger';
 import { coloured } from '../utils/colour';
 import { adapterSchema } from './adapter';
 
