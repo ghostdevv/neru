@@ -5,10 +5,10 @@ import Joi from 'joi';
 export interface Adapter<ServerType = unknown> {
     name: string;
 
-    getParamRoute: (slug: string) => string;
-    getSpreadRoute: (slug: string) => string;
+    getParamRoute: (slug: string) => Promise<string> | string;
+    getSpreadRoute: (slug: string) => Promise<string> | string;
 
-    addRoute: (server: ServerType) => Promise<void> | void;
+    addRoute: (server: ServerType, route: string) => Promise<void> | void;
 }
 
 export const adapterSchema = Joi.object({
