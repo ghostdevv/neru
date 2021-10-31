@@ -1,11 +1,25 @@
-import { adapterSchema } from '../adapters/adapter';
 import type { Adapter } from '../adapters/adapter';
+import type { Consolite } from 'consolite';
 import Joi from 'joi';
 
 export const neruOptionsSchema = Joi.object({
     routes: [Joi.string(), Joi.array().items(Joi.string())],
     debug: Joi.boolean(),
 });
+
+export const validateOptions = (
+    options: NeruOptions,
+    logger: Consolite & Console,
+): NeruOptions => {
+    const { error, value } = neruOptionsSchema.validate(options);
+
+    if (error) {
+        logger.error(error.annotate());
+        throw new Error('Options invalid, check the error above');
+    }
+
+    return value;
+};
 
 export interface NeruParams<AdapterType extends Adapter> extends NeruOptions {
     /**

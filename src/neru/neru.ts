@@ -1,6 +1,6 @@
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
-import { neruOptionsSchema } from './options';
+import { validateOptions } from './options';
 
 import type { Adapter } from '../adapters/adapter';
 import type { NeruParams } from './options';
@@ -10,12 +10,8 @@ export const neru = <AdapterType extends Adapter>({
     server,
     ...inpOptions
 }: NeruParams<AdapterType>) => {
-    const { error, value: options } = neruOptionsSchema.validate(inpOptions);
-    const logger = createLogger(options.debug);
-    const layer = createLayer(inpAdapter, logger);
+    const logger = createLogger(inpOptions.debug);
 
-    if (error) {
-        logger.error(error.annotate());
-        throw new Error('Options invalid, check the error above');
-    }
+    const options = validateOptions(inpOptions, logger);
+    const layer = createLayer(inpAdapter, logger);
 };
