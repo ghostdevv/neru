@@ -1,5 +1,7 @@
 import Joi from 'joi';
 
+// @todo add jsdoc
+
 export interface Adapter<ServerType = unknown> {
     name: string;
 
