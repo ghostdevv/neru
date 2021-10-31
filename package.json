@@ -43,7 +43,7 @@
         "node": ">=12"
     },
     "dependencies": {
-        "consolite": "^0.1.0",
+        "consolite": "^0.2.2",
         "joi": "^17.4.2"
     }
 }
