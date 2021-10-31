@@ -1,10 +1,6 @@
-import { Adapter } from "../adapters/Adapter";
+import type { Adapter } from '../adapters/adapter';
 
-export const defaults = {
-    routes: 'src/routes',
-};
-
-export interface NeruOptions<AdapterType extends Adapter<unknown>> {
+export interface NeruOptions<AdapterType> {
     /**
      * The route files neru should read
      */

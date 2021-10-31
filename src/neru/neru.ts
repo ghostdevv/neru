@@ -1,15 +1,18 @@
+import { validateAdapter } from '../adapters/adapter';
 import type { NeruOptions } from './options';
 
-import { Adapter } from '../adapters/Adapter';
-
-export const neru = <AdapterType extends Adapter<unknown>>({
+export const neru = <AdapterType>({
     adapter,
     server,
     ...options
 }: NeruOptions<AdapterType>) => {
-    // const layer = new adapter()
-};
+    const { error } = validateAdapter(adapter);
 
-interface adapter<AdapterType extends InstanceType<typeof Adapter>> {
-    create: () => AdapterType;
-}
+    if (error) {
+        console.error(error.annotate());
+
+        throw new Error(
+            'Invalid adapter, please contact the author with the above error',
+        );
+    }
+};
