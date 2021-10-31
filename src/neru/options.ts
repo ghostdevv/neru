@@ -18,5 +18,5 @@ export interface NeruOptions<AdapterType extends Adapter<unknown>> {
     /**
      * Your server
      */
-    server: AdapterType extends Adapter<infer T> ? T : never;
-}}
+    server: AdapterType extends Adapter<infer T> ? T : unknown;
+}
