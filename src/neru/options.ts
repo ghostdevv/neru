@@ -3,8 +3,11 @@ import type { ConsoliteLogger } from 'consolite';
 import Joi from 'joi';
 
 export const neruOptionsSchema = Joi.object({
-    routes: [Joi.string(), Joi.array().items(Joi.string())],
-    debug: Joi.boolean(),
+    routes: Joi.alternatives()
+        .try(Joi.string(), Joi.array().items(Joi.string()))
+        .default('src/routes'),
+
+    debug: Joi.boolean().default(false),
 });
 
 export const validateOptions = (
@@ -21,7 +24,8 @@ export const validateOptions = (
     return value;
 };
 
-export interface NeruParams<AdapterType extends Adapter> extends NeruOptions {
+export interface NeruParams<AdapterType extends Adapter>
+    extends Partial<NeruOptions> {
     /**
      * The adapter that works with your server choice!
      */
@@ -37,7 +41,7 @@ export interface NeruOptions {
     /**
      * The route files neru should read
      */
-    routes?: string | string[];
+    routes: string | string[];
 
     /**
      * Enable debug messages
