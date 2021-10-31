@@ -15,7 +15,3 @@ export const adapterSchema = Joi.object({
     addSlugRoute: Joi.function(),
     addSpreadRoute: Joi.function(),
 });
-
-export const validateAdapter = <AdapterType>(adapter: AdapterType) => {
-    return adapterSchema.validate(adapter);
-};
