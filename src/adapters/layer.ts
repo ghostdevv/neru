@@ -1,12 +1,15 @@
 import { createLogger } from '../utils/logger';
 import { coloured } from '../utils/colour';
 import { adapterSchema } from './adapter';
+
+import type { Consolite } from 'consolite';
 import type { Adapter } from './adapter';
 
 export const createLayer = <AdapterType extends Adapter>(
     adapter: AdapterType,
+    baseLogger: Consolite & Console,
 ) => {
-    const logger = createLogger().createChild(
+    const logger = baseLogger.createChild(
         coloured(`[ADAPTER: ${adapter.name || 'unknown'}]`, 35),
     );
 
@@ -19,6 +22,8 @@ export const createLayer = <AdapterType extends Adapter>(
             'Invalid adapter, please contact the author with the above error',
         );
     }
+
+    logger.debug(`Loaded adapter`);
 
     return {
         logger,
