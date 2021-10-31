@@ -6,13 +6,13 @@ import type { Adapter } from '../adapters/adapter';
 import type { NeruParams } from './options';
 
 export const neru = <AdapterType extends Adapter>({
-    adapter,
+    adapter: inpAdapter,
     server,
-    ...options
+    ...inpOptions
 }: NeruParams<AdapterType>) => {
-    const { error } = neruOptionsSchema.validate(options);
+    const { error, value: options } = neruOptionsSchema.validate(inpOptions);
     const logger = createLogger(options.debug);
-    const layer = createLayer(adapter, logger);
+    const layer = createLayer(inpAdapter, logger);
 
     if (error) {
         logger.error(error.annotate());

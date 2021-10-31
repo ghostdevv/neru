@@ -4,7 +4,6 @@ import Joi from 'joi';
 
 export const neruOptionsSchema = Joi.object({
     routes: [Joi.string(), Joi.array().items(Joi.string())],
-
     debug: Joi.boolean(),
 });
 
