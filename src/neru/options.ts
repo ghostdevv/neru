@@ -1,6 +1,6 @@
 import type { Adapter } from '../adapters/adapter';
 
-export interface NeruOptions<AdapterType> {
+export interface NeruOptions<AdapterType extends Adapter> {
     /**
      * The route files neru should read
      */
