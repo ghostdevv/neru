@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-export interface Adapter<ServerType> {
+export interface Adapter<ServerType = unknown> {
     name: string;
 
     addRoute?: (server: ServerType) => Promise<void> | void;
