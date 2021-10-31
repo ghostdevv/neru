@@ -1,27 +1,21 @@
-import { validateAdapter } from '../adapters/adapter';
-import type { Adapter } from '../adapters/adapter';
+import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
-import type { NeruOptions } from './options';
-import { coloured } from '../utils/colour';
+import { neruOptionsSchema } from './options';
+
+import type { Adapter } from '../adapters/adapter';
+import type { NeruParams } from './options';
 
 export const neru = <AdapterType extends Adapter>({
     adapter,
     server,
     ...options
-}: NeruOptions<AdapterType>) => {
+}: NeruParams<AdapterType>) => {
+    const { error } = neruOptionsSchema.validate(options);
     const logger = createLogger(options.debug);
-
-    const adapterLogger = logger.createChild(
-        coloured(`[ADAPTER: ${adapter.name || 'unknown'}]`, 35),
-    );
-
-    const { error } = validateAdapter(adapter);
+    const layer = createLayer(adapter, logger);
 
     if (error) {
-        adapterLogger.error(error.annotate());
-
-        throw new Error(
-            'Invalid adapter, please contact the author with the above error',
-        );
+        logger.error(error.annotate());
+        throw new Error('Options invalid, check the error above');
     }
 };
