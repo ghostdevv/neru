@@ -15,4 +15,9 @@ export interface NeruOptions<AdapterType> {
      * Your server
      */
     server: AdapterType extends Adapter<infer T> ? T : unknown;
+
+    /**
+     * Enable debug messages
+     */
+    debug: boolean;
 }
