@@ -1,12 +1,12 @@
 import { coloured } from '../utils/colour';
 import { adapterSchema } from './adapter';
 
-import type { Consolite } from 'consolite';
+import type { ConsoliteLogger } from 'consolite';
 import type { Adapter } from './adapter';
 
 export const createLayer = <AdapterType extends Adapter>(
     adapter: AdapterType,
-    baseLogger: Consolite & Console,
+    baseLogger: ConsoliteLogger,
 ) => {
     const logger = baseLogger.createChild(
         coloured(`[ADAPTER: ${adapter.name || 'unknown'}]`, 35),

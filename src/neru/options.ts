@@ -1,5 +1,5 @@
 import type { Adapter } from '../adapters/adapter';
-import type { Consolite } from 'consolite';
+import type { ConsoliteLogger } from 'consolite';
 import Joi from 'joi';
 
 export const neruOptionsSchema = Joi.object({
@@ -9,7 +9,7 @@ export const neruOptionsSchema = Joi.object({
 
 export const validateOptions = (
     options: NeruOptions,
-    logger: Consolite & Console,
+    logger: ConsoliteLogger,
 ): NeruOptions => {
     const { error, value } = neruOptionsSchema.validate(options);
 
