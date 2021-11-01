@@ -1,5 +1,6 @@
 import { posixify, stripTrailingSlash, flattenPaths } from 'ghoststools';
 import { normalize, resolve } from 'path';
+import { stripExt } from 'ghoststools';
 import { existsSync } from 'fs';
 
 export const resolveRoutes = (routesDir: string): string[] => {
@@ -8,6 +9,7 @@ export const resolveRoutes = (routesDir: string): string[] => {
     if (!existsSync(dir))
         throw new Error(`Unable to find routes directory ${dir}`);
 
-    // @todo remove ext
-    return flattenPaths(dir).map((file) => file.replace(dir, ''));
+    return flattenPaths(dir)
+        .map((file) => file.replace(dir, ''))
+        .map((file) => stripExt(file));
 };
