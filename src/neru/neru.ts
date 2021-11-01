@@ -1,4 +1,4 @@
-import { resolveRoutes } from './routes/resolve';
+import { resolveRouteFiles } from './routes/resolve';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
 import { validateOptions } from './options';
@@ -20,7 +20,7 @@ export const neru = <AdapterType extends Adapter>({
     const routes = [];
 
     for (const routesDir of castToArray<string>(options.routes))
-        routes.push(...resolveRoutes(routesDir));
+        routes.push(...resolveRouteFiles(routesDir));
 
     console.log(routes);
 };
