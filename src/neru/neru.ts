@@ -2,6 +2,7 @@ import { resolveRouteFiles } from './routes/resolve';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
 import { validateOptions } from './options';
+import { coloured } from '../utils/colour';
 import { castToArray } from 'ghoststools';
 
 import type { NeruOptions, NeruParams } from './options';
@@ -22,5 +23,8 @@ export const neru = <AdapterType extends Adapter>({
     for (const routesDir of castToArray<string>(options.routes))
         routes.push(...resolveRouteFiles(routesDir));
 
-    console.log(routes);
+    if (options.debug)
+        routes.forEach((r) =>
+            logger.debug(`Found route ${coloured(r.route, 33)}`),
+        );
 };
