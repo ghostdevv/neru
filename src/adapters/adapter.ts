@@ -5,8 +5,8 @@ import Joi from 'joi';
 export interface Adapter<ServerType = unknown> {
     name: string;
 
-    getParamRoute: (slug: string) => Promise<string> | string;
-    getSpreadRoute: (slug: string) => Promise<string> | string;
+    getParamRoute: (slug: string) => string;
+    getSpreadRoute: (slug: string) => string;
 
     addRoute: (server: ServerType, route: string) => Promise<void> | void;
 }
