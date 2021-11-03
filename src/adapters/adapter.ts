@@ -9,13 +9,13 @@ export interface Adapter<ServerType = unknown> {
     /**
      * This function will be given a param and should return the framework specific implimentation of it
      */
-    getParamRoute: (slug: string) => string;
+    formatParamRoute: (slug: string) => string;
 
     /**
      * This function will be given a spread param and should return the framework specific implimentation of it
      * Not all frameworks support these but there are usually workarounds
      */
-    getSpreadRoute: (slug: string) => string;
+    formatSpreadRoute: (slug: string) => string;
 
     /**
      * This function should add the given route to the server
