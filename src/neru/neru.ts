@@ -1,12 +1,15 @@
-import { resolveRouteFiles } from './routes/resolve';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
+import { RouteFile } from './routes/RouteFile';
+import { RouteDir } from './routes/RouteDir';
 import { validateOptions } from './options';
 import { coloured } from '../utils/colour';
+import { flattenPaths } from 'ghoststools';
 import { castToArray } from 'ghoststools';
+import { Route } from './routes/Route';
 
-import type { NeruOptions, NeruParams } from './options';
 import type { Adapter } from '../adapters/adapter';
+import type { NeruParams } from './options';
 
 export const neru = <AdapterType extends Adapter>({
     adapter: inpAdapter,
@@ -18,13 +21,16 @@ export const neru = <AdapterType extends Adapter>({
     const options = validateOptions(inpOptions, logger);
     const layer = createLayer(inpAdapter, logger);
 
-    const routes = [];
+    for (const rawDir of castToArray(options.routes)) {
+        const dir = new RouteDir(rawDir);
 
-    for (const routesDir of castToArray<string>(options.routes))
-        routes.push(...resolveRouteFiles(routesDir));
+        for (const file of flattenPaths(dir.path)) {
+            const routeFile = new RouteFile(file, dir);
+            const route = new Route(routeFile, layer.adapter);
 
-    if (options.debug)
-        routes.forEach((r) =>
-            logger.debug(`Found route ${coloured(r.route, 33)}`),
-        );
+            logger.debug(`Found route ${coloured(route.route, 33)}`);
+
+            // Add the route to the server
+        }
+    }
 };

@@ -1,14 +1,17 @@
+import type { RouteDir } from './RouteDir';
 import { stripExt } from 'ghoststools';
 
 export class RouteFile {
-    public readonly route: string;
+    public readonly routePath: string;
     public readonly filePath: string;
-    public readonly routesDir: string;
+    public readonly routesDir: RouteDir;
 
-    constructor(filePath: string, routesDir: string) {
+    constructor(filePath: string, routesDir: RouteDir) {
         this.filePath = filePath;
         this.routesDir = routesDir;
 
-        this.route = stripExt(this.filePath.replace(this.routesDir, ''));
+        this.routePath = stripExt(
+            this.filePath.replace(this.routesDir.path, ''),
+        );
     }
 }
