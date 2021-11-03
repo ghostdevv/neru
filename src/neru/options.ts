@@ -11,7 +11,7 @@ export const neruOptionsSchema = Joi.object({
 });
 
 export const validateOptions = (
-    options: NeruOptions,
+    options: Partial<NeruOptions>,
     logger: ConsoliteLogger,
 ): NeruOptions => {
     const { error, value } = neruOptionsSchema.validate(options);

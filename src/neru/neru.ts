@@ -15,7 +15,7 @@ export const neru = <AdapterType extends Adapter>({
 }: NeruParams<AdapterType>) => {
     const logger = createLogger(inpOptions.debug);
 
-    const options = validateOptions(inpOptions as NeruOptions, logger);
+    const options = validateOptions(inpOptions, logger);
     const layer = createLayer(inpAdapter, logger);
 
     const routes = [];
