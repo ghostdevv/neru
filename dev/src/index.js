@@ -6,8 +6,8 @@ import { neru } from 'neru';
 const adapter = {
     name: 'testing-adapter',
 
-    getParamRoute: (slug) => `{${slug}}`,
-    getSpreadRoute: (slug) => `{${slug}**}`,
+    formatParamRoute: (slug) => `{${slug}}`,
+    formatSpreadRoute: (slug) => `{${slug}**}`,
 
     addRoute: (server, route) => console.log({ route }),
 };

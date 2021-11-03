@@ -26,8 +26,8 @@ export interface Adapter<ServerType = unknown> {
 export const adapterSchema = Joi.object({
     name: Joi.string().required(),
 
-    getParamRoute: Joi.function().required(),
-    getSpreadRoute: Joi.function().required(),
+    formatParamRoute: Joi.function().required(),
+    formatSpreadRoute: Joi.function().required(),
 
     addRoute: Joi.function().required(),
 });
