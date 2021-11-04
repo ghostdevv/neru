@@ -1,14 +1,6 @@
-import { LowercaseMethod } from '../methods/methods';
+import type { RouteMethods } from '../methods/routeMethods';
 import type { RouteFile } from './RouteFile';
-import type { Adapter } from '../..';
-
-export interface RouteMethods<MethodValue = unknown>
-    extends Record<LowercaseMethod, MethodValue> {
-    /**
-     * This allows you to respond to any method
-     */
-    all: MethodValue;
-}
+import { Adapter } from '../..';
 
 export class Route<AdapterType extends Adapter, MethodType> {
     /**
