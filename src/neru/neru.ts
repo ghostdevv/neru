@@ -1,3 +1,4 @@
+import { routeMethodsSchema } from './methods/routeMethods';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
 import { RouteFile } from './routes/RouteFile';
@@ -9,7 +10,7 @@ import { castToArray } from 'ghoststools';
 import { Route } from './routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import type { RouteMethods } from './methods/routeMethods';
+import { RouteMethods } from './methods/routeMethods';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
@@ -28,14 +29,24 @@ export const neru = async <AdapterType extends Adapter>({
         for (const file of flattenPaths(dir.path)) {
             const routeFile = new RouteFile(file, dir);
 
-            const data: RouteMethods<MethodType<typeof layer.adapter>> =
+            const routeMethods: RouteMethods<MethodType<typeof layer.adapter>> =
                 await import(routeFile.filePath);
 
-            const route = new Route(routeFile, layer.adapter, data);
+            const { error } = routeMethodsSchema.validate(routeMethods);
+
+            if (error) {
+                logger.error(error.annotate());
+
+                throw new Error(
+                    `Unable to parse route file: ${routeFile.filePath}`,
+                );
+            }
+
+            const route = new Route(routeFile, layer.adapter, routeMethods);
 
             logger.debug(`Found route ${coloured(route.route, 33)}`);
 
-            // Add the route to the server
+            layer.adapter.addRoute(server, route, routeMethods);
         }
     }
 };
