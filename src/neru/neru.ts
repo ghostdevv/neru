@@ -9,7 +9,7 @@ import { castToArray } from 'ghoststools';
 import { Route } from './routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import type { RouteMethods } from './routes/Route';
+import type { RouteMethods } from './methods/routeMethods';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
