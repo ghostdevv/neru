@@ -2,7 +2,7 @@ import type { RouteMethods } from '../neru/routes/Route';
 import Joi from 'joi';
 
 export type MethodType<AdapterType extends Adapter> =
-    AdapterType extends Adapter<infer T, infer U> ? U : never;
+    AdapterType extends Adapter<infer T, infer U> ? U : unknown;
 
 export interface Adapter<ServerType = unknown, MethodType = any> {
     /**
