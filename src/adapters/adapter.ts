@@ -1,10 +1,11 @@
 import type { RouteMethods } from '../neru/methods/routeMethods';
+import type { Route } from '../neru/routes/Route';
 import Joi from 'joi';
 
 export type MethodType<AdapterType extends Adapter> =
     AdapterType extends Adapter<infer T, infer U> ? U : unknown;
 
-export interface Adapter<ServerType = unknown, MethodType = any> {
+export interface Adapter<ServerType = any, MethodType = any> {
     /**
      * The name of the adapter
      */
@@ -26,7 +27,7 @@ export interface Adapter<ServerType = unknown, MethodType = any> {
      */
     addRoute: (
         server: ServerType,
-        route: string,
+        route: Route<Adapter<ServerType, MethodType>, MethodType>,
         methods: RouteMethods<MethodType>,
     ) => Promise<void> | void;
 }
