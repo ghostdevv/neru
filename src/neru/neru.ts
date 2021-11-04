@@ -8,10 +8,11 @@ import { flattenPaths } from 'ghoststools';
 import { castToArray } from 'ghoststools';
 import { Route } from './routes/Route';
 
-import type { Adapter } from '../adapters/adapter';
+import type { Adapter, MethodType } from '../adapters/adapter';
+import type { RouteMethods } from './routes/Route';
 import type { NeruParams } from './options';
 
-export const neru = <AdapterType extends Adapter>({
+export const neru = async <AdapterType extends Adapter>({
     adapter: inpAdapter,
     server,
     ...inpOptions
@@ -26,7 +27,11 @@ export const neru = <AdapterType extends Adapter>({
 
         for (const file of flattenPaths(dir.path)) {
             const routeFile = new RouteFile(file, dir);
-            const route = new Route(routeFile, layer.adapter);
+
+            const data: RouteMethods<MethodType<typeof layer.adapter>> =
+                await import(routeFile.filePath);
+
+            const route = new Route(routeFile, layer.adapter, data);
 
             logger.debug(`Found route ${coloured(route.route, 33)}`);
 
