@@ -1,7 +1,7 @@
 import { neru } from 'neru';
 
 /**
- * @type {import('neru').Adapter<string>}
+ * @type {import('neru').Adapter<string, number>}
  */
 const adapter = {
     name: 'testing-adapter',
