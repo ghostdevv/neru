@@ -1,6 +1,6 @@
 {
     "name": "neru",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Neru is the file router for express.",
     "author": "GHOST",
     "license": "MIT",
