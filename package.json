@@ -39,8 +39,11 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
+    "packageManager": "pnpm",
     "engines": {
-        "node": ">=12"
+        "pnpm": "^6.7.0",
+        "npm": "forbidden, use pnpm",
+        "node": ">= 12"
     },
     "dependencies": {
         "consolite": "^0.2.6",
