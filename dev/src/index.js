@@ -15,6 +15,6 @@ const adapter = {
 neru({
     adapter,
     server: '',
-    routes: 'dev/src/routes',
+    routes: 'src/routes',
     debug: true,
 });

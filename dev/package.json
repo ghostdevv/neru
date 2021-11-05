@@ -1,6 +1,13 @@
 {
     "type": "module",
-    "workspaces": [
-        ".."
-    ]
+    "private": true,
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "dependencies": {
+        "neru": "workspace:*"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.14"
+    }
 }
