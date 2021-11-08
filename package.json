@@ -24,5 +24,10 @@
         "pnpm": "^6.7.0",
         "npm": "forbidden, use pnpm",
         "node": ">= 12"
+    },
+    "pnpm": {
+        "overrides": {
+            "neru": "workspace:*"
+        }
     }
 }
