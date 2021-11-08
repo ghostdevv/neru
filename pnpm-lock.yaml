@@ -17,9 +17,11 @@ importers:
 
   dev:
     specifiers:
+      '@nerujs/hapi': workspace:*
       neru: workspace:*
       nodemon: ^2.0.14
     dependencies:
+      '@nerujs/hapi': link:../packages/adapter-hapi
       neru: link:../packages/neru
     devDependencies:
       nodemon: 2.0.14

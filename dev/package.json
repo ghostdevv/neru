@@ -5,7 +5,8 @@
         "dev": "nodemon src/index.js"
     },
     "dependencies": {
-        "neru": "workspace:*"
+        "neru": "workspace:*",
+        "@nerujs/hapi": "workspace:*"
     },
     "devDependencies": {
         "nodemon": "^2.0.14"
