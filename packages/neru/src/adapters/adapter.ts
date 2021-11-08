@@ -1,4 +1,4 @@
-import type { RouteMethods } from '../neru/methods/routeMethods';
+import type { RouteMethods } from '../neru/routes/routeMethods';
 import type { Route } from '../neru/routes/Route';
 import Joi from 'joi';
 
