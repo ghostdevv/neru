@@ -6,10 +6,11 @@
         "dev": "nodemon src/index.js"
     },
     "dependencies": {
-        "neru": "workspace:*",
-        "@nerujs/hapi": "workspace:*"
+        "@nerujs/hapi": "workspace:*",
+        "neru": "workspace:*"
     },
     "devDependencies": {
+        "@hapi/hapi": "^20.0.0",
         "nodemon": "^2.0.14"
     }
 }
