@@ -24,6 +24,12 @@ importers:
     devDependencies:
       nodemon: 2.0.14
 
+  packages/adapter-hapi:
+    specifiers:
+      neru: workspace:*
+    dependencies:
+      neru: link:../neru
+
   packages/neru:
     specifiers:
       consolite: ^0.2.6
