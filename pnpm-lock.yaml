@@ -1,11 +1,14 @@
 lockfileVersion: 5.3
 
+overrides:
+  neru: workspace:*
+
 importers:
 
   .:
     specifiers:
-      '@types/node': ^16.11.4
-      tsup: ^5.5.0
+      '@types/node': ^16.11.6
+      tsup: ^5.6.0
       typescript: ^4.4.4
     devDependencies:
       '@types/node': 16.11.6
@@ -825,8 +828,8 @@ packages:
       package-json: 6.5.0
     dev: true
 
-  /lilconfig/2.0.3:
-    resolution: {integrity: sha512-EHKqr/+ZvdKCifpNrJCKxBTgk5XupZA3y/aCPY9mxfgBzmgh93Mt/WqjjQ38oMxXuvDokaKiM3lAgvSH2sjtHg==}
+  /lilconfig/2.0.4:
+    resolution: {integrity: sha512-bfTIN7lEsiooCocSISTWXkiWJkRqtL9wYtYy+8EK3Y41qh3mpwPU0ycTOgjdY9ErwXCc8QyrQp82bdL0Xkm9yA==}
     engines: {node: '>=10'}
     dev: true
 
@@ -1024,7 +1027,7 @@ packages:
         optional: true
     dependencies:
       import-cwd: 3.0.0
-      lilconfig: 2.0.3
+      lilconfig: 2.0.4
       yaml: 1.10.2
     dev: true
 
