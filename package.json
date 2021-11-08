@@ -9,6 +9,8 @@
     },
     "scripts": {
         "dev": "pnpm -r dev --parallel",
+        "dev-build": "pnpm -r dev --parallel --filter !dev",
+        "dev-dev": "cd dev && pnpm run dev",
         "build": "pnpm -r build"
     },
     "homepage": "https://github.com/NeruJS/neru",
