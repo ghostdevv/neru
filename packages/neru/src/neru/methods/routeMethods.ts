@@ -1,5 +1,5 @@
-import type { LowercaseMethod } from './methods';
-import { lowercaseMethods } from './methods';
+import type { LowercaseMethod } from '@nerujs/methods';
+import { lowercaseMethods } from '@nerujs/methods';
 import Joi from 'joi';
 
 export interface RouteMethods<MethodValue = unknown>

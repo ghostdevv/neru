@@ -38,12 +38,17 @@ importers:
       '@types/hapi__hapi': 20.0.9
       neru: link:../neru
 
+  packages/methods:
+    specifiers: {}
+
   packages/neru:
     specifiers:
+      '@nerujs/methods': workspace:*
       consolite: ^0.2.6
       ghoststools: ^0.5.3
       joi: ^17.4.2
     dependencies:
+      '@nerujs/methods': link:../methods
       consolite: 0.2.9
       ghoststools: 0.5.3
       joi: 17.4.2
