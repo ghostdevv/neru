@@ -1,4 +1,4 @@
-import { routeMethodsSchema } from './methods/routeMethods';
+import { routeMethodsSchema } from './routes/routeMethods';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
 import { RouteFile } from './routes/RouteFile';
@@ -10,7 +10,7 @@ import { castToArray } from 'ghoststools';
 import { Route } from './routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import { RouteMethods } from './methods/routeMethods';
+import type { RouteMethods } from './routes/routeMethods';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
