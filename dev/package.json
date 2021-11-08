@@ -1,4 +1,5 @@
 {
+    "name": "dev",
     "type": "module",
     "private": true,
     "scripts": {
