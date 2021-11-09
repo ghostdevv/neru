@@ -1,0 +1,16 @@
+{
+    "name": "dev",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "dependencies": {
+        "@nerujs/hapi": "workspace:*",
+        "neru": "workspace:*"
+    },
+    "devDependencies": {
+        "@hapi/hapi": "^20.0.0",
+        "nodemon": "^2.0.14"
+    }
+}

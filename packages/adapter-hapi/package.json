@@ -1,0 +1,43 @@
+{
+    "name": "@nerujs/hapi",
+    "version": "0.0.0",
+    "description": "The hapi adapter for neru",
+    "author": "GHOST",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "exports": {
+        ".": {
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "dev": "tsup-node --watch src",
+        "build": "tsup-node"
+    },
+    "homepage": "https://github.com/NeruJS/neru",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NeruJS/neru"
+    },
+    "bugs": {
+        "url": "https://github.com/NeruJS/neru"
+    },
+    "packageManager": "pnpm",
+    "engines": {
+        "pnpm": "^6.7.0",
+        "npm": "forbidden, use pnpm",
+        "node": ">= 12"
+    },
+    "dependencies": {
+        "@hapi/hapi": "^20.0.0",
+        "@types/hapi__hapi": "^20.0.0",
+        "neru": "*"
+    }
+}

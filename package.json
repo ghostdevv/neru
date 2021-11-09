@@ -1,32 +1,18 @@
 {
-    "name": "neru",
-    "version": "0.3.0",
-    "author": "GHOST",
-    "main": "src/index.js",
-    "type": "module",
-    "description": "Neru is the file router for express.",
-    "scripts": {
-        "dev": "nodemon dev/index.js",
-        "test": "uvu tests -b -c"
-    },
-    "exports": {
-        "./package.json": "./package.json",
-        ".": "./src/index.js"
-    },
-    "dependencies": {
-        "configent": "^2.2.0",
-        "recursive-readdir-sync": "^1.0.6"
-    },
-    "devDependencies": {
-        "axios": "^0.21.1",
-        "express": "^4.17.1",
-        "nodemon": "^2.0.7",
-        "uvu": "^0.5.1"
-    },
-    "peerDependencies": {
-        "express": "^4.17.1"
-    },
+    "name": "neru-monorepo",
+    "private": true,
     "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^16.11.7",
+        "tsup": "^5.6.0",
+        "typescript": "^4.4.4"
+    },
+    "scripts": {
+        "dev": "pnpm -r dev --parallel",
+        "dev-build": "pnpm dev --parallel --filter \\!dev",
+        "dev-dev": "pnpm dev --filter dev",
+        "build": "pnpm -r build"
+    },
     "homepage": "https://github.com/NeruJS/neru",
     "repository": {
         "type": "git",
@@ -35,7 +21,15 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
+    "packageManager": "pnpm",
     "engines": {
-        "node": ">=12"
+        "pnpm": "^6.7.0",
+        "npm": "forbidden, use pnpm",
+        "node": ">= 12"
+    },
+    "pnpm": {
+        "overrides": {
+            "neru": "workspace:*"
+        }
     }
 }
