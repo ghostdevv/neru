@@ -40,8 +40,5 @@
         "consolite": "^0.2.6",
         "ghoststools": "^0.5.3",
         "joi": "^17.4.2"
-    },
-    "devDependencies": {
-        "uvu": "^0.5.2"
     }
 }
