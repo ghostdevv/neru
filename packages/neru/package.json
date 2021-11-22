@@ -31,11 +31,6 @@
         "url": "https://github.com/NeruJS/neru"
     },
     "packageManager": "pnpm@6.20.3",
-    "engines": {
-        "pnpm": "^6.7.0",
-        "npm": "forbidden, use pnpm",
-        "node": ">= 12"
-    },
     "dependencies": {
         "@nerujs/methods": "workspace:*",
         "consolite": "^0.2.9",

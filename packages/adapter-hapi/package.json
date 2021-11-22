@@ -30,11 +30,6 @@
         "url": "https://github.com/NeruJS/neru"
     },
     "packageManager": "pnpm@6.20.3",
-    "engines": {
-        "pnpm": "^6.7.0",
-        "npm": "forbidden, use pnpm",
-        "node": ">= 12"
-    },
     "dependencies": {
         "@hapi/hapi": "^20.2.1",
         "@types/hapi__hapi": "^20.0.9",
