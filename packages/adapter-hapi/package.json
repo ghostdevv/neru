@@ -36,8 +36,8 @@
         "node": ">= 12"
     },
     "dependencies": {
-        "@hapi/hapi": "^20.0.0",
-        "@types/hapi__hapi": "^20.0.0",
-        "neru": "*"
+        "@hapi/hapi": "^20.2.1",
+        "@types/hapi__hapi": "^20.0.9",
+        "neru": "workspace:*"
     }
 }
