@@ -19,7 +19,8 @@
     ],
     "scripts": {
         "dev": "tsup-node --watch src",
-        "build": "tsup-node"
+        "build": "tsup-node",
+        "test": "tsm node_modules/uvu/bin.js tests"
     },
     "homepage": "https://github.com/NeruJS/neru",
     "repository": {
@@ -40,5 +41,8 @@
         "consolite": "^0.2.6",
         "ghoststools": "^0.5.3",
         "joi": "^17.4.2"
+    },
+    "devDependencies": {
+        "uvu": "^0.5.2"
     }
 }

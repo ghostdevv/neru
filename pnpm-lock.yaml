@@ -8,14 +8,14 @@ importers:
   .:
     specifiers:
       '@types/node': ^16.11.7
+      tsm: ^2.1.4
       tsup: ^5.6.0
       typescript: ^4.4.4
-      uvu: ^0.5.2
     devDependencies:
       '@types/node': 16.11.7
+      tsm: 2.1.4
       tsup: 5.6.0_typescript@4.4.4
       typescript: 4.4.4
-      uvu: 0.5.2
 
   dev:
     specifiers:
@@ -49,11 +49,14 @@ importers:
       consolite: ^0.2.6
       ghoststools: ^0.5.3
       joi: ^17.4.2
+      uvu: ^0.5.2
     dependencies:
       '@nerujs/methods': link:../methods
       consolite: 0.2.9
       ghoststools: 0.5.3
       joi: 17.4.2
+    devDependencies:
+      uvu: 0.5.2
 
 packages:
 
@@ -1537,6 +1540,14 @@ packages:
 
   /ts-interface-checker/0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+    dev: true
+
+  /tsm/2.1.4:
+    resolution: {integrity: sha512-gz1zckplzOzHdiY1HVVUoH8bl2eWxbU6uJraB31w1NQ+/kQkjix3ldYHBnWaoNnOL9q8ruS+E2Wckdcw56DzrA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.13.12
     dev: true
 
   /tsup/5.6.0_typescript@4.4.4:
