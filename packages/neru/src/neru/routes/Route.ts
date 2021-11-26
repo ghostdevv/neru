@@ -24,12 +24,24 @@ export class Route<AdapterType extends Adapter, MethodType> {
         methods: Partial<RouteMethods<MethodType>>,
     ) {
         this.routeFile = routeFile;
-        this.route = Route.parseRoutePath(this.routeFile.routePath, adapter);
+
+        // Set initial route value
+        this.route = this.routeFile.routePath;
+
+        // Run route parser chain
+        this.route = Route.resolveIndex(this.route);
+        this.route = Route.formatRoutePath(this.route, adapter);
 
         this.methods = methods;
     }
 
-    static parseRoutePath<AdapterType extends Adapter>(
+    static resolveIndex(route: string) {
+        return route.endsWith('/index')
+            ? route.slice(0, -'index'.length)
+            : route;
+    }
+
+    static formatRoutePath<AdapterType extends Adapter>(
         route: string,
         adapter: AdapterType,
     ) {
