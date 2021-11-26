@@ -1,4 +1,5 @@
 import type { RouteMethods } from './routeMethods';
+import { stripTrailingSlash } from 'ghoststools';
 import type { RouteFile } from './RouteFile';
 import { Adapter } from '../..';
 
@@ -31,6 +32,7 @@ export class Route<AdapterType extends Adapter, MethodType> {
         // Run route parser chain
         this.route = Route.resolveIndex(this.route);
         this.route = Route.formatRoutePath(this.route, adapter);
+        this.route = stripTrailingSlash(this.route);
 
         this.methods = methods;
     }
