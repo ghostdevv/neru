@@ -47,13 +47,13 @@ importers:
     specifiers:
       '@nerujs/methods': workspace:*
       consolite: ^0.2.9
-      ghoststools: ^0.5.3
+      ghoststools: ^0.6.0
       joi: ^17.4.2
       uvu: ^0.5.2
     dependencies:
       '@nerujs/methods': link:../methods
       consolite: 0.2.9
-      ghoststools: 0.5.3
+      ghoststools: 0.6.3
       joi: 17.4.2
     devDependencies:
       uvu: 0.5.2
@@ -833,8 +833,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /ghoststools/0.5.3:
-    resolution: {integrity: sha512-9++vvkfEyGNQx0ol0wmrB5wLvhbwCFS9Z2eeG8tCi7Co4PgkmB5U+UP1HdgGlsVvm2EZnmZSbKIw3fkrfoqcPA==}
+  /ghoststools/0.6.3:
+    resolution: {integrity: sha512-33bVpmjLpvtLTJuxvrqA9IGaLpXSQXi62b1MpgshMCi5izEES23mPZ9h0Z5FXwEWBVZFzy7lrL6d1ok6cviI3Q==}
     dev: false
 
   /glob-parent/5.1.2:
