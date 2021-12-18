@@ -5,8 +5,8 @@ import { RouteFile } from './routes/RouteFile';
 import { RouteDir } from './routes/RouteDir';
 import { validateOptions } from './options';
 import { coloured } from '../utils/colour';
-import { flattenPaths } from 'ghoststools';
 import { castToArray } from 'ghoststools';
+import { readFiles } from '../utils/fs';
 import { Route } from './routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
@@ -26,7 +26,7 @@ export const neru = async <AdapterType extends Adapter>({
     for (const rawDir of castToArray(options.routes)) {
         const dir = new RouteDir(rawDir);
 
-        for (const file of flattenPaths(dir.path)) {
+        for (const file of readFiles(dir.path)) {
             const routeFile = new RouteFile(file, dir);
 
             const routeMethods: RouteMethods<MethodType<typeof layer.adapter>> =
