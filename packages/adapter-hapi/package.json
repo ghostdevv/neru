@@ -32,7 +32,7 @@
     "packageManager": "pnpm@6.24.1",
     "dependencies": {
         "@hapi/hapi": "^20.2.1",
-        "@types/hapi__hapi": "^20.0.9",
+        "@types/hapi__hapi": "^20.0.10",
         "neru": "workspace:*"
     }
 }
