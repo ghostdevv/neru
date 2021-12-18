@@ -11,7 +11,9 @@ export interface RouteMethods<MethodValue = unknown>
 }
 
 // @todo validate methods
-export const routeMethodsSchema = Joi.object().keys({
-    ...Object.fromEntries(lowercaseMethods.map((m) => [m, Joi.any()])),
-    all: Joi.any(),
-});
+export const routeMethodsSchema = Joi.object()
+    .keys({
+        ...Object.fromEntries(lowercaseMethods.map((m) => [m, Joi.any()])),
+        all: Joi.any(),
+    })
+    .unknown(true);
