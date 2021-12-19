@@ -10,21 +10,22 @@ export const adapter: Adapter<Server, ServerRoute> = {
     formatSpreadRoute: (slug) => `{${slug}*}`,
 
     addRoute: (server, { route }, methods) => {
-        const methodsArray: [string, NeruHapiServerRoute][] =
-            Object.entries(methods);
+        const methodsArray: [
+            string,
+            NeruHapiServerRoute | NeruHapiServerRoute[],
+        ][] = Object.entries(methods);
 
-        for (const [method, data] of methodsArray) {
-            if (typeof data != 'object')
-                throw new TypeError(
-                    `Expected route data for route "${route}" with method "${method}" - try the route fn`,
-                );
-
+        const add = (method: string, data: NeruHapiServerRoute) =>
             server.route({
                 ...data,
                 method,
                 path: route,
             });
-        }
+
+        for (const [method, data] of methodsArray)
+            Array.isArray(data)
+                ? data.forEach((x) => add(method, x))
+                : add(method, data);
     },
 };
 
