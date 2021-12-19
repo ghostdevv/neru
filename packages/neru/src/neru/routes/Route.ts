@@ -1,4 +1,4 @@
-import type { RouteMethods } from './routeMethods';
+import type { RouteMethods } from './methods.d';
 import { stripTrailingSlash } from 'ghoststools';
 import type { RouteFile } from './RouteFile';
 import { Adapter } from '../..';

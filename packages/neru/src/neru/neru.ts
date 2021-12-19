@@ -1,7 +1,7 @@
-import { routeMethodsSchema } from './routes/routeMethods';
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
 import { RouteFile } from './routes/RouteFile';
+import { importRoutes } from './routes/import';
 import { RouteDir } from './routes/RouteDir';
 import { validateOptions } from './options';
 import { coloured } from '../utils/colour';
@@ -10,7 +10,7 @@ import { readFiles } from '../utils/fs';
 import { Route } from './routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import type { RouteMethods } from './routes/routeMethods';
+import type { RouteMethods } from './routes/methods.d';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
@@ -29,18 +29,9 @@ export const neru = async <AdapterType extends Adapter>({
         for (const file of readFiles(dir.path)) {
             const routeFile = new RouteFile(file, dir);
 
-            const routeMethods: RouteMethods<MethodType<typeof layer.adapter>> =
-                await import(routeFile.filePath);
-
-            const { error } = routeMethodsSchema.validate(routeMethods);
-
-            if (error) {
-                logger.error(error.annotate());
-
-                throw new Error(
-                    `Unable to parse route file: ${routeFile.filePath}`,
-                );
-            }
+            const routeMethods = await importRoutes<
+                MethodType<typeof layer.adapter>
+            >(routeFile.filePath, logger);
 
             const route = new Route(routeFile, layer.adapter, routeMethods);
 

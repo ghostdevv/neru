@@ -1,4 +1,4 @@
-import type { RouteMethods } from '../neru/routes/routeMethods';
+import type { RouteMethods } from '../neru/routes/methods.d';
 import type { Route } from '../neru/routes/Route';
 import Joi from 'joi';
 
@@ -28,7 +28,7 @@ export interface Adapter<ServerType = any, MethodType = any> {
     addRoute: (
         server: ServerType,
         route: Route<Adapter<ServerType, MethodType>, MethodType>,
-        methods: RouteMethods<MethodType>,
+        methods: Partial<RouteMethods<MethodType>>,
     ) => Promise<void> | void;
 }
 
