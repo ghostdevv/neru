@@ -28,10 +28,8 @@ export const neru = async <AdapterType extends Adapter>({
         for (const file of readFiles(dir.path)) {
             const routeFile = new RouteFile(file, dir);
 
-            const routeMethods = await importRoutes<
-                MethodType<typeof layer.adapter>
-            >(routeFile.filePath, logger);
-
+            // prettier-ignore
+            const routeMethods = await importRoutes<MethodType<typeof layer.adapter>>(routeFile.filePath, logger);
             const route = new Route(routeFile, layer.adapter, routeMethods);
 
             logger.debug(`Found route ${coloured(route.route, 33)}`);
