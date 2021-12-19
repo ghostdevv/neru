@@ -7,5 +7,6 @@ export { RouteDir } from './neru/routes/RouteDir';
 export { Route } from './neru/routes/Route';
 
 // Export types
+export type { RouteMethods, RawRouteMethods } from './neru/routes/methods';
 export type { NeruOptions, NeruParams } from './neru/options';
 export type { Adapter } from './adapters/adapter';
