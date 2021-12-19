@@ -10,7 +10,6 @@ import { readFiles } from '../utils/fs';
 import { Route } from '../routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import type { RouteMethods } from '../methods/methods.d';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
