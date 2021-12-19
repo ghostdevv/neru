@@ -1,5 +1,5 @@
-import type { RouteMethods } from '../neru/routes/methods.d';
-import type { Route } from '../neru/routes/Route';
+import type { RouteMethods } from '../methods/methods.d';
+import type { Route } from '../routes/Route';
 import Joi from 'joi';
 
 export type MethodType<AdapterType extends Adapter> =

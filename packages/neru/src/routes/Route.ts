@@ -1,7 +1,7 @@
-import type { RouteMethods } from './methods.d';
+import type { RouteMethods } from '../methods/methods.d';
 import { stripTrailingSlash } from 'ghoststools';
 import type { RouteFile } from './RouteFile';
-import { Adapter } from '../..';
+import { Adapter } from '..';
 
 export class Route<AdapterType extends Adapter, MethodType> {
     /**

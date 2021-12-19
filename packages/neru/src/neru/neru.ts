@@ -1,16 +1,16 @@
 import { createLayer } from '../adapters/layer';
 import { createLogger } from '../utils/logger';
-import { RouteFile } from './routes/RouteFile';
-import { importRoutes } from './routes/import';
-import { RouteDir } from './routes/RouteDir';
+import { RouteFile } from '../routes/RouteFile';
+import { importRoutes } from '../methods/import';
+import { RouteDir } from '../routes/RouteDir';
 import { validateOptions } from './options';
 import { coloured } from '../utils/colour';
 import { castToArray } from 'ghoststools';
 import { readFiles } from '../utils/fs';
-import { Route } from './routes/Route';
+import { Route } from '../routes/Route';
 
 import type { Adapter, MethodType } from '../adapters/adapter';
-import type { RouteMethods } from './routes/methods.d';
+import type { RouteMethods } from '../methods/methods.d';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
