@@ -1,4 +1,4 @@
-import { flattenPaths } from 'ghoststools';
+import { readdirRecursive } from 'ghoststools';
 
-export const readFiles = (files: string | string[]) =>
-    flattenPaths(files, { filter: (f) => !f.startsWith('_') });
+export const readFiles = (files: string) =>
+    readdirRecursive(files, { filter: (f) => !f.startsWith('_') });
