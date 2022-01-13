@@ -29,5 +29,5 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
-    "packageManager": "pnpm@6.24.1"
+    "packageManager": "pnpm@6.26.1"
 }
