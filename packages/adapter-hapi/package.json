@@ -29,7 +29,7 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
-    "packageManager": "pnpm@6.29.0",
+    "packageManager": "pnpm@6.29.1",
     "dependencies": {
         "@hapi/hapi": "^20.2.1",
         "@types/hapi__hapi": "^20.0.10",
