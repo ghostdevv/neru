@@ -30,7 +30,7 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
-    "packageManager": "pnpm@6.29.0",
+    "packageManager": "pnpm@6.29.1",
     "dependencies": {
         "@nerujs/methods": "workspace:*",
         "consolite": "^0.2.9",
