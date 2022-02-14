@@ -24,7 +24,7 @@
     "bugs": {
         "url": "https://github.com/NeruJS/neru"
     },
-    "packageManager": "pnpm@6.29.1",
+    "packageManager": "pnpm@6.31.0",
     "engines": {
         "pnpm": "^6.7.0",
         "npm": "forbidden, use pnpm",
