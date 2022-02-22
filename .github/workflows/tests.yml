@@ -9,13 +9,22 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [12.x, 14.x, 16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - run: npm test
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.0.1
+
+      - name: Install Dependancies
+        run: pnpm i
+
+      - name: Run Tests
+        run: pnpm test
