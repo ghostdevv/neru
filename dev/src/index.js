@@ -11,7 +11,10 @@ await neru({
     adapter,
     server,
     routes: 'src/routes',
-    debug: true,
+
+    options: {
+        debug: true,
+    },
 });
 
 await server.start();
