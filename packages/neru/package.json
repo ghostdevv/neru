@@ -34,8 +34,7 @@
     "dependencies": {
         "@nerujs/methods": "workspace:*",
         "consolite": "^0.2.9",
-        "ghoststools": "^0.6.3",
-        "joi": "^17.5.0"
+        "ghoststools": "^0.6.3"
     },
     "devDependencies": {
         "uvu": "^0.5.2"
