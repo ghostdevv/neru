@@ -3,9 +3,7 @@ import { createLogger } from '../utils/logger';
 import { RouteFile } from '../routes/RouteFile';
 import { importRoutes } from '../methods/import';
 import { RouteDir } from '../routes/RouteDir';
-import { validateOptions } from './options';
 import { coloured } from '../utils/colour';
-import { castToArray } from 'ghoststools';
 import { readFiles } from '../utils/fs';
 import { Route } from '../routes/Route';
 
@@ -13,16 +11,22 @@ import type { Adapter, MethodType } from '../adapters/adapter';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
-    adapter: inpAdapter,
+    adapter: inputAdapter,
     server,
-    ...inpOptions
+    routes,
+    options = {},
 }: NeruParams<AdapterType>) => {
-    const logger = createLogger(inpOptions.debug);
+    const logger = createLogger(options.debug);
+    const layer = createLayer(inputAdapter, logger);
 
-    const options = validateOptions(inpOptions, logger);
-    const layer = createLayer(inpAdapter, logger);
+    if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
+        throw new TypeError(
+            'Please give a valid routes directory or array of directories',
+        );
 
-    for (const rawDir of castToArray(options.routes)) {
+    const routesArray = Array.isArray(routes) ? routes : [routes];
+
+    for (const rawDir of routesArray) {
         const dir = new RouteDir(rawDir);
 
         for (const file of readFiles(dir.path)) {

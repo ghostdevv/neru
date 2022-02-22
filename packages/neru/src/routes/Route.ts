@@ -49,10 +49,23 @@ export class Route<AdapterType extends Adapter, MethodType> {
     ) {
         return route.replace(
             /\[(\.\.\.)?([^ ]+?)\]/gi,
-            (param, isSpread, slug) =>
-                isSpread
-                    ? adapter.formatSpreadRoute(slug)
-                    : adapter.formatParamRoute(slug),
+            (param, isSpread, slug) => {
+                if (!adapter.formatParamRoute)
+                    throw new Error(
+                        'The current adapter you are using does not support param routes.',
+                    );
+
+                if (isSpread) {
+                    if (!adapter.formatSpreadRoute)
+                        throw new Error(
+                            'The current adapter you are using does not support spread routes',
+                        );
+
+                    return adapter.formatSpreadRoute(slug);
+                }
+
+                return adapter.formatParamRoute(slug);
+            },
         );
     }
 }
