@@ -1,6 +1,6 @@
 import type { ConsoliteLogger } from 'consolite';
-import { coloured } from '../utils/colour';
 import type { Adapter } from './adapter';
+import { magenta } from 'kleur/colors';
 
 export const createLayer = <AdapterType extends Adapter>(
     adapter: AdapterType,
@@ -17,7 +17,7 @@ export const createLayer = <AdapterType extends Adapter>(
         );
 
     const logger = baseLogger.createChild(
-        coloured(`[ADAPTER: ${adapter.name}]`, 35),
+        magenta(`[ADAPTER: ${adapter.name}]`),
     );
 
     // prettier-ignore

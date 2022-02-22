@@ -48,11 +48,13 @@ importers:
       '@nerujs/methods': workspace:*
       consolite: ^0.2.9
       ghoststools: ^0.6.3
+      kleur: ^4.1.4
       uvu: ^0.5.2
     dependencies:
       '@nerujs/methods': link:../methods
       consolite: 0.2.9
       ghoststools: 0.6.3
+      kleur: 4.1.4
     devDependencies:
       uvu: 0.5.2
 
@@ -1087,7 +1089,6 @@ packages:
   /kleur/4.1.4:
     resolution: {integrity: sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==}
     engines: {node: '>=6'}
-    dev: true
 
   /latest-version/5.1.0:
     resolution: {integrity: sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==}
