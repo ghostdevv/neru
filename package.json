@@ -3,6 +3,7 @@
     "private": true,
     "license": "MIT",
     "devDependencies": {
+        "@changesets/cli": "^2.21.0",
         "@types/node": "^16.11.25",
         "tsm": "^2.2.1",
         "tsup": "^5.11.13",
@@ -13,8 +14,8 @@
         "dev-build": "pnpm build --parallel -- --watch",
         "dev-dev": "pnpm dev --filter dev",
         "build": "pnpm -r build",
-        "publish": "pnpm build && pnpm publish -r --access public",
-        "test": "pnpm -r test"
+        "test": "pnpm -r test",
+        "release": "changeset publish"
     },
     "homepage": "https://github.com/ghostdevv/neru",
     "repository": {
