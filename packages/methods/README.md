@@ -1,6 +1,6 @@
 # Methods
 
-This is a simple typed version of nodes http.METHODS, it's made since [neru](https://github.com/nerujs/neru) requires a typed http methods and nodes is typed as string
+This is a simple typed version of nodes http.METHODS, it's made since [neru](https://github.com/ghostdevv/neru) requires a typed http methods and nodes is typed as string
 
 # Exported members
 

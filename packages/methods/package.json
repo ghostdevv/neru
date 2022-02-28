@@ -21,13 +21,13 @@
         "dev": "tsup-node --watch src",
         "build": "tsup-node"
     },
-    "homepage": "https://github.com/NeruJS/neru",
+    "homepage": "https://github.com/ghostdevv/neru",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/NeruJS/neru"
+        "url": "git+https://github.com/ghostdevv/neru"
     },
     "bugs": {
-        "url": "https://github.com/NeruJS/neru"
+        "url": "https://github.com/ghostdevv/neru"
     },
     "packageManager": "pnpm@6.32.2"
 }
