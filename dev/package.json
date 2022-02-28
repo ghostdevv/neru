@@ -1,6 +1,7 @@
 {
     "name": "dev",
     "type": "module",
+    "version": "0.0.0",
     "private": true,
     "scripts": {
         "dev": "nodemon src/index.js"
