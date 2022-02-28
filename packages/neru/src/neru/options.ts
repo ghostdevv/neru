@@ -1,5 +1,4 @@
 import type { Adapter } from '../adapters/adapter';
-import type { ConsoliteLogger } from 'consolite';
 
 export interface NeruParams<AdapterType extends Adapter> {
     /**
@@ -20,7 +19,7 @@ export interface NeruParams<AdapterType extends Adapter> {
     /**
      * Neru Options
      */
-    options?: Partial<NeruOptions>;
+    options?: NeruOptions;
 }
 
 export interface NeruOptions {
