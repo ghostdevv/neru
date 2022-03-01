@@ -4,23 +4,15 @@ import { sep } from 'path';
 
 import { RouteDir } from '../../src/index';
 
-const inverseSeperator = sep == '/' ? '\\' : '/';
+test('correctly normalise slash depending on the platform', () => {
+    const dir = new RouteDir('/a\\b', false);
 
-// TODO fix
-// test('correctly formats a wonky path', () => {
-//     const path = '\\home/ghost/Desktop/hello.js\\routes';
-//     const dir = new RouteDir(path, false);
+    assert.equal(dir.path, sep == '\\' ? '/a/b' : '/a\\b');
 
-//     assert.equal(dir.path, '/home/ghost/Desktop/hello.js/routes');
-// });
-
-// Should be moved to RouteFile testing
-
-// test('don\'t assume system incorrect slash is a seperator', () => {
-//     const path = `${sep}/a${inverseSeperator}/b`;
-//     const dir = new RouteDir(path);
-
-//     assert.equal(dir.path, path);
-// })
+    /**
+     * * On windows folders can't contain a slash, but on linux like systems they can so we only assume on windows
+     * * that all back slash can be converted to forward but on linux we do not make this assumption
+     */
+});
 
 test.run();
