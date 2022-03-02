@@ -2,7 +2,7 @@ import type { ConsoliteLogger } from 'consolite';
 import type { Adapter } from './adapter';
 import { magenta } from 'kleur/colors';
 
-export const createLayer = <AdapterType extends Adapter>(
+export const validateAdapter = <AdapterType extends Adapter>(
     adapter: AdapterType,
     baseLogger: ConsoliteLogger,
 ) => {
@@ -35,13 +35,10 @@ export const createLayer = <AdapterType extends Adapter>(
     logger.debug(`Loaded adapter`);
 
     if (!adapter.formatParamRoute)
-        logger.warn('Adapter does not have a param route formatter');
+        logger.debug('WARN: Adapter does not have a param route formatter');
 
     if (!adapter.formatSpreadRoute)
-        logger.warn('Adapter does not have a spread route formatter');
+        logger.debug('WARN: Adapter does not have a spread route formatter');
 
-    return {
-        logger,
-        adapter,
-    };
+    return true;
 };

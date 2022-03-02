@@ -1,4 +1,4 @@
-import { createLayer } from '../adapters/layer';
+import { validateAdapter } from '../adapters/validate';
 import { createLogger } from '../utils/logger';
 import { RouteFile } from '../routes/RouteFile';
 import { importRoutes } from '../methods/import';
@@ -11,18 +11,20 @@ import type { Adapter, MethodType } from '../adapters/adapter';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
-    adapter: inputAdapter,
+    adapter,
     server,
     routes,
     options = {},
 }: NeruParams<AdapterType>) => {
-    const logger = createLogger(options.debug);
-    const layer = createLayer(inputAdapter, logger);
-
     if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
         throw new TypeError(
             'Please give a valid routes directory or array of directories',
         );
+
+    const logger = createLogger(options.debug);
+
+    // Validate the adapter
+    validateAdapter(adapter, logger);
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
@@ -33,12 +35,12 @@ export const neru = async <AdapterType extends Adapter>({
             const routeFile = new RouteFile(file, dir);
 
             // prettier-ignore
-            const routeMethods = await importRoutes<MethodType<typeof layer.adapter>>(routeFile.filePath, logger);
-            const route = new Route(routeFile, layer.adapter, routeMethods);
+            const routeMethods = await importRoutes<MethodType<typeof adapter>>(routeFile.filePath, logger);
+            const route = new Route(routeFile, adapter, routeMethods);
 
             logger.debug(`Found route ${blue(route.route)}`);
 
-            layer.adapter.addRoute(server, route, routeMethods);
+            adapter.addRoute(server, route, routeMethods);
         }
     }
 };
