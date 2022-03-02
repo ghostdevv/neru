@@ -21,7 +21,7 @@
     "scripts": {
         "dev": "tsup-node --watch src",
         "build": "tsup-node",
-        "test": "tsm node_modules/uvu/bin.js tests"
+        "test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\""
     },
     "homepage": "https://github.com/ghostdevv/neru",
     "repository": {
