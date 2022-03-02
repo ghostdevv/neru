@@ -30,9 +30,9 @@ export class Route<AdapterType extends Adapter, MethodType> {
         this.route = this.routeFile.routePath;
 
         // Run route parser chain
+        this.route = stripTrailingSlash(this.route);
         this.route = Route.resolveIndex(this.route);
         this.route = Route.formatRoutePath(this.route, adapter);
-        this.route = stripTrailingSlash(this.route);
 
         this.methods = methods;
     }
