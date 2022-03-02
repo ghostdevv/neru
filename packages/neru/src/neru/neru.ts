@@ -24,9 +24,9 @@ export const neru = async <AdapterType extends Adapter>({
             'Please give a valid routes directory or array of directories',
         );
 
-    const routesArray = Array.isArray(routes) ? routes : [routes];
+    const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
-    for (const rawDir of routesArray) {
+    for (const rawDir of routeDirectoryArray) {
         const dir = new RouteDir(rawDir);
 
         for (const file of readFiles(dir.path)) {
