@@ -1,7 +1,7 @@
 import type { RouteMethods } from '../methods/methods.d';
 import type { Route } from '../routes/Route';
 
-export type MethodType<AdapterType extends Adapter> =
+export type GetMethodType<AdapterType extends Adapter> =
     AdapterType extends Adapter<infer T, infer U> ? U : unknown;
 
 export interface Adapter<ServerType = any, MethodType = any> {

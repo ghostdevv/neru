@@ -7,7 +7,7 @@ import { readFiles } from '../utils/fs';
 import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
 
-import type { Adapter, MethodType } from '../adapters/adapter';
+import type { Adapter, GetMethodType } from '../adapters/adapter';
 import type { NeruParams } from './options';
 
 export const neru = async <AdapterType extends Adapter>({
@@ -35,7 +35,7 @@ export const neru = async <AdapterType extends Adapter>({
             const routeFile = new RouteFile(file, dir);
 
             // prettier-ignore
-            const routeMethods = await importRoutes<MethodType<typeof adapter>>(routeFile.filePath, logger);
+            const routeMethods = await importRoutes<GetMethodType<typeof adapter>>(routeFile.filePath, logger);
             const route = new Route(routeFile, adapter, routeMethods);
 
             logger.debug(`Found route ${blue(route.route)}`);
