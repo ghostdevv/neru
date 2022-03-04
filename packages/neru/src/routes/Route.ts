@@ -1,5 +1,5 @@
+import { filePathToRoute, formatRoutePath } from './utils';
 import type { RouteMethods } from '../methods/methods.d';
-import { filePathToRoute } from '../utils/fs';
 import { Adapter } from '../adapters/adapter';
 
 export class Route<AdapterType extends Adapter, MethodType> {
@@ -35,32 +35,6 @@ export class Route<AdapterType extends Adapter, MethodType> {
 
         // Resolve the route
         this.route = filePathToRoute(filePath, routesDirectory);
-        this.route = Route.formatRoutePath(this.route, adapter);
-    }
-
-    static formatRoutePath<AdapterType extends Adapter>(
-        route: string,
-        adapter: AdapterType,
-    ) {
-        return route.replace(
-            /\[(\.\.\.)?([^ ]+?)\]/gi,
-            (param, isSpread, slug) => {
-                if (!adapter.formatParamRoute)
-                    throw new Error(
-                        'The current adapter you are using does not support param routes.',
-                    );
-
-                if (isSpread) {
-                    if (!adapter.formatSpreadRoute)
-                        throw new Error(
-                            'The current adapter you are using does not support spread routes',
-                        );
-
-                    return adapter.formatSpreadRoute(slug);
-                }
-
-                return adapter.formatParamRoute(slug);
-            },
-        );
+        this.route = formatRoutePath(this.route, adapter);
     }
 }

@@ -1,4 +1,3 @@
-import { stripExt, stripTrailingSlash } from 'ghoststools';
 import { readdirRecursive, posixify } from 'ghoststools';
 import { normalize, resolve, sep } from 'path';
 
@@ -11,22 +10,3 @@ export const normaliseSlashes = (path: string) =>
 // TODO am I running normaliseSlashes in right place
 export const normaliseDirectory = (path: string) =>
     resolve(normalize(normaliseSlashes(path)));
-
-export const filePathToRoute = (path: string, routeDirectory: string) => {
-    // Remove file extension
-    path = stripExt(path);
-
-    // Get rid of the route directory from the path
-    path = path.replace(routeDirectory, '');
-
-    // Remove the trailing slash
-    path = stripTrailingSlash(path);
-
-    // Resolve the index
-    path = path.endsWith('/index') ? path.slice(0, -'index'.length) : path;
-
-    // Check path starts with a /
-    path = path.startsWith('/') ? path : `/${path}`;
-
-    return path;
-};
