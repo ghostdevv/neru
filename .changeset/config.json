@@ -1,9 +1,9 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@1.6.3/schema.json",
     "changelog": [
-        "@changesets/cli/changelog",
+        "@svitejs/changesets-changelog-github-compact",
         {
-            "repo": "ghostdevv/jellycommands"
+            "repo": "ghostdevv/neru"
         }
     ],
     "commit": false,
