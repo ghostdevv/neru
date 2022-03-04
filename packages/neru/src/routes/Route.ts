@@ -1,7 +1,7 @@
 import type { RouteMethods } from '../methods/methods.d';
 import { stripTrailingSlash } from 'ghoststools';
-import type { RouteFile } from './RouteFile';
 import { Adapter } from '..';
+import { filePathToRoute } from '../utils/fs';
 
 export class Route<AdapterType extends Adapter, MethodType> {
     /**
@@ -12,7 +12,12 @@ export class Route<AdapterType extends Adapter, MethodType> {
     /**
      * The file this route belongs to
      */
-    public readonly routeFile: RouteFile;
+    public readonly filePath: string;
+
+    /**
+     * The directory this route was found in
+     */
+    public readonly routesDirectory: string;
 
     /**
      * All methods exported from the file
@@ -20,27 +25,18 @@ export class Route<AdapterType extends Adapter, MethodType> {
     public readonly methods: Partial<RouteMethods<MethodType>>;
 
     constructor(
-        routeFile: RouteFile,
+        filePath: string,
+        routesDirectory: string,
         adapter: AdapterType,
         methods: Partial<RouteMethods<MethodType>>,
     ) {
-        this.routeFile = routeFile;
-
-        // Set initial route value
-        this.route = this.routeFile.routePath;
-
-        // Run route parser chain
-        this.route = stripTrailingSlash(this.route);
-        this.route = Route.resolveIndex(this.route);
-        this.route = Route.formatRoutePath(this.route, adapter);
-
+        this.routesDirectory = routesDirectory;
+        this.filePath = filePath;
         this.methods = methods;
-    }
 
-    static resolveIndex(route: string) {
-        return route.endsWith('/index')
-            ? route.slice(0, -'index'.length)
-            : route;
+        // Resolve the route
+        this.route = filePathToRoute(filePath, routesDirectory);
+        this.route = Route.formatRoutePath(this.route, adapter);
     }
 
     static formatRoutePath<AdapterType extends Adapter>(
