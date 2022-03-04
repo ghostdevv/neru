@@ -1,7 +1,7 @@
 import type { RouteMethods, RawRouteMethods } from './methods';
 import type { ConsoliteLogger } from 'consolite';
 
-export const importRoutes = async <MethodType>(
+export const importMethods = async <MethodType>(
     path: string,
     logger: ConsoliteLogger,
 ): Promise<Partial<RouteMethods<MethodType>>> => {

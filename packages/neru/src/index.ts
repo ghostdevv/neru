@@ -2,8 +2,6 @@
 export { neru } from './neru/neru';
 
 // Export Route related
-export { RouteFile } from './routes/RouteFile';
-export { RouteDir } from './routes/RouteDir';
 export { Route } from './routes/Route';
 
 // Export types
