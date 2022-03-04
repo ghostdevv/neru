@@ -12,7 +12,7 @@ export const filePathToRoute = (path: string, routeDirectory: string) => {
     path = stripTrailingSlash(path);
 
     // Resolve the index
-    path = path.endsWith('/index') ? path.slice(0, -'index'.length) : path;
+    path = path.endsWith('/index') ? path.slice(0, -'/index'.length) : path;
 
     // Check path starts with a /
     path = path.startsWith('/') ? path : `/${path}`;
