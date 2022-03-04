@@ -6,11 +6,11 @@ export const validateAdapter = <AdapterType extends Adapter>(
     adapter: AdapterType,
     baseLogger: ConsoliteLogger,
 ) => {
-    // An adapter must have a valid name, check this
+    // An adapter must have a valid name
     if (!adapter.name || typeof adapter.name != 'string')
         throw new TypeError('An adapter must have a string name');
 
-    // All adapters have to have an addRoute function, check this
+    // All adapters have to have an addRoute function
     if (!adapter.addRoute || typeof adapter.addRoute != 'function')
         throw new TypeError(
             'Adapter must have a function called addRoute. Please check the docs',
