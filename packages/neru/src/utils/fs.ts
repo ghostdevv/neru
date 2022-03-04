@@ -7,6 +7,5 @@ export const readFiles = (files: string) =>
 export const normaliseSlashes = (path: string) =>
     sep == '\\' ? posixify(path) : path;
 
-// TODO am I running normaliseSlashes in right place
 export const normaliseDirectory = (path: string) =>
     resolve(normalize(normaliseSlashes(path)));
