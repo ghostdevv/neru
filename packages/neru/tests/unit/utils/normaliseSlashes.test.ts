@@ -2,12 +2,12 @@ import assert from 'assert';
 import { test } from 'uvu';
 import { sep } from 'path';
 
-import { RouteDir } from '../../src/index';
+import { normaliseSlashes } from '../../../src/utils/fs';
 
 test('correctly normalise slash depending on the platform', () => {
-    const dir = new RouteDir('/a\\b', false);
+    const dir = normaliseSlashes('/a\\b');
 
-    assert.equal(dir.path, sep == '\\' ? '/a/b' : '/a\\b');
+    assert.equal(dir, sep == '\\' ? '/a/b' : '/a\\b');
 
     /**
      * * On windows folders can't contain a slash, but on linux like systems they can so we only assume on windows
