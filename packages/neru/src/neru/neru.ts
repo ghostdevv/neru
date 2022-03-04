@@ -1,6 +1,6 @@
 import { normaliseDirectory, readFiles } from '../utils/fs';
 import { validateAdapter } from '../adapters/validate';
-import { importRoutes } from '../methods/import';
+import { importMethods } from '../methods/import';
 import { createLogger } from '../utils/logger';
 import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
@@ -35,7 +35,7 @@ export const neru = async <AdapterType extends Adapter>({
 
         for (const path of readFiles(dir)) {
             // prettier-ignore
-            const methods = await importRoutes<GetMethodType<typeof adapter>>(path, logger);
+            const methods = await importMethods<GetMethodType<typeof adapter>>(path, logger);
             const route = new Route(path, dir, adapter, methods);
 
             logger.debug(`Found route ${blue(route.route)}`);
