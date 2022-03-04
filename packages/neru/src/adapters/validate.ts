@@ -27,7 +27,7 @@ export const validateAdapter = <AdapterType extends Adapter>(
         );
 
     // prettier-ignore
-    if (adapter.formatSpreadRoute && typeof adapter.formatParamRoute != 'function')
+    if (adapter.formatSpreadRoute && typeof adapter.formatSpreadRoute != 'function')
         throw new TypeError(
             'Type of adapter.formatSpreadRoute must be a function',
         );
