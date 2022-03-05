@@ -2,6 +2,7 @@ import { normaliseDirectory, readFiles } from '../utils/fs';
 import { validateAdapter } from '../adapters/validate';
 import { importMethods } from '../methods/import';
 import { createLogger } from '../utils/logger';
+import { normalize, resolve } from 'path';
 import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
 
@@ -28,12 +29,14 @@ export const neru = async <AdapterType extends Adapter>({
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
     for (const rawDir of routeDirectoryArray) {
-        const dir = normaliseDirectory(rawDir);
+        const dir = resolve(normalize(rawDir));
 
         if (!existsSync(dir))
             throw new Error(`Unable to find directory ${dir}`);
 
-        for (const path of readFiles(dir)) {
+        for (const rawPath of readFiles(dir)) {
+            const path = resolve(normalize(rawPath));
+
             // prettier-ignore
             const methods = await importMethods<GetMethodType<typeof adapter>>(path, logger);
             const route = new Route(path, dir, adapter, methods);

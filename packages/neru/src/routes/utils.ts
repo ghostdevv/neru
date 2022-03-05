@@ -1,7 +1,12 @@
 import { stripExt, stripTrailingSlash } from 'ghoststools';
+import { normaliseSlashes } from '../utils/fs';
 import { Adapter } from '../adapters/adapter';
 
 export const filePathToRoute = (path: string, routeDirectory: string) => {
+    // Normalise Directory and Path
+    path = normaliseSlashes(path);
+    routeDirectory = normaliseSlashes(routeDirectory);
+
     // Remove file extension
     path = stripExt(path);
 
