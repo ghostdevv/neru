@@ -9,8 +9,8 @@ test('picks up routes correctly', async () => {
     const server = createMockServer();
     await neru({ adapter, server, routes: 'tests/integration/routes' });
 
-    assert.ok(server.has('/'));
-    assert.ok(server.has('/hello/world'));
+    assert.ok(server.has('/'), "Doesn't have '/' route");
+    assert.ok(server.has('/hello/world'), "Doesn't have '/hello/world' route");
 });
 
 test.run();
