@@ -9,7 +9,9 @@ const __dirname = normalize(dirname(fileURLToPath(import.meta.url)));
 const testfiles = join(__dirname, './testfiles');
 const rawFiles = readFiles(testfiles);
 
-const files = new Set(rawFiles.map((f) => f.replace(__dirname, '')));
+const files = new Set(
+    rawFiles.map((f) => f.replace(__dirname, '').replace(/\\/g, '/')),
+);
 
 test('files are correctly read', async () => {
     assert.ok(

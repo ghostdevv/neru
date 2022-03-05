@@ -1,5 +1,6 @@
 import assert from 'assert';
 import { test } from 'uvu';
+import { sep } from 'path';
 
 import { filePathToRoute } from '../../../src/routes/utils';
 
@@ -44,6 +45,22 @@ test('removes file extension', () => {
 test('adds a leading slash if not present', () => {
     const route = filePathToRoute('test', '');
     assert.equal(route, '/test');
+});
+
+// Windows Test
+test('normalises slashes', () => {
+    const route = filePathToRoute(sep == '\\' ? '\\a\\b\\c' : '/a/b/c', '');
+    assert.equal(route, '/a/b/c');
+});
+
+// Windows Test
+test('normalises directory', () => {
+    const route = filePathToRoute(
+        sep == '\\' ? '\\a\\b\\c' : '/a/b/c',
+        sep == '\\' ? '\\a\\b' : '/a/b',
+    );
+
+    assert.equal(route, '/c');
 });
 
 test.run();
