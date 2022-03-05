@@ -1,16 +1,15 @@
-import { join, dirname } from 'path';
+import { join, dirname, normalize } from 'path';
 import { fileURLToPath } from 'url';
 import assert from 'assert';
 import { test } from 'uvu';
 
 import { readFiles } from '../../../src/utils/fs';
 
-const testfiles = join(dirname(fileURLToPath(import.meta.url)), './testfiles');
+const __dirname = normalize(dirname(fileURLToPath(import.meta.url)));
+const testfiles = join(__dirname, './testfiles');
 const rawFiles = readFiles(testfiles);
 
-const files = new Set(
-    rawFiles.map((f) => f.replace(dirname(fileURLToPath(import.meta.url)), '')),
-);
+const files = new Set(rawFiles.map((f) => f.replace(__dirname, '')));
 
 test('files are correctly read', async () => {
     assert.ok(files.has('/testfiles/index.js'));
