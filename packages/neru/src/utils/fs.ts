@@ -8,4 +8,4 @@ export const normaliseSlashes = (path: string) =>
     sep == '\\' ? posixify(path) : path;
 
 export const normaliseDirectory = (path: string) =>
-    resolve(normalize(normaliseSlashes(path)));
+    normaliseSlashes(resolve(normalize(path)));
