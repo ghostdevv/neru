@@ -34,11 +34,11 @@
     "packageManager": "pnpm@6.32.2",
     "dependencies": {
         "@nerujs/methods": "workspace:*",
-        "consolite": "^0.2.9",
+        "consolite": "^0.2.10",
         "ghoststools": "^0.6.3",
         "kleur": "^4.1.4"
     },
     "devDependencies": {
-        "uvu": "^0.5.2"
+        "uvu": "^0.5.3"
     }
 }
