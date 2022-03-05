@@ -1,12 +1,13 @@
 import type { RouteMethods, RawRouteMethods } from './methods';
 import type { ConsoliteLogger } from 'consolite';
+import { pathToFileURL } from 'url';
 
 export const importMethods = async <MethodType>(
     path: string,
     logger: ConsoliteLogger,
 ): Promise<Partial<RouteMethods<MethodType>>> => {
     const rawRouteMethods: Partial<RawRouteMethods<MethodType>> = await import(
-        path
+        pathToFileURL(path).href
     );
 
     // If delete is found warn that it will be ignored
