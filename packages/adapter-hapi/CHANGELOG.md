@@ -1,5 +1,12 @@
 # @nerujs/hapi
 
+## 0.0.5
+
+### Patch Changes
+
+-   Updated dependencies [[`16e44e2`](https://github.com/ghostdevv/neru/commit/16e44e202ce9e7268458afeb2bfeaf4c2dfddbe1), [`b87e5f7`](https://github.com/ghostdevv/neru/commit/b87e5f7593d5b3e1a965238c6c41ee1738878d50), [`8b32ee1`](https://github.com/ghostdevv/neru/commit/8b32ee171b0b210cc6cf164fd2eeaca75de4dc73), [`e2f4fa8`](https://github.com/ghostdevv/neru/commit/e2f4fa8babf0ad4d9f40abc948966a4858b4ef90), [`663d0ba`](https://github.com/ghostdevv/neru/commit/663d0ba46b06f42661bae02dcaf61acab16fe01e), [`195aeef`](https://github.com/ghostdevv/neru/commit/195aeef646b74af5c09ec0b9301138f1904c7c7f), [`141120c`](https://github.com/ghostdevv/neru/commit/141120ca9b8959886915c6f8f3e2ccab73dc69d3), [`5cdd4a3`](https://github.com/ghostdevv/neru/commit/5cdd4a34177beff67b717ff7b3cf63ff7bc51c45), [`81a5b8f`](https://github.com/ghostdevv/neru/commit/81a5b8fedb3d6b1b7770e1fb81a53da1f2933bbc), [`5b397b8`](https://github.com/ghostdevv/neru/commit/5b397b86cb07cfc897db0d3139b9192bb74e0758)]:
+    -   neru@0.6.6
+
 ## 0.0.4
 
 ### Patch Changes
