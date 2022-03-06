@@ -13,7 +13,7 @@ import { existsSync } from 'fs';
 export const neru = async <AdapterType extends Adapter>({
     adapter,
     server,
-    routes,
+    routes = 'src/routes',
     options = {},
 }: NeruParams<AdapterType>) => {
     if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))

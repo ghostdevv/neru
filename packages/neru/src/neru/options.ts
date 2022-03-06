@@ -13,6 +13,7 @@ export interface NeruParams<AdapterType extends Adapter> {
 
     /**
      * The route files neru should read
+     * @default "src/routes"
      */
     routes: string | string[];
 
