@@ -1,8 +1,8 @@
-import { normaliseDirectory, readFiles } from '../utils/fs';
 import { validateAdapter } from '../adapters/validate';
 import { importMethods } from '../methods/import';
 import { createLogger } from '../utils/logger';
 import { normalize, resolve } from 'path';
+import { readFiles } from '../utils/fs';
 import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
 
