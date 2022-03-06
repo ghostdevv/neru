@@ -20,7 +20,8 @@
     ],
     "scripts": {
         "dev": "tsup-node --watch src",
-        "build": "tsup-node"
+        "build": "tsup-node",
+        "test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\""
     },
     "homepage": "https://github.com/ghostdevv/neru",
     "repository": {
@@ -35,5 +36,10 @@
         "@hapi/hapi": "^20.2.1",
         "@types/hapi__hapi": "^20.0.10",
         "neru": "workspace:*"
+    },
+    "devDependencies": {
+        "axios": "^0.26.0",
+        "neru": "workspace:*",
+        "uvu": "^0.5.3"
     }
 }
