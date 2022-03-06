@@ -1,3 +1,4 @@
+import { LowercaseMethod, lowercaseMethods, methods } from '@nerujs/methods';
 import type { RouteMethods, RawRouteMethods } from './methods';
 import type { ConsoliteLogger } from 'consolite';
 import { pathToFileURL } from 'url';
@@ -16,15 +17,20 @@ export const importMethods = async <MethodType>(
             `Exported properties called "delete" are ignored, please use "del" - ${path}`,
         );
 
-    const routeMethods: Partial<RouteMethods<MethodType>> = {
-        ...rawRouteMethods,
-    };
+    const routeMethods: Partial<RouteMethods<MethodType>> = {};
 
-    if (rawRouteMethods.del) {
-        routeMethods['delete'] = rawRouteMethods.del;
+    for (const [key, value] of Object.entries(rawRouteMethods)) {
+        // If the key is del we need to map it to delete
+        if (key == 'del') {
+            routeMethods['delete'] = value;
+            continue;
+        }
 
-        // @ts-ignore
-        delete routeMethods.del;
+        const method = key as LowercaseMethod;
+
+        if (method == 'delete' || !lowercaseMethods.includes(method)) continue;
+
+        routeMethods[method] = value;
     }
 
     return routeMethods;
