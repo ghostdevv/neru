@@ -12,9 +12,9 @@ Neru is the lightweight file router for your favourite backend frameworks. In th
 
 ## Adapters:
 
-| Package                                       | Documentation                                    | Changelog                                       |
-|-----------------------------------------------|--------------------------------------------------|-------------------------------------------------|
-| [@nerujs/adapter-hapi](packages/adapter-hapi) | [Documentation](packages/adapter-hapi/README.md) | [Changelog](packages/adapter-hapi/CHANGELOG.md) |
+| Adapter | Package                                       | Documentation                                    | Changelog                                       |
+|---------|-----------------------------------------------|--------------------------------------------------|-------------------------------------------------|
+| Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi) | [Documentation](packages/adapter-hapi/README.md) | [Changelog](packages/adapter-hapi/CHANGELOG.md) |
 
 ## Misc:
 
