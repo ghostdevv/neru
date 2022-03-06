@@ -6,6 +6,3 @@ export const readFiles = (files: string) =>
 
 export const normaliseSlashes = (path: string) =>
     sep == '\\' ? posixify(path) : path;
-
-export const normaliseDirectory = (path: string) =>
-    normaliseSlashes(resolve(normalize(path)));
