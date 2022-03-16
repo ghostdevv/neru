@@ -1,6 +1,6 @@
 {
     "name": "@nerujs/hapi",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "The hapi adapter for neru",
     "author": "GHOST",
     "license": "MIT",
