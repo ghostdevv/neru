@@ -1,6 +1,6 @@
 import type { Adapter } from '../adapters/adapter';
 
-export interface NeruParams<AdapterType extends Adapter> {
+export interface NeruOptions<AdapterType extends Adapter> {
     /**
      * The adapter that works with your server choice!
      */
@@ -17,13 +17,6 @@ export interface NeruParams<AdapterType extends Adapter> {
      */
     routes: string | string[];
 
-    /**
-     * Neru Options
-     */
-    options?: NeruOptions;
-}
-
-export interface NeruOptions {
     /**
      * Enable debug messages
      */

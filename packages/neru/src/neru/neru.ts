@@ -7,15 +7,14 @@ import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
 
 import type { Adapter, GetMethodType } from '../adapters/adapter';
-import type { NeruParams } from './options';
+import type { NeruOptions } from './options';
 import { existsSync } from 'fs';
 
-export const neru = async <AdapterType extends Adapter>({
-    adapter,
-    server,
-    routes = 'src/routes',
-    options = {},
-}: NeruParams<AdapterType>) => {
+export const neru = async <AdapterType extends Adapter>(
+    options: NeruOptions<AdapterType>,
+) => {
+    const { routes, adapter, server } = options;
+
     if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
         throw new TypeError(
             'Please give a valid routes directory or array of directories',
