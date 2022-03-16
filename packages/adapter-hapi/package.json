@@ -38,7 +38,7 @@
         "neru": "workspace:*"
     },
     "devDependencies": {
-        "axios": "^0.26.0",
+        "axios": "^0.26.1",
         "neru": "workspace:*",
         "uvu": "^0.5.3"
     }

@@ -3,12 +3,12 @@
     "private": true,
     "license": "MIT",
     "devDependencies": {
-        "@changesets/cli": "^2.21.0",
+        "@changesets/cli": "^2.21.1",
+        "@svitejs/changesets-changelog-github-compact": "^0.1.1",
         "@types/node": "^16.11.26",
         "tsm": "^2.2.1",
-        "tsup": "^5.11.13",
-        "typescript": "^4.6.2",
-        "@svitejs/changesets-changelog-github-compact": "^0.1.1"
+        "tsup": "^5.12.1",
+        "typescript": "^4.6.2"
     },
     "scripts": {
         "dev": "pnpm -r dev --parallel",
