@@ -2,4 +2,4 @@
 'neru': patch
 ---
 
-method importer allowed non methods through
+method importer didn't strip non methods

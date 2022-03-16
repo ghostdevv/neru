@@ -1,5 +1,5 @@
 ---
-'neru': patch
+'neru': minor
 ---
 
 ignore option
