@@ -28,4 +28,9 @@ export interface NeruOptions {
      * Enable debug messages
      */
     debug?: boolean;
+
+    /**
+     * Ignore files that match this regex
+     */
+    ignore?: RegExp;
 }

@@ -34,7 +34,7 @@ export const neru = async <AdapterType extends Adapter>({
         if (!existsSync(dir))
             throw new Error(`Unable to find directory ${dir}`);
 
-        for (const rawPath of readFiles(dir)) {
+        for (const rawPath of readFiles(dir, options.ignore)) {
             const path = resolve(normalize(rawPath));
 
             // prettier-ignore
