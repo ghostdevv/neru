@@ -1,5 +1,0 @@
----
-'neru': minor
----
-
-ignore option
