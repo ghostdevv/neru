@@ -2,31 +2,28 @@
 
 > Neru is still a work in progress!
 
-Neru is a small and lightweight file system router designed to power your favourite backends. We currently maintain adapters for hapi, express, and fastify so you can get started with your favourite framework! But you might be able to find community adapters online, [or make your own!](#)
+Neru is a small and lightweight file system router designed to power your favourite backends. We currently maintain adapters for hapi, and express so you can get started with your favourite framework! But you might be able to find community adapters online, [or make your own!](#)
 
 # Getting Started
 
 ## Installing
 
-First you need to install `neru` and your `adapter` of choice, you can look below for a list of adapters, in this example we will assume you are using hapi.
+First you need to install `neru` and your `adapter` of choice, you can look below for a list of adapters, in this example we will assume you are using express.
 
 ```bash
-npm i neru @nerujs/hapi
+npm i neru @nerujs/express express
 ```
 
 ## Setup
 
-Now we have neru and our adapter installed we can run neru and pass in our `hapi server`, `adapter`, and `routes` directory.
+Now we have neru and our adapter installed we can run neru and pass in our `express server`, `adapter`, and `routes` directory.
 
 ```js
-import { adapter } from '@nerujs/hapi';
-import Hapi from '@hapi/hapi';
+import { adapter } from '@nerujs/express';
+import express from 'express';
 import { neru } from 'neru';
 
-const server = Hapi.server({
-    host: 'localhost',
-    port: 3000,
-});
+const server = express();
 
 await neru({
     adapter,
@@ -34,32 +31,26 @@ await neru({
     routes: 'src/routes',
 });
 
-await server.start();
-
-console.log(`Online on ${server.info.uri}`);
+server.listen(3000, () => console.log('Online on port 3000'));
 ```
 
 ## Creating a route
 
-In our `src/routes` directory we can create a index route, this will correspond to `/` on our server. In that file we can export a hapi route object
+In our `src/routes` directory we can create a index route, this will correspond to `/` on our server. In that file we can export a express route handler
 
 ```js
-export const get = {
-    handler() {
-        return 'Hello World'
-    }
+export const get = (req, res) => {
+    res.send('Hello World');
 }
 ```
 
 Theres also a `route` function exported by most adapters that is optional but provides type completion:
 
 ```js
-import { route } from '@nerujs/hapi';
+import { route } from '@nerujs/express';
 
-export const get = route({
-    handler() {
-        return 'Hello World'
-    }
+export const get = route((req, res) => {
+    res.send('Hello World');
 })
 ```
 
