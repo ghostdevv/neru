@@ -1,6 +1,6 @@
 {
     "name": "@nerujs/express",
-    "version": "0.0.5",
+    "version": "0.0.0",
     "description": "The express adapter for neru",
     "author": "GHOST",
     "license": "MIT",
