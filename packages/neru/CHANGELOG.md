@@ -1,5 +1,19 @@
 # neru
 
+## 0.7.0
+
+### Minor Changes
+
+-   ignore option ([`84ab5e8`](https://github.com/ghostdevv/neru/commit/84ab5e8b8679320d24e0749062591e945dcebd78))
+
+### Patch Changes
+
+-   fix not having default routes ([`29cd04b`](https://github.com/ghostdevv/neru/commit/29cd04b116a2ff491db20f35229301ff1afe2755))
+
+*   remove options property and remove params concept ([`82e104e`](https://github.com/ghostdevv/neru/commit/82e104e62d3efef8a2f1d745b207c6715ffae341))
+
+-   method importer didn't strip non methods ([`067194c`](https://github.com/ghostdevv/neru/commit/067194c3c210cae711d96e6c369e49625ea1a72a))
+
 ## 0.6.6
 
 ### Patch Changes
