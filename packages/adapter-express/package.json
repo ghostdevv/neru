@@ -37,6 +37,7 @@
     },
     "devDependencies": {
         "axios": "^0.26.1",
+        "express": "^4.17.3",
         "neru": "workspace:*",
         "uvu": "^0.5.3"
     }
