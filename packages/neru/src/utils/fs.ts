@@ -1,8 +1,8 @@
-import { readdirRecursive, posixify } from 'ghoststools';
+import { readdirRecursive as _readdirRecursive, posixify } from 'ghoststools';
 import { sep } from 'path';
 
-export const readFiles = (files: string, ignoreRegex?: RegExp) =>
-    readdirRecursive(files, {
+export const readDirRecursive = (files: string, ignoreRegex?: RegExp) =>
+    _readdirRecursive(files, {
         filter: (f) => f.startsWith('_') || !ignoreRegex?.test(f),
     });
 

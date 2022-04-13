@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import assert from 'assert';
 import { test } from 'uvu';
 
-import { readFiles } from '../../../src/utils/fs';
+import { readDirRecursive } from '../../../src/utils/fs';
 
 const __dirname = normalize(dirname(fileURLToPath(import.meta.url)));
 const testfiles = join(__dirname, './testfiles');
@@ -15,7 +15,7 @@ const $ = (path: string) => path.replace(/\$/g, sep);
 
 test('files are correctly read', async () => {
     const files = new Set(
-        readFiles(testfiles).map((f) => f.replace(__dirname, '')),
+        readDirRecursive(testfiles).map((f) => f.replace(__dirname, '')),
     );
 
     const p1 = $('$testfiles$index.js');
@@ -31,7 +31,9 @@ test('files are correctly read', async () => {
 
 test('ignore works', async () => {
     const files = new Set(
-        readFiles(testfiles, /hello/i).map((f) => f.replace(__dirname, '')),
+        readDirRecursive(testfiles, /hello/i).map((f) =>
+            f.replace(__dirname, ''),
+        ),
     );
 
     const p1 = $('$testfiles$index.js');
