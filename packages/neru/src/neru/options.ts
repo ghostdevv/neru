@@ -18,7 +18,7 @@ export interface NeruOptions<AdapterType extends Adapter> {
     routes: string | string[];
 
     /**
-     * Enable debug messages
+     * Enable debug messages, you can also set the NERU_DEBUG environment variable to any value for this to be enabled
      */
     debug?: boolean;
 

@@ -1,10 +1,9 @@
-import type { ConsoliteLogger } from 'consolite';
+import { logger as baseLogger } from '../utils/logger';
 import type { Adapter } from './adapter';
 import { magenta } from 'kleur/colors';
 
 export const validateAdapter = <AdapterType extends Adapter>(
     adapter: AdapterType,
-    baseLogger: ConsoliteLogger,
 ) => {
     // An adapter must have a valid name
     if (!adapter.name || typeof adapter.name != 'string')

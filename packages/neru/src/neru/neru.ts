@@ -1,7 +1,7 @@
 import { validateAdapter } from '../adapters/validate';
 import { importMethods } from '../methods/import';
-import { createLogger } from '../utils/logger';
 import { normalize, resolve } from 'path';
+import { logger } from '../utils/logger';
 import { readFiles } from '../utils/fs';
 import { Route } from '../routes/Route';
 import { blue } from 'kleur/colors';
@@ -20,10 +20,11 @@ export const neru = async <AdapterType extends Adapter>(
             'Please give a valid routes directory or array of directories',
         );
 
-    const logger = createLogger(options.debug);
+    // Set debug
+    if (options.debug) process.env.NERU_DEBUG = '1';
 
     // Validate the adapter
-    validateAdapter(adapter, logger);
+    validateAdapter(adapter);
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
@@ -37,7 +38,7 @@ export const neru = async <AdapterType extends Adapter>(
             const path = resolve(normalize(rawPath));
 
             // prettier-ignore
-            const methods = await importMethods<GetMethodType<typeof adapter>>(path, logger);
+            const methods = await importMethods<GetMethodType<typeof adapter>>(path);
             const route = new Route(path, dir, adapter, methods);
 
             logger.debug(`Found route ${blue(route.route)}`);

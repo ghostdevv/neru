@@ -1,11 +1,10 @@
-import { LowercaseMethod, lowercaseMethods, methods } from '@nerujs/methods';
+import { LowercaseMethod, lowercaseMethods } from '@nerujs/methods';
 import type { RouteMethods, RawRouteMethods } from './methods';
-import type { ConsoliteLogger } from 'consolite';
+import { logger } from '../utils/logger';
 import { pathToFileURL } from 'url';
 
 export const importMethods = async <MethodType>(
     path: string,
-    logger: ConsoliteLogger,
 ): Promise<Partial<RouteMethods<MethodType>>> => {
     const rawRouteMethods: Partial<RawRouteMethods<MethodType>> = await import(
         pathToFileURL(path).href

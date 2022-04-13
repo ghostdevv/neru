@@ -14,3 +14,5 @@ export const createLogger = (debug = false) => {
 
     return logger;
 };
+
+export const logger = createLogger(!!process.env.NERU_DEBUG);
