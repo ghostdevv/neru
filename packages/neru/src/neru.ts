@@ -1,3 +1,5 @@
+/** @format */
+
 import type { Adapter, GetMethodType } from './adapters/adapter';
 import { validateAdapter } from './adapters/validate';
 import { importMethods } from './methods/import';
@@ -37,11 +39,9 @@ export const neru = async <AdapterType extends Adapter>(
     for (const rawDir of routeDirectoryArray) {
         const dir = resolve(normalize(rawDir));
 
-        if (!existsSync(dir))
-            throw new Error(`Unable to find directory ${dir}`);
+        if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
 
         for (const path of readDirRecursive(dir, options.ignore)) {
-            // prettier-ignore
             const methods = await importMethods<GetMethodType<AdapterType>>(path);
             const route = new Route(path, dir, adapter, methods);
 
