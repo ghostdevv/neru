@@ -14,6 +14,11 @@ export const neru = async <AdapterType extends Adapter>(
 ) => {
     const { routes, adapter, server } = options;
 
+    // Set debug
+    if (options.debug) {
+        process.env.NERU_DEBUG = '1';
+    }
+
     // Check if routes are given and valid
     if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
         throw new TypeError(
@@ -26,11 +31,6 @@ export const neru = async <AdapterType extends Adapter>(
 
     // Check if server exists
     if (!server) throw new Error('Please give a valid server');
-
-    // Set debug
-    if (options.debug) {
-        process.env.NERU_DEBUG = '1';
-    }
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
