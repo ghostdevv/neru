@@ -2,4 +2,4 @@
 'neru': patch
 ---
 
-refactor file reading process
+refactor file path reading process
