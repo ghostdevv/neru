@@ -15,6 +15,7 @@ const adapter: Adapter<{}, {}> = {
 test('resolves complex route correctly', () => {
     const route = new Route(
         '/home/ghost/routes/test/[id]/[...slug].js',
+        '',
         '/home/ghost/routes',
         adapter,
         {},
@@ -26,6 +27,7 @@ test('resolves complex route correctly', () => {
 test('has expected properties', () => {
     const route = new Route(
         '/home/ghost/routes/test.js',
+        '',
         '/home/ghost/routes',
         adapter,
         {},

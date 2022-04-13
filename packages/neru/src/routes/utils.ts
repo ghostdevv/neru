@@ -25,6 +25,16 @@ export const filePathToRoute = (path: string, routeDirectory: string) => {
     return path;
 };
 
+export const formatRoutePathSegment = (path: string) => {
+    // Check path starts with a /
+    path = path.startsWith('/') ? path : `/${path}`;
+
+    // Remove the trailing slash
+    path = stripTrailingSlash(path);
+
+    return path;
+};
+
 export const formatRoutePath = <AdapterType extends Adapter>(
     route: string,
     adapter: AdapterType,

@@ -23,6 +23,13 @@ export interface NeruOptions<AdapterType extends Adapter> {
     debug?: boolean;
 
     /**
+     * The base path for all routes
+     * For example a base of "/api" would make all routes neru manages start with "/api"
+     * @default ""
+     */
+    base?: string;
+
+    /**
      * Ignore files that match this regex
      */
     ignore?: RegExp;
