@@ -1,6 +1,6 @@
 import { LowercaseMethod, lowercaseMethods } from '@nerujs/methods';
 import type { RouteMethods, RawRouteMethods } from './methods';
-import { logger } from '../utils/logger';
+import { logger } from '../logger';
 import { pathToFileURL } from 'url';
 
 export const importMethods = async <MethodType>(

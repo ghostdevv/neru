@@ -7,7 +7,7 @@ const prefixes: Record<string, string> = {
     warn: bold(yellow('[WARN]')),
 };
 
-export const createLogger = (debug = false) => {
+const createLogger = (debug = false) => {
     const logger = consolite((method) => prefixes[method] || '');
 
     if (debug) logger.level = 4;

@@ -1,4 +1,4 @@
-import { logger as baseLogger } from '../utils/logger';
+import { logger as baseLogger } from '../logger';
 import type { Adapter } from './adapter';
 import { magenta } from 'kleur/colors';
 

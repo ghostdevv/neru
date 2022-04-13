@@ -1,13 +1,12 @@
-import { validateAdapter } from '../adapters/validate';
-import { importMethods } from '../methods/import';
-import { normalize, resolve } from 'path';
-import { logger } from '../utils/logger';
-import { readFiles } from '../utils/fs';
-import { Route } from '../routes/Route';
-import { blue } from 'kleur/colors';
-
-import type { Adapter, GetMethodType } from '../adapters/adapter';
+import type { Adapter, GetMethodType } from './adapters/adapter';
+import { validateAdapter } from './adapters/validate';
+import { importMethods } from './methods/import';
 import type { NeruOptions } from './options';
+import { normalize, resolve } from 'path';
+import { logger } from './logger';
+import { readFiles } from './utils/fs';
+import { Route } from './routes/Route';
+import { blue } from 'kleur/colors';
 import { existsSync } from 'fs';
 
 export const neru = async <AdapterType extends Adapter>(
@@ -38,7 +37,7 @@ export const neru = async <AdapterType extends Adapter>(
             const path = resolve(normalize(rawPath));
 
             // prettier-ignore
-            const methods = await importMethods<GetMethodType<typeof adapter>>(path);
+            const methods = await importMethods<GetMethodType<AdapterType>>(path);
             const route = new Route(path, dir, adapter, methods);
 
             logger.debug(`Found route ${blue(route.route)}`);

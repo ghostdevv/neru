@@ -1,4 +1,4 @@
-import type { Adapter } from '../adapters/adapter';
+import type { Adapter } from './adapters/adapter';
 
 export interface NeruOptions<AdapterType extends Adapter> {
     /**
