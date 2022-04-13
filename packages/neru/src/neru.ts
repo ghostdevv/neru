@@ -1,5 +1,3 @@
-/** @format */
-
 import type { Adapter, GetMethodType } from './adapters/adapter';
 import { validateAdapter } from './adapters/validate';
 import { importMethods } from './methods/import';
