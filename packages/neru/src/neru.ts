@@ -17,6 +17,7 @@ export const neru = async <AdapterType extends Adapter>(
     // Set debug
     if (options.debug) {
         process.env.NERU_DEBUG = '1';
+        logger.level = 4;
     }
 
     // Check if routes are given and valid
