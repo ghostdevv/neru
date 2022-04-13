@@ -3,10 +3,10 @@ import { validateAdapter } from './adapters/validate';
 import { importMethods } from './methods/import';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
-import { logger } from './logger';
 import { readFiles } from './utils/fs';
 import { Route } from './routes/Route';
 import { blue } from 'kleur/colors';
+import { logger } from './logger';
 import { existsSync } from 'fs';
 
 export const neru = async <AdapterType extends Adapter>(
