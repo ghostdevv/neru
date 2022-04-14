@@ -15,8 +15,8 @@ const adapter: Adapter<{}, {}> = {
 test('adds a base correctly', () => {
     const route = new Route({
         filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/api',
-        base: '/home/ghost/routes',
+        routesDirectory: '/home/ghost/routes',
+        base: '/api',
         adapter,
         methods: {},
     });
@@ -27,8 +27,8 @@ test('adds a base correctly', () => {
 test('fixes wonky base', () => {
     const route = new Route({
         filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: 'api/',
-        base: '/home/ghost/routes',
+        routesDirectory: '/home/ghost/routes',
+        base: 'api/',
         adapter,
         methods: {},
     });
@@ -39,8 +39,8 @@ test('fixes wonky base', () => {
 test("doesn't format base", () => {
     const route = new Route({
         filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/[...a]/index',
-        base: '/home/ghost/routes',
+        routesDirectory: '/home/ghost/routes',
+        base: '/[...a]/index',
         adapter,
         methods: {},
     });
@@ -51,8 +51,8 @@ test("doesn't format base", () => {
 test("doesn't break on / base", () => {
     const route = new Route({
         filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/',
-        base: '/home/ghost/routes',
+        routesDirectory: '/home/ghost/routes',
+        base: '/',
         adapter,
         methods: {},
     });
