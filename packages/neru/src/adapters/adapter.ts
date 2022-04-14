@@ -16,6 +16,7 @@ export interface Adapter<ServerType = any, HandlerType = any> {
      * The name of the adapter
      */
     name: string;
+
     /**
      * This function should add the given handler to the server by it's route and method
      */
