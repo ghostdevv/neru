@@ -8,7 +8,7 @@ export const createMockServer = (): ServerType => new Map();
 export const adapter: Adapter<ServerType, HandlerType> = {
     name: 'mock',
 
-    addRoute: (server, route, methods) => void server.set(route.route, methods),
+    addHandler: ({ server, route, method }) => void server.set(route.route, method),
 
     formatParamRoute: (slug) => slug,
     formatSpreadRoute: (slug) => slug,

@@ -1,22 +1,26 @@
-import type { RouteMethods } from '../handlers/methods';
+import { LowercaseMethod } from '@nerujs/methods';
 import type { Route } from '../routes/Route';
 
 export type GetHandlerType<AdapterType extends Adapter> =
     AdapterType extends Adapter<infer T, infer U> ? U : unknown;
+
+export interface AdapterAddHandlerData<ServerType, HandlerType> {
+    server: ServerType;
+    method: LowercaseMethod;
+    handler: HandlerType;
+    route: Route<Adapter<ServerType, HandlerType>>;
+}
 
 export interface Adapter<ServerType = any, HandlerType = any> {
     /**
      * The name of the adapter
      */
     name: string;
-
     /**
-     * This function should add the given route to the server
+     * This function should add the given handler to the server by it's route and method
      */
-    addRoute: (
-        server: ServerType,
-        route: Route<Adapter<ServerType, HandlerType>>,
-        methods: Partial<RouteMethods<HandlerType>>,
+    addHandler: (
+        data: AdapterAddHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;
 
     /**

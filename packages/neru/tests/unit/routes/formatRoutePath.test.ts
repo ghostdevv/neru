@@ -6,7 +6,7 @@ import type { Adapter } from '../../../src/index';
 
 const adapter: Adapter<{}, {}> = {
     name: 'test',
-    addRoute: () => {},
+    addHandler: () => {},
 
     formatParamRoute: (slug) => `(${slug})`,
     formatSpreadRoute: (slug) => `{${slug}}`,

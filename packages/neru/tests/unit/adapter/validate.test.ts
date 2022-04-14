@@ -18,22 +18,22 @@ test("must have a name that's a string", () => {
     assert.throws(() => validateAdapter(adapter));
 });
 
-test('must have an addRoute param', () => {
+test('must have an addHandler param', () => {
     // @ts-ignore
     const adapter: GenericAdapter = { name: 'test' };
     assert.throws(() => validateAdapter(adapter));
 });
 
-test("must have an addRoute param that's a function", () => {
+test("must have an addHandler param that's a function", () => {
     // @ts-ignore
-    const adapter: GenericAdapter = { name: 'test', addRoute: true };
+    const adapter: GenericAdapter = { name: 'test', addHandler: true };
     assert.throws(() => validateAdapter(adapter));
 });
 
 test('if has formatParamRoute it must be a function', () => {
     const adapter: GenericAdapter = {
         name: 'test',
-        addRoute: () => {},
+        addHandler: () => {},
         // @ts-ignore
         formatParamRoute: true,
     };
@@ -44,7 +44,7 @@ test('if has formatParamRoute it must be a function', () => {
 test('if has formatSpreadRoute it must be a function', () => {
     const adapter: GenericAdapter = {
         name: 'test',
-        addRoute: () => {},
+        addHandler: () => {},
         // @ts-ignore
         formatSpreadRoute: true,
     };
@@ -55,7 +55,7 @@ test('if has formatSpreadRoute it must be a function', () => {
 test('formatParamRoute is optional', () => {
     const adapter: GenericAdapter = {
         name: 'test',
-        addRoute: () => {},
+        addHandler: () => {},
 
         formatSpreadRoute: () => '',
     };
@@ -66,7 +66,7 @@ test('formatParamRoute is optional', () => {
 test('formatSpreadRoute is optional', () => {
     const adapter: GenericAdapter = {
         name: 'test',
-        addRoute: () => {},
+        addHandler: () => {},
 
         formatParamRoute: () => '',
     };
@@ -77,7 +77,7 @@ test('formatSpreadRoute is optional', () => {
 test('valid adapter works', () => {
     const adapter: GenericAdapter = {
         name: 'test',
-        addRoute: () => {},
+        addHandler: () => {},
 
         formatParamRoute: () => '',
         formatSpreadRoute: () => '',

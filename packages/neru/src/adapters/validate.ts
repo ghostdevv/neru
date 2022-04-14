@@ -9,15 +9,13 @@ export const validateAdapter = <AdapterType extends Adapter>(
     if (!adapter.name || typeof adapter.name != 'string')
         throw new TypeError('An adapter must have a string name');
 
-    // All adapters have to have an addRoute function
-    if (!adapter.addRoute || typeof adapter.addRoute != 'function')
+    // All adapters have to have an addHandler function
+    if (!adapter.addHandler || typeof adapter.addHandler != 'function')
         throw new TypeError(
-            'Adapter must have a function called addRoute. Please check the docs',
+            'Adapter must have a function called addHandler. Please check the docs',
         );
 
-    const logger = baseLogger.createChild(
-        magenta(`[ADAPTER: ${adapter.name}]`),
-    );
+    const logger = baseLogger.createChild(magenta(`[ADAPTER: ${adapter.name}]`));
 
     // prettier-ignore
     if (adapter.formatParamRoute && typeof adapter.formatParamRoute != 'function')
