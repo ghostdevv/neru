@@ -1,10 +1,10 @@
 import type { RouteMethods } from '../methods/methods.d';
 import type { Route } from '../routes/Route';
 
-export type GetMethodType<AdapterType extends Adapter> =
+export type GetHandlerType<AdapterType extends Adapter> =
     AdapterType extends Adapter<infer T, infer U> ? U : unknown;
 
-export interface Adapter<ServerType = any, MethodType = any> {
+export interface Adapter<ServerType = any, HandlerType = any> {
     /**
      * The name of the adapter
      */
@@ -15,8 +15,8 @@ export interface Adapter<ServerType = any, MethodType = any> {
      */
     addRoute: (
         server: ServerType,
-        route: Route<Adapter<ServerType, MethodType>, MethodType>,
-        methods: Partial<RouteMethods<MethodType>>,
+        route: Route<Adapter<ServerType, HandlerType>>,
+        methods: Partial<RouteMethods<HandlerType>>,
     ) => Promise<void> | void;
 
     /**

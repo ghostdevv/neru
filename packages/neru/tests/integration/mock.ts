@@ -1,11 +1,11 @@
 import type { Adapter } from '../../src/index';
 
-export type MethodType = {};
-export type ServerType = Map<string, MethodType>;
+export type HandlerType = {};
+export type ServerType = Map<string, HandlerType>;
 
 export const createMockServer = (): ServerType => new Map();
 
-export const adapter: Adapter<ServerType, MethodType> = {
+export const adapter: Adapter<ServerType, HandlerType> = {
     name: 'mock',
 
     addRoute: (server, route, methods) => void server.set(route.route, methods),

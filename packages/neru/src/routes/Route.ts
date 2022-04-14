@@ -1,5 +1,5 @@
 import { filePathToRoute, formatRoutePath, formatRoutePathSegment } from './utils';
-import { Adapter, GetMethodType } from '../adapters/adapter';
+import { Adapter, GetHandlerType } from '../adapters/adapter';
 import type { RouteMethods } from '../methods/methods.d';
 
 export interface RouteParams<AdapterType extends Adapter> {
@@ -9,7 +9,7 @@ export interface RouteParams<AdapterType extends Adapter> {
     base?: string;
 
     adapter: AdapterType;
-    methods: Partial<RouteMethods<GetMethodType<AdapterType>>>;
+    methods: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
 }
 
 export class Route<AdapterType extends Adapter> {
@@ -36,7 +36,7 @@ export class Route<AdapterType extends Adapter> {
     /**
      * All methods exported from the file
      */
-    public readonly methods: Partial<RouteMethods<GetMethodType<AdapterType>>>;
+    public readonly methods: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
 
     /**
      * The base path for the roues
