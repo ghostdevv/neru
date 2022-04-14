@@ -1,4 +1,4 @@
-import type { RouteMethods } from '../methods/methods.d';
+import type { RouteMethods } from '../handlers/methods';
 import type { Route } from '../routes/Route';
 
 export type GetHandlerType<AdapterType extends Adapter> =

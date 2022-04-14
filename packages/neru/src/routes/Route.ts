@@ -1,6 +1,6 @@
 import { filePathToRoute, formatRoutePath, formatRoutePathSegment } from './utils';
 import { Adapter, GetHandlerType } from '../adapters/adapter';
-import type { RouteMethods } from '../methods/methods.d';
+import type { RouteMethods } from '../handlers/methods';
 
 export interface RouteParams<AdapterType extends Adapter> {
     filePath: string;

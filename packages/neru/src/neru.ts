@@ -1,6 +1,6 @@
 import type { Adapter, GetHandlerType } from './adapters/adapter';
 import { validateAdapter } from './adapters/validate';
-import { importMethods } from './methods/import';
+import { importHandlers } from './handlers/import';
 import { readDirRecursive } from './utils/fs';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
@@ -41,7 +41,7 @@ export const neru = async <AdapterType extends Adapter>(
         if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
 
         for (const path of readDirRecursive(dir, options.ignore)) {
-            const methods = await importMethods<GetHandlerType<AdapterType>>(path);
+            const methods = await importHandlers<GetHandlerType<AdapterType>>(path);
 
             const route = new Route({
                 filePath: path,

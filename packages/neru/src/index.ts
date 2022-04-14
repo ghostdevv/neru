@@ -5,6 +5,6 @@ export { neru } from './neru';
 export { Route } from './routes/Route';
 
 // Export types
-export type { RouteMethods, RawRouteMethods } from './methods/methods.d';
+export type { RouteMethods, RawRouteMethods } from './handlers/methods';
 export type { Adapter } from './adapters/adapter';
 export type { NeruOptions } from './options';

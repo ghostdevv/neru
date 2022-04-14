@@ -3,7 +3,7 @@ import type { RouteMethods, RawRouteMethods } from './methods';
 import { logger } from '../logger';
 import { pathToFileURL } from 'url';
 
-export const importMethods = async <HanlderType>(
+export const importHandlers = async <HanlderType>(
     path: string,
 ): Promise<Partial<RouteMethods<HanlderType>>> => {
     const rawRouteMethods: Partial<RawRouteMethods<HanlderType>> = await import(
