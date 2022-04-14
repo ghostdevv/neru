@@ -43,13 +43,13 @@ export const neru = async <AdapterType extends Adapter>(
         for (const path of readDirRecursive(dir, options.ignore)) {
             const methods = await importMethods<GetMethodType<AdapterType>>(path);
 
-            const route = new Route(
-                path,
-                options.base || '',
-                dir,
+            const route = new Route({
+                filePath: path,
+                routesDirectory: dir,
+                base: options.base,
                 adapter,
                 methods,
-            );
+            });
 
             logger.debug(`Found route ${blue(route.route)}`);
 

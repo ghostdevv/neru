@@ -13,49 +13,49 @@ const adapter: Adapter<{}, {}> = {
 };
 
 test('adds a base correctly', () => {
-    const route = new Route(
-        '/home/ghost/routes/test/[id]/[...slug].js',
-        '/api',
-        '/home/ghost/routes',
+    const route = new Route({
+        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
+        routesDirectory: '/api',
+        base: '/home/ghost/routes',
         adapter,
-        {},
-    );
+        methods: {},
+    });
 
     assert.equal(route.route, '/api/test/(id)/{slug}');
 });
 
 test('fixes wonky base', () => {
-    const route = new Route(
-        '/home/ghost/routes/test/[id]/[...slug].js',
-        'api/',
-        '/home/ghost/routes',
+    const route = new Route({
+        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
+        routesDirectory: 'api/',
+        base: '/home/ghost/routes',
         adapter,
-        {},
-    );
+        methods: {},
+    });
 
     assert.equal(route.route, '/api/test/(id)/{slug}');
 });
 
 test("doesn't format base", () => {
-    const route = new Route(
-        '/home/ghost/routes/test/[id]/[...slug].js',
-        '/[...a]/index',
-        '/home/ghost/routes',
+    const route = new Route({
+        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
+        routesDirectory: '/[...a]/index',
+        base: '/home/ghost/routes',
         adapter,
-        {},
-    );
+        methods: {},
+    });
 
     assert.equal(route.route, '/[...a]/index/test/(id)/{slug}');
 });
 
 test("doesn't break on / base", () => {
-    const route = new Route(
-        '/home/ghost/routes/test/[id]/[...slug].js',
-        '/',
-        '/home/ghost/routes',
+    const route = new Route({
+        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
+        routesDirectory: '/',
+        base: '/home/ghost/routes',
         adapter,
-        {},
-    );
+        methods: {},
+    });
 
     console.log({ route });
 
