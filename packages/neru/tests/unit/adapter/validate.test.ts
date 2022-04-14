@@ -1,38 +1,33 @@
-import { createLogger } from 'consolite';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
 import assert from 'assert';
 import { test } from 'uvu';
 
 import { validateAdapter } from '../../../src/adapters/validate';
 import { Adapter } from '../../../src/adapters/adapter';
 
-const logger = createLogger('[TEST]');
-
 type GenericAdapter = Adapter<any, any>;
 
 test('must have a name param', () => {
     // @ts-ignore
     const adapter: GenericAdapter = {};
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test("must have a name that's a string", () => {
     // @ts-ignore
     const adapter: GenericAdapter = { name: true };
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test('must have an addRoute param', () => {
     // @ts-ignore
     const adapter: GenericAdapter = { name: 'test' };
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test("must have an addRoute param that's a function", () => {
     // @ts-ignore
     const adapter: GenericAdapter = { name: 'test', addRoute: true };
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test('if has formatParamRoute it must be a function', () => {
@@ -43,7 +38,7 @@ test('if has formatParamRoute it must be a function', () => {
         formatParamRoute: true,
     };
 
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test('if has formatSpreadRoute it must be a function', () => {
@@ -54,7 +49,7 @@ test('if has formatSpreadRoute it must be a function', () => {
         formatSpreadRoute: true,
     };
 
-    assert.throws(() => validateAdapter(adapter, logger));
+    assert.throws(() => validateAdapter(adapter));
 });
 
 test('formatParamRoute is optional', () => {
@@ -65,7 +60,7 @@ test('formatParamRoute is optional', () => {
         formatSpreadRoute: () => '',
     };
 
-    validateAdapter(adapter, logger);
+    validateAdapter(adapter);
 });
 
 test('formatSpreadRoute is optional', () => {
@@ -76,7 +71,7 @@ test('formatSpreadRoute is optional', () => {
         formatParamRoute: () => '',
     };
 
-    validateAdapter(adapter, logger);
+    validateAdapter(adapter);
 });
 
 test('valid adapter works', () => {
@@ -88,7 +83,7 @@ test('valid adapter works', () => {
         formatSpreadRoute: () => '',
     };
 
-    validateAdapter(adapter, logger);
+    validateAdapter(adapter);
 });
 
 test.run();
