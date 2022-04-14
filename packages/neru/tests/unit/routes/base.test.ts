@@ -57,8 +57,6 @@ test("doesn't break on / base", () => {
         methods: {},
     });
 
-    console.log({ route });
-
     assert.equal(route.route, '/test/(id)/{slug}');
 });
 
