@@ -42,20 +42,22 @@ export const neru = async <AdapterType extends Adapter>(
         if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
 
         for (const path of readDirRecursive(dir, options.ignore)) {
-            const methods = await importHandlers<GetHandlerType<AdapterType>>(path);
+            const handlers = await importHandlers<GetHandlerType<AdapterType>>(
+                path,
+            );
 
             const route = new Route({
                 filePath: path,
                 routesDirectory: dir,
                 base: options.base,
                 adapter,
-                methods,
+                handlers,
             });
 
             logger.debug(`Found route ${blue(route.route)}`);
 
             // Loop over all handlers and use adapter to add to server
-            for (const [method, handler] of Object.entries(methods))
+            for (const [method, handler] of Object.entries(handlers))
                 adapter.addHandler({
                     method: method as LowercaseMethod,
                     server,

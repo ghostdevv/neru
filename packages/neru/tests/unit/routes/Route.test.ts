@@ -17,7 +17,7 @@ test('resolves complex route correctly', () => {
         filePath: '/home/ghost/routes/test/[id]/[...slug].js',
         routesDirectory: '/home/ghost/routes',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.route, '/test/(id)/{slug}');
@@ -28,12 +28,12 @@ test('has expected properties', () => {
         filePath: '/home/ghost/routes/test.js',
         routesDirectory: '/home/ghost/routes',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.filePath, '/home/ghost/routes/test.js');
     assert.equal(route.routesDirectory, '/home/ghost/routes');
-    assert.deepEqual(route.methods, {});
+    assert.deepEqual(route.handlers, {});
 });
 
 test.run();

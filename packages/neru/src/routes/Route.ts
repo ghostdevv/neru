@@ -9,7 +9,7 @@ export interface RouteParams<AdapterType extends Adapter> {
     base?: string;
 
     adapter: AdapterType;
-    methods: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
+    handlers: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
 }
 
 export class Route<AdapterType extends Adapter> {
@@ -34,9 +34,9 @@ export class Route<AdapterType extends Adapter> {
     public readonly adapter: AdapterType;
 
     /**
-     * All methods exported from the file
+     * All handlers exported from the file
      */
-    public readonly methods: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
+    public readonly handlers: Partial<RouteMethods<GetHandlerType<AdapterType>>>;
 
     /**
      * The base path for the roues
@@ -47,9 +47,9 @@ export class Route<AdapterType extends Adapter> {
 
     constructor(data: RouteParams<AdapterType>) {
         this.routesDirectory = data.routesDirectory;
+        this.handlers = data.handlers;
         this.filePath = data.filePath;
         this.adapter = data.adapter;
-        this.methods = data.methods;
         this.base = data.base || '';
 
         // Resolve the route

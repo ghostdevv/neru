@@ -18,7 +18,7 @@ test('adds a base correctly', () => {
         routesDirectory: '/home/ghost/routes',
         base: '/api',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.route, '/api/test/(id)/{slug}');
@@ -30,7 +30,7 @@ test('fixes wonky base', () => {
         routesDirectory: '/home/ghost/routes',
         base: 'api/',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.route, '/api/test/(id)/{slug}');
@@ -42,7 +42,7 @@ test("doesn't format base", () => {
         routesDirectory: '/home/ghost/routes',
         base: '/[...a]/index',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.route, '/[...a]/index/test/(id)/{slug}');
@@ -54,7 +54,7 @@ test("doesn't break on / base", () => {
         routesDirectory: '/home/ghost/routes',
         base: '/',
         adapter,
-        methods: {},
+        handlers: {},
     });
 
     assert.equal(route.route, '/test/(id)/{slug}');
