@@ -1,7 +1,6 @@
 import type { Adapter, GetHandlerType } from './adapters/adapter';
 import { validateAdapter } from './adapters/validate';
 import { importRouteHandlers } from './handlers/import';
-import { LowercaseMethod } from '@nerujs/methods';
 import { readDirRecursive } from './utils/fs';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
@@ -62,7 +61,7 @@ export const neru = async <AdapterType extends Adapter>(
             // Loop over all handlers and use adapter to add to server
             for (const [method, handler] of handlers)
                 adapter.addHandler({
-                    method: method as LowercaseMethod,
+                    method,
                     server,
                     handler,
                     route,
