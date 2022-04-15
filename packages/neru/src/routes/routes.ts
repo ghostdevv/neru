@@ -1,4 +1,5 @@
 import { filePathToRoute, formatRoutePath, formatRoutePathSegment } from './utils';
+import { stripTrailingSlash } from 'ghoststools';
 import { Adapter } from '../adapters/adapter';
 
 export interface RouteConstructionData {
@@ -19,6 +20,7 @@ export const constructRoute = (data: RouteConstructionData) => {
 
     if (options.base) {
         route = formatRoutePathSegment(options.base) + route;
+        route = stripTrailingSlash(route);
     }
 
     return route;

@@ -1,7 +1,7 @@
 import assert from 'assert';
 import { test } from 'uvu';
 
-import { Route } from '../../../src/routes/Route';
+import { constructRoute } from '../../../src/routes/routes';
 import type { Adapter } from '../../../src/index';
 
 const adapter: Adapter<{}, {}> = {
@@ -13,51 +13,58 @@ const adapter: Adapter<{}, {}> = {
 };
 
 test('adds a base correctly', () => {
-    const route = new Route({
-        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/home/ghost/routes',
+    const route = constructRoute({
+        path: '/home/ghost/routes/test/[id]/[...slug].js',
+        directory: '/home/ghost/routes',
         base: '/api',
         adapter,
-        handlers: {},
     });
 
-    assert.equal(route.route, '/api/test/(id)/{slug}');
+    assert.equal(route, '/api/test/(id)/{slug}');
 });
 
 test('fixes wonky base', () => {
-    const route = new Route({
-        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/home/ghost/routes',
+    const route = constructRoute({
+        path: '/home/ghost/routes/test/[id]/[...slug].js',
+        directory: '/home/ghost/routes',
         base: 'api/',
         adapter,
-        handlers: {},
     });
 
-    assert.equal(route.route, '/api/test/(id)/{slug}');
+    assert.equal(route, '/api/test/(id)/{slug}');
 });
 
 test("doesn't format base", () => {
-    const route = new Route({
-        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/home/ghost/routes',
+    const route = constructRoute({
+        path: '/home/ghost/routes/test/[id]/[...slug].js',
+        directory: '/home/ghost/routes',
         base: '/[...a]/index',
         adapter,
-        handlers: {},
     });
 
-    assert.equal(route.route, '/[...a]/index/test/(id)/{slug}');
+    assert.equal(route, '/[...a]/index/test/(id)/{slug}');
 });
 
 test("doesn't break on / base", () => {
-    const route = new Route({
-        filePath: '/home/ghost/routes/test/[id]/[...slug].js',
-        routesDirectory: '/home/ghost/routes',
+    const route = constructRoute({
+        path: '/home/ghost/routes/test/[id]/[...slug].js',
+        directory: '/home/ghost/routes',
         base: '/',
         adapter,
-        handlers: {},
     });
 
-    assert.equal(route.route, '/test/(id)/{slug}');
+    assert.equal(route, '/test/(id)/{slug}');
+});
+
+test("doesn't break on root", () => {
+    const route = constructRoute({
+        path: '/home/ghost/routes/',
+        directory: '/home/ghost/routes',
+        base: '/api',
+        adapter,
+    });
+
+    assert.equal(route, '/api');
 });
 
 test.run();
