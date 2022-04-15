@@ -1,27 +1,27 @@
 import { LowercaseMethod, lowercaseMethods } from '@nerujs/methods';
-import type { RouteMethods, RawRouteMethods } from './methods';
+import type { RouteHandlers, RawRouteHandlers } from './handlers';
 import { logger } from '../logger';
 import { pathToFileURL } from 'url';
 
-export const importHandlers = async <HanlderType>(
+export const importRouteHandlers = async <HanlderType>(
     path: string,
-): Promise<Partial<RouteMethods<HanlderType>>> => {
-    const rawRouteMethods: Partial<RawRouteMethods<HanlderType>> = await import(
+): Promise<Partial<RouteHandlers<HanlderType>>> => {
+    const rawHandlers: Partial<RawRouteHandlers<HanlderType>> = await import(
         pathToFileURL(path).href
     );
 
     // If delete is found warn that it will be ignored
-    if ((rawRouteMethods as Record<string, unknown>)['delete'])
+    if ((rawHandlers as Record<string, unknown>)['delete'])
         logger.warn(
             `Exported properties called "delete" are ignored, please use "del" - ${path}`,
         );
 
-    const routeMethods: Partial<RouteMethods<HanlderType>> = {};
+    const handlers: Partial<RouteHandlers<HanlderType>> = {};
 
-    for (const [key, value] of Object.entries(rawRouteMethods)) {
+    for (const [key, value] of Object.entries(rawHandlers)) {
         // If the key is del we need to map it to delete
         if (key == 'del') {
-            routeMethods['delete'] = value;
+            handlers['delete'] = value;
             continue;
         }
 
@@ -29,8 +29,8 @@ export const importHandlers = async <HanlderType>(
 
         if (method == 'delete' || !lowercaseMethods.includes(method)) continue;
 
-        routeMethods[method] = value;
+        handlers[method] = value;
     }
 
-    return routeMethods;
+    return handlers;
 };

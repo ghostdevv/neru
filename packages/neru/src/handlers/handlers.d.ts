@@ -1,10 +1,10 @@
 import type { LowercaseMethod } from '@nerujs/methods';
 
-export interface RouteMethods<HandlerType = unknown>
+export interface RouteHandlers<HandlerType = unknown>
     extends Record<LowercaseMethod, HandlerType> {}
 
-export interface RawRouteMethods<HandlerType = unknown>
-    extends Omit<RouteMethods<HandlerType>, 'delete'> {
+export interface RawRouteHandlers<HandlerType = unknown>
+    extends Omit<RouteHandlers<HandlerType>, 'delete'> {
     /**
      * This is a alias for the delete method
      */
