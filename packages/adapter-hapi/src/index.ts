@@ -13,7 +13,7 @@ export const adapter: Adapter<Server, NeruHapiServerRoute> = {
         server.route({
             ...handler,
             method,
-            path: route.route,
+            path: route,
         }),
 };
 

@@ -1,10 +1,10 @@
 import type { Adapter, GetHandlerType } from './adapters/adapter';
-import { validateAdapter } from './adapters/validate';
 import { importRouteHandlers } from './handlers/import';
+import { validateAdapter } from './adapters/validate';
+import { constructRoute } from './routes/routes';
 import { readDirRecursive } from './utils/fs';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
-import { Route } from './routes/Route';
 import { blue } from 'kleur/colors';
 import { logger } from './logger';
 import { existsSync } from 'fs';
@@ -37,26 +37,27 @@ export const neru = async <AdapterType extends Adapter>(
 
     // Loop over all route directories
     for (const rawDir of routeDirectoryArray) {
-        const dir = resolve(normalize(rawDir));
+        const directory = resolve(normalize(rawDir));
 
-        if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
+        if (!existsSync(directory))
+            throw new Error(`Unable to find directory ${directory}`);
 
         // Loop over all the files in the directory
-        for (const path of readDirRecursive(dir, options.ignore)) {
+        for (const path of readDirRecursive(directory, options.ignore)) {
             // Import the handlers
             const handlers = await importRouteHandlers<GetHandlerType<AdapterType>>(
                 path,
             );
 
-            const route = new Route({
-                filePath: path,
-                routesDirectory: dir,
-                base: options.base,
+            // Construct the route
+            const route = constructRoute({
+                path,
+                directory,
                 adapter,
-                handlers,
+                base: options.base,
             });
 
-            logger.debug(`Found route ${blue(route.route)}`);
+            logger.debug(`Found route ${blue(route)}`);
 
             // Loop over all handlers and use adapter to add to server
             for (const [method, handler] of handlers)
