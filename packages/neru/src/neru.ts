@@ -1,6 +1,6 @@
 import type { Adapter, GetHandlerType } from './adapters/adapter';
 import { validateAdapter } from './adapters/validate';
-import { importHandlers } from './handlers/import';
+import { importRouteHandlers } from './handlers/import';
 import { LowercaseMethod } from '@nerujs/methods';
 import { readDirRecursive } from './utils/fs';
 import type { NeruOptions } from './options';
@@ -42,7 +42,7 @@ export const neru = async <AdapterType extends Adapter>(
         if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
 
         for (const path of readDirRecursive(dir, options.ignore)) {
-            const handlers = await importHandlers<GetHandlerType<AdapterType>>(
+            const handlers = await importRouteHandlers<GetHandlerType<AdapterType>>(
                 path,
             );
 
@@ -57,7 +57,7 @@ export const neru = async <AdapterType extends Adapter>(
             logger.debug(`Found route ${blue(route.route)}`);
 
             // Loop over all handlers and use adapter to add to server
-            for (const [method, handler] of Object.entries(handlers))
+            for (const [method, handler] of handlers)
                 adapter.addHandler({
                     method: method as LowercaseMethod,
                     server,

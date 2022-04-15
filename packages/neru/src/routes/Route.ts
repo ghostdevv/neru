@@ -9,7 +9,7 @@ export interface RouteParams<AdapterType extends Adapter> {
     base?: string;
 
     adapter: AdapterType;
-    handlers: Partial<RouteHandlers<GetHandlerType<AdapterType>>>;
+    handlers: RouteHandlers<GetHandlerType<AdapterType>>;
 }
 
 export class Route<AdapterType extends Adapter> {
@@ -36,7 +36,7 @@ export class Route<AdapterType extends Adapter> {
     /**
      * All handlers exported from the file
      */
-    public readonly handlers: Partial<RouteHandlers<GetHandlerType<AdapterType>>>;
+    public readonly handlers: RouteHandlers<GetHandlerType<AdapterType>>;
 
     /**
      * The base path for the roues
