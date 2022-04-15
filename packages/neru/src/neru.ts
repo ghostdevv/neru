@@ -36,12 +36,15 @@ export const neru = async <AdapterType extends Adapter>(
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
+    // Loop over all route directories
     for (const rawDir of routeDirectoryArray) {
         const dir = resolve(normalize(rawDir));
 
         if (!existsSync(dir)) throw new Error(`Unable to find directory ${dir}`);
 
+        // Loop over all the files in the directory
         for (const path of readDirRecursive(dir, options.ignore)) {
+            // Import the handlers
             const handlers = await importRouteHandlers<GetHandlerType<AdapterType>>(
                 path,
             );
