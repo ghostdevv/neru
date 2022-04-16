@@ -59,14 +59,22 @@ export const neru = async <AdapterType extends Adapter>(
 
             logger.debug(`Found route ${blue(route)}`);
 
+            // Promises array for the add handler promises
+            const addHandlerPromises = [];
+
             // Loop over all handlers and use adapter to add to server
-            for (const [method, handler] of handlers)
-                adapter.addHandler({
-                    method,
-                    server,
-                    handler,
-                    route,
-                });
+            for (const [method, handler] of handlers.handlers)
+                addHandlerPromises.push(
+                    adapter.addHandler({
+                        method,
+                        server,
+                        handler,
+                        route,
+                    }),
+                );
+
+            // Wait for all handlers to be added
+            await Promise.all(addHandlerPromises);
         }
     }
 };
