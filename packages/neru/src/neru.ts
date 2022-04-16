@@ -75,6 +75,20 @@ export const neru = async <AdapterType extends Adapter>(
 
             // Wait for all handlers to be added
             await Promise.all(addHandlerPromises);
+
+            // Check if handler has all method
+            if (handlers.all) {
+                // Exit if unsupported
+                if (!adapter.addAllHandler)
+                    throw new TypeError('Adapter does not support "all" handlers');
+
+                // All all handler
+                await adapter.addAllHandler({
+                    handler: handlers.all,
+                    server,
+                    route,
+                });
+            }
         }
     }
 };

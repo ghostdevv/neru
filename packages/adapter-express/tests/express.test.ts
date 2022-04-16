@@ -29,4 +29,13 @@ test('gets spread route', async () => {
     close();
 });
 
+test('gets all route', async () => {
+    const { request, close } = await createServer();
+    const response = await request('/all');
+
+    assert.equal(response.data?.message, 'Ok');
+
+    close();
+});
+
 test.run();
