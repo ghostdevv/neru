@@ -3,9 +3,7 @@ import type { RouteHandlers, RawRouteHandlers } from './handlers';
 import { pathToFileURL } from 'url';
 import { logger } from '../logger';
 
-export const importRouteHandlers = async <HanlderType>(
-    path: string,
-): Promise<RouteHandlers<HanlderType>> => {
+export const importRouteHandlers = async <HanlderType>(path: string) => {
     const rawHandlers: Partial<RawRouteHandlers<HanlderType>> = await import(
         pathToFileURL(path).href
     );
@@ -32,5 +30,8 @@ export const importRouteHandlers = async <HanlderType>(
         handlers.set(method, value);
     }
 
-    return handlers;
+    return {
+        handlers,
+        all: rawHandlers.all,
+    };
 };

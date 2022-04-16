@@ -11,4 +11,9 @@ export interface RawRouteHandlers<HandlerType = unknown>
      * This is a alias for the delete method
      */
     del?: HandlerType;
+
+    /**
+     * Special all handler
+     */
+    all: HandlerType;
 }

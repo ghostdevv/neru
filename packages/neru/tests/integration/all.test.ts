@@ -11,15 +11,12 @@ test('picks up routes correctly', async () => {
         adapter,
         server,
         routes: 'tests/integration/routes',
-        base: '/api',
     });
 
-    assert.ok(server.has('/api'), "Doesn't have '/api' route");
+    const route = server.get('/');
 
-    assert.ok(
-        server.has('/api/hello/world'),
-        "Doesn't have '/api/hello/world' route",
-    );
+    assert.ok(route, 'Route was not found');
+    assert.ok(route.all, 'Route did not have all prop');
 });
 
 test.run();

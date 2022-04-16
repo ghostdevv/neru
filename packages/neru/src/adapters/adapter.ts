@@ -10,6 +10,12 @@ export interface AdapterAddHandlerData<ServerType, HandlerType> {
     route: string;
 }
 
+export interface AdapterAddAllHandlerData<ServerType, HandlerType> {
+    server: ServerType;
+    handler: HandlerType;
+    route: string;
+}
+
 export interface Adapter<ServerType = any, HandlerType = any> {
     /**
      * The name of the adapter
@@ -21,6 +27,10 @@ export interface Adapter<ServerType = any, HandlerType = any> {
      */
     addHandler: (
         data: AdapterAddHandlerData<ServerType, HandlerType>,
+    ) => Promise<void> | void;
+
+    addAllHandler?: (
+        data: AdapterAddAllHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;
 
     /**

@@ -15,6 +15,13 @@ export const adapter: Adapter<Server, NeruHapiServerRoute> = {
             method,
             path: route,
         }),
+
+    addAllHandler: ({ server, route, handler }) =>
+        server.route({
+            ...handler,
+            method: '*',
+            path: route,
+        }),
 };
 
 export const route = (route: NeruHapiServerRoute) => route;
