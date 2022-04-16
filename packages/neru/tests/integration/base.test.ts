@@ -14,8 +14,6 @@ test('picks up routes correctly', async () => {
         base: '/api',
     });
 
-    console.log(server);
-
     assert.ok(server.has('/api'), "Doesn't have '/api' route");
 
     assert.ok(
