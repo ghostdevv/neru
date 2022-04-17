@@ -73,12 +73,14 @@ importers:
       consolite: ^0.2.10
       ghoststools: ^0.6.3
       kleur: ^4.1.4
+      totalist: ^3.0.0
       uvu: ^0.5.3
     dependencies:
       '@nerujs/methods': link:../methods
       consolite: 0.2.10
       ghoststools: 0.6.3
       kleur: 4.1.4
+      totalist: 3.0.0
     devDependencies:
       uvu: 0.5.3
 
@@ -2938,6 +2940,11 @@ packages:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
     dev: true
+
+  /totalist/3.0.0:
+    resolution: {integrity: sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /touch/3.1.0:
     resolution: {integrity: sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==}

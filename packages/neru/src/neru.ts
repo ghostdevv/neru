@@ -2,9 +2,9 @@ import type { Adapter, GetHandlerType } from './adapters/adapter';
 import { importRouteHandlers } from './handlers/import';
 import { validateAdapter } from './adapters/validate';
 import { constructRoute } from './routes/routes';
-import { readDirRecursive } from './utils/fs';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
+import { totalist } from 'totalist';
 import { blue } from 'kleur/colors';
 import { logger } from './logger';
 import { existsSync } from 'fs';
@@ -42,8 +42,11 @@ export const neru = async <AdapterType extends Adapter>(
         if (!existsSync(directory))
             throw new Error(`Unable to find directory ${directory}`);
 
-        // Loop over all the files in the directory
-        for (const path of readDirRecursive(directory, options.ignore)) {
+        // Use totalist to read all the files
+        await totalist(rawDir, async (name, path) => {
+            // Skip over certain files
+            if (name.startsWith('_') || options.ignore?.test(name)) return;
+
             // Import the handlers
             const handlers = await importRouteHandlers<GetHandlerType<AdapterType>>(
                 path,
@@ -89,6 +92,6 @@ export const neru = async <AdapterType extends Adapter>(
                     route,
                 });
             }
-        }
+        });
     }
 };
