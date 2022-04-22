@@ -3,6 +3,9 @@
     "description": "Get started quickly with neru by running npm init neru",
     "version": "0.0.0",
     "type": "module",
+    "bin": {
+        "create-neru": "src/bin.js"
+    },
     "dependencies": {
         "cpy": "^9.0.1",
         "desm": "^1.2.0",
