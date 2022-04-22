@@ -1,0 +1,18 @@
+{
+    "type": "module",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node ."
+    },
+    "dependencies": {
+        "@nerujs/express": "^0.1.0",
+        "express": "^4.17.3",
+        "neru": "^0.8.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/node": "^17.0.25",
+        "nodemon": "^2.0.15"
+    }
+}
