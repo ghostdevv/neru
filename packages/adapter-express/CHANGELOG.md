@@ -1,5 +1,14 @@
 # @nerujs/express
 
+## 0.1.1
+
+### Patch Changes
+
+-   update documentation ([#41](https://github.com/ghostdevv/neru/pull/41))
+
+-   Updated dependencies [[`6e1075b`](https://github.com/ghostdevv/neru/commit/6e1075b8bf6cf7545821be416d5663fe588da6c6), [`7987e47`](https://github.com/ghostdevv/neru/commit/7987e477ed99ee6d5e3dd32ea5140431b15baf83)]:
+    -   neru@0.8.1
+
 ## 0.1.0
 
 ### Minor Changes
