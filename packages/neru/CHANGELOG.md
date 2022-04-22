@@ -1,5 +1,13 @@
 # neru
 
+## 0.8.1
+
+### Patch Changes
+
+-   switch to totalist ([#39](https://github.com/ghostdevv/neru/pull/39))
+
+*   update documentation ([#41](https://github.com/ghostdevv/neru/pull/41))
+
 ## 0.8.0
 
 ### Minor Changes
