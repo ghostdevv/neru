@@ -4,7 +4,17 @@
 
 Neru is a small and lightweight file system router designed to power your favourite backends. We currently maintain adapters for hapi, and express so you can get started with your favourite framework! But you might be able to find community adapters online, [or make your own!](#)
 
-# Getting Started
+# Quick Start
+
+You can get started by creating your neru project:
+
+```bash
+npm init neru my-project
+```
+
+# Add neru yourself
+
+It only takes a few easy steps!
 
 ## Installing
 

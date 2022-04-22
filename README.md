@@ -4,16 +4,25 @@
 
 Neru is the lightweight file router for your favourite backend frameworks. In this repo you can find the code for neru and it's related packages.
 
+# Get Started
+
+You can get started by creating your neru project:
+
+```bash
+npm init neru my-project
+```
+
 # Packages
 
 ## Core:
 
-| Package                                       | Documentation                                    | Changelog                                       |
-|-----------------------------------------------|--------------------------------------------------|-------------------------------------------------|
-| [neru](packages/neru)                         | [Documentation](packages/neru/README.md)         | [Changelog](packages/neru/CHANGELOG.md)         |
+| Package                                       | Documentation                                    | Changelog                                                                   |
+|-----------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
+| [neru](packages/neru)                         | [Documentation](packages/neru/README.md)         | [Changelog](packages/neru/CHANGELOG.md)                                     |
+| [create-neru](packages/create-neru)                         | [Documentation](packages/create-neru/README.md)         | [Changelog](packages/create-neru/CHANGELOG.md)         |
 
 ## Adapters:
-
+create-
 | Adapter | Package                                             | Documentation                                       | Changelog                                          |
 |---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
 | Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
