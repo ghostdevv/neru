@@ -2,7 +2,7 @@
 
 > Neru is still a work in progress!
 
-Neru is a small and lightweight file system router designed to power your favourite backends. We currently maintain adapters for hapi, and express so you can get started with your favourite framework! But you might be able to find community adapters online, [or make your own!](#)
+The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi) and [Express](https://github.com/expressjs/express) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love to use.
 
 # Quick Start
 
