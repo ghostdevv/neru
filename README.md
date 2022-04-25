@@ -1,8 +1,8 @@
 # Neru Monorepo
 
-> Neru is still a work in progress!
+The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi) and [Express](https://github.com/expressjs/express) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love.
 
-Neru is the lightweight file router for your favourite backend frameworks. In this repo you can find the code for neru and it's related packages.
+> NOTE: Neru is still a work in progress!
 
 # Get Started
 
@@ -19,10 +19,12 @@ npm init neru my-project
 | Package                                       | Documentation                                    | Changelog                                                                   |
 |-----------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
 | [neru](packages/neru)                         | [Documentation](packages/neru/README.md)         | [Changelog](packages/neru/CHANGELOG.md)                                     |
-| [create-neru](packages/create-neru)                         | [Documentation](packages/create-neru/README.md)         | [Changelog](packages/create-neru/CHANGELOG.md)         |
+| [create-neru](packages/create-neru)           | [Documentation](packages/create-neru/README.md)  | [Changelog](packages/create-neru/CHANGELOG.md)                              |
 
 ## Adapters:
-create-
+
+[Suggest a new adapter](https://github.com/ghostdevv/neru/issues/new)
+
 | Adapter | Package                                             | Documentation                                       | Changelog                                          |
 |---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
 | Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
