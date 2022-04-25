@@ -12,6 +12,15 @@ You can get started by creating your neru project:
 npm init neru my-project
 ```
 
+# Adapters
+
+Adapters are what allow you to use neru with your favourite framework, you can get started with the ones below or [suggest a new one to be added](https://github.com/ghostdevv/neru/issues/new)
+
+| Adapter | Package                                             | Documentation                                       | Changelog                                          |
+|---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
+| Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
+| Express | [@nerujs/adapter-express](packages/adapter-express) | [Documentation](packages/adapter-express/README.md) | [Changelog](packages/adapter-express/CHANGELOG.md) |
+
 # Add neru yourself
 
 It only takes a few easy steps!
