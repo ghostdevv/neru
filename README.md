@@ -1,10 +1,8 @@
 # Neru Monorepo
 
-The lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi) and [Express](https://github.com/expressjs/express) (more coming soon!).  Easily connect your project to any backend framework with Neru's adapters.
+The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi) and [Express](https://github.com/expressjs/express) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love to use.
 
-In this repo you can find the packages for `neru`, `create-neru` cli, and the adapters.
-
-> note: Neru is still a work in progress!
+> NOTE: Neru is still a work in progress!
 
 # Get Started
 
