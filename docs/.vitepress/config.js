@@ -19,8 +19,23 @@ export default defineConfig({
         ],
 
         sidebar: {
-            '/guide/': 'auto',
             '/adapters': 'auto',
+
+            '/': [
+                {
+                    text: 'Guide',
+                    children: [
+                        {
+                            text: 'Getting Started',
+                            link: '/guide/',
+                        },
+                        {
+                            text: 'Routes',
+                            link: '/guide/routes',
+                        },
+                    ],
+                },
+            ],
         },
     },
 });
