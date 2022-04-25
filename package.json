@@ -8,15 +8,18 @@
         "@types/node": "^16.11.27",
         "tsm": "^2.2.1",
         "tsup": "^5.12.5",
-        "typescript": "^4.6.3"
+        "typescript": "^4.6.3",
+        "vitepress": "^0.22.3"
     },
     "scripts": {
         "dev": "pnpm -r dev --parallel",
         "dev-build": "pnpm build --parallel -- --watch",
         "dev-dev": "pnpm dev --filter dev",
-        "build": "pnpm -r build",
+        "build": "pnpm -r build && pnpm docs:build",
         "test": "pnpm -r test",
-        "release": "changeset publish"
+        "release": "changeset publish",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs"
     },
     "homepage": "https://github.com/ghostdevv/neru",
     "repository": {
