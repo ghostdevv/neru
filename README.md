@@ -19,10 +19,10 @@ npm init neru my-project
 | Package                                       | Documentation                                    | Changelog                                                                   |
 |-----------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
 | [neru](packages/neru)                         | [Documentation](packages/neru/README.md)         | [Changelog](packages/neru/CHANGELOG.md)                                     |
-| [create-neru](packages/create-neru)                         | [Documentation](packages/create-neru/README.md)         | [Changelog](packages/create-neru/CHANGELOG.md)         |
+| [create-neru](packages/create-neru)           | [Documentation](packages/create-neru/README.md)  | [Changelog](packages/create-neru/CHANGELOG.md)                              |
 
 ## Adapters:
-create-
+
 | Adapter | Package                                             | Documentation                                       | Changelog                                          |
 |---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
 | Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
