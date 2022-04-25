@@ -23,6 +23,8 @@ npm init neru my-project
 
 ## Adapters:
 
+[Suggest a new adapter](https://github.com/ghostdevv/neru/issues/new)
+
 | Adapter | Package                                             | Documentation                                       | Changelog                                          |
 |---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
 | Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
