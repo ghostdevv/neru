@@ -38,7 +38,7 @@ export const get = {
 }
 ```
 
-## Handler  Type Saftey
+## Handler Type Saftey
 
 Currently our route handlers aren't type safe, all Neru adapters should export a function that adds type saftey and intellisense.
 
