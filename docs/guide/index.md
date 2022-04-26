@@ -12,7 +12,7 @@ npm init neru@latest my-project
 
 ### Installing
 
-First install Neru and the adapter of your choice, for this demo we will use Express.
+First install Neru and an adapter of your choice, for this demo we will use Express.
 
 ```bash
 npm i neru @nerujs/express express
