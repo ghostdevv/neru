@@ -5,6 +5,8 @@ export default defineConfig({
     description:
         'Neru is a small and lightweight file router for your favourite backends',
 
+    head: [['link', { rel: 'icon', href: '/placeholder-cheese.png' }]],
+
     themeConfig: {
         repo: 'ghostdevv/neru',
         docsDir: 'docs',
