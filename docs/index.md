@@ -4,6 +4,8 @@ home: true
 actionText: Get Started
 actionLink: /guide/
 
+heroImage: ./placeholder-cheese.png
+
 features:
   - title: 🌈 Framework Agnostic
     details: Add fast file routing to any framework you like

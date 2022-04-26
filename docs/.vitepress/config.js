@@ -9,6 +9,7 @@ export default defineConfig({
         repo: 'ghostdevv/neru',
         docsDir: 'docs',
         docsBranch: 'main',
+        logo: './placeholder-cheese.png',
 
         editLinks: true,
         editLinkText: 'Suggest changes to this page',
