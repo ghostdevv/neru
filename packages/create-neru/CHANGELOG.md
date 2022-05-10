@@ -1,5 +1,11 @@
 # create-neru
 
+## 0.0.2
+
+### Patch Changes
+
+-   fix tsconfig ([`3bd4024`](https://github.com/ghostdevv/neru/commit/3bd402425bb153bc2dce6e0e8d17caffc31878d3))
+
 ## 0.0.1
 
 ### Patch Changes
