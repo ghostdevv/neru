@@ -2,7 +2,10 @@
     "compilerOptions": {
         "strict": true,
         "lib": ["ESNext"],
-        "module": "ESNext"
+        "module": "ESNext",
+        "target": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node"
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules/**"]
