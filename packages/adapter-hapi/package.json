@@ -31,7 +31,6 @@
     "bugs": {
         "url": "https://github.com/ghostdevv/neru"
     },
-    "packageManager": "pnpm@6.32.2",
     "dependencies": {
         "@hapi/hapi": "^20.2.1",
         "@types/hapi__hapi": "^20.0.10",

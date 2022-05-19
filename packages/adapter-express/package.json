@@ -31,7 +31,6 @@
     "bugs": {
         "url": "https://github.com/ghostdevv/neru"
     },
-    "packageManager": "pnpm@6.32.2",
     "dependencies": {
         "neru": "workspace:*"
     },
