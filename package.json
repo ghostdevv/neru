@@ -30,7 +30,7 @@
     "engines": {
         "pnpm": "^7.0.0",
         "npm": "forbidden, use pnpm",
-        "node": ">= 12"
+        "node": ">= 14"
     },
     "pnpm": {
         "overrides": {
