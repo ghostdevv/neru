@@ -35,9 +35,9 @@
         "neru": "workspace:*"
     },
     "devDependencies": {
-        "@types/express": "^4.17.13",
+        "@types/express": "4.17.0",
         "axios": "^0.26.1",
-        "express": "^4.17.3",
+        "express": "4.17.0",
         "neru": "workspace:*",
         "uvu": "^0.5.3"
     }
