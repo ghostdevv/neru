@@ -32,7 +32,7 @@
         "url": "https://github.com/ghostdevv/neru"
     },
     "dependencies": {
-        "@hapi/hapi": "^20.2.1",
+        "@hapi/hapi": "^20.2.2",
         "@types/hapi__hapi": "^20.0.10",
         "neru": "workspace:*"
     },
