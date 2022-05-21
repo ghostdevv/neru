@@ -1,5 +1,14 @@
 # @nerujs/hapi
 
+## 0.1.2
+
+### Patch Changes
+
+-   update pnpm & node ([#44](https://github.com/ghostdevv/neru/pull/44))
+
+-   Updated dependencies [[`78ac286`](https://github.com/ghostdevv/neru/commit/78ac286abe969586d831712d37603eb5dc9ad9ba)]:
+    -   neru@0.8.2
+
 ## 0.1.1
 
 ### Patch Changes
