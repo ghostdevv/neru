@@ -1,5 +1,11 @@
 # create-neru
 
+## 0.0.3
+
+### Patch Changes
+
+-   update pnpm & node ([#44](https://github.com/ghostdevv/neru/pull/44))
+
 ## 0.0.2
 
 ### Patch Changes
