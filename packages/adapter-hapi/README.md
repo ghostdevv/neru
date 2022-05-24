@@ -8,4 +8,6 @@ You can get started by creating your neru & hapi project:
 npm init neru my-project
 ```
 
-**to be documented fully**
+# Documentation
+
+TBA

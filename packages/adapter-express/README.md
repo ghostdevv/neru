@@ -8,4 +8,6 @@ You can get started by creating your neru & express project:
 npm init neru my-project
 ```
 
-**to be documented fully**
+# Documentation
+
+TBA
