@@ -4,7 +4,7 @@ home: true
 actionText: Get Started
 actionLink: /guide/
 
-heroImage: /placeholder-cheese.png
+heroImage: /logo.svg
 
 features:
   - title: 🌈 Framework Agnostic

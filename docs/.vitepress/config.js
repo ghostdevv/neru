@@ -5,13 +5,13 @@ export default defineConfig({
     description:
         'Neru is a small and lightweight file router for your favourite backends',
 
-    head: [['link', { rel: 'icon', href: '/placeholder-cheese.png' }]],
+    head: [['link', { rel: 'icon', href: '/logo.svg' }]],
 
     themeConfig: {
         repo: 'ghostdevv/neru',
         docsDir: 'docs',
         docsBranch: 'main',
-        logo: '/placeholder-cheese.png',
+        logo: '/logo.svg',
 
         editLinks: true,
         editLinkText: 'Suggest changes to this page',
