@@ -6,11 +6,11 @@ This is the official adapter for hapi and neru, you can find the code for that a
 
 ### Neru CLI
 
-The quickest way to get started with Neru is using the [Neru CLI](/guide#neru-cli). This CLI has an option for the hapi adapter!
+The quickest way to get started with Neru is using the [Neru CLI](/guide/#neru-cli). This CLI has an option for the hapi adapter!
 
 ### Manually
 
-Please [read the guide here](/guide#add-neru-to-an-existing-project) to find out how to use neru on a new/existing project manually.
+Please [read the guide here](/guide/#add-neru-to-an-existing-project) to find out how to use neru on a new/existing project manually.
 
 Here is an example what your project's main file might look like:
 

@@ -18,7 +18,7 @@ npm init neru@latest my-project
     npm install neru @nerujs/express
     ```
 
-2. Create your src/index.js file, make sure to use the adapter and framework of your choice. You can copy and paste the specific code you will need on your [adapters documentation page](/adapters)
+2. Create your src/index.js file, make sure to use the adapter and framework of your choice. You can copy and paste the specific code you will need on your [adapters documentation page](/adapters/)
 
     ```js
     import { adapter } from '@nerujs/express';
