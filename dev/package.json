@@ -11,7 +11,7 @@
         "neru": "workspace:*"
     },
     "devDependencies": {
-        "@hapi/hapi": "^20.2.1",
-        "nodemon": "^2.0.15"
+        "@hapi/hapi": "^20.2.2",
+        "nodemon": "^2.0.16"
     }
 }
