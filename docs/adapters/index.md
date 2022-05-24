@@ -12,3 +12,6 @@ This page shows a list of all the adapters in the neru ecosystem, not all commun
 # Community Adapters
 
 Please [send a PR](https://github.com/ghostdevv/neru) if you want your adapter on this list!
+
+| Adapter | Package           | Documentation                      | Github                                                                         |
+|---------|-------------------|------------------------------------|--------------------------------------------------------------------------------|
