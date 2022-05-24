@@ -22,7 +22,25 @@ export default defineConfig({
         ],
 
         sidebar: {
-            '/adapters': 'auto',
+            '/adapters': [
+                {
+                    text: 'Home',
+                    link: '/adapters/',
+                },
+                {
+                    text: 'Official Adapters',
+                    children: [
+                        {
+                            text: 'Express',
+                            link: '/adapters/express',
+                        },
+                        {
+                            text: 'Hapi',
+                            link: '/adapters/hapi',
+                        },
+                    ],
+                },
+            ],
 
             '/': [
                 {
