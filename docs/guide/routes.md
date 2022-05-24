@@ -40,7 +40,7 @@ export const get = {
 
 ## Handler Type Saftey
 
-Currently our route handlers aren't type safe, all Neru adapters should export a function that adds type saftey and intellisense.
+In the previous example our route handlers aren't type safe, all Neru provided Adapters should export a function that adds type saftey and intellisense.
 
 ```js
 import { route } from '@nerujs/express';
@@ -48,4 +48,14 @@ import { route } from '@nerujs/express';
 export const get = route((req, res) => {
     res.send('Hello World');
 });
+```
+
+Custom adapters or community adapters might not do this, so you might need to type it manually. For an example we can do that with express like so:
+
+```ts
+import type { RequestHandler } from 'express';
+
+export const get: RequestHandler = (req, res) => {
+    res.send('Hello World')
+}
 ```
