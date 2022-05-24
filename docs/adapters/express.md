@@ -15,8 +15,6 @@ Please [read the guide here](/guide#add-neru-to-an-existing-project) to find out
 Here is an example what your project's main file might look like:
 
 ```js
-
-  
 import { adapter } from '@nerujs/express';
 import express from 'express';
 import { neru } from 'neru';
@@ -62,4 +60,16 @@ export const get = route((req, res) => {
 export const get = (req, res) => {
     res.send('Hello World');
 };
+```
+
+### Typing Manually
+
+If you want to be type safe but not use the provided tools, here is how you can do that:
+
+```ts
+import type { RequestHandler } from 'express'
+
+export const get: RequestHandler = (req, res) => {
+    res.send('Hello World')
+}
 ```
