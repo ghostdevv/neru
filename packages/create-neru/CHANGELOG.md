@@ -1,5 +1,13 @@
 # create-neru
 
+## 0.0.4
+
+### Patch Changes
+
+-   documentation ([#46](https://github.com/ghostdevv/neru/pull/46))
+
+*   add documentation and discord information ([`b00e000`](https://github.com/ghostdevv/neru/commit/b00e0001b25daa44cba74eddc0b45c6cdad305a8))
+
 ## 0.0.3
 
 ### Patch Changes
