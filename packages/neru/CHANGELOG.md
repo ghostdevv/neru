@@ -1,5 +1,15 @@
 # neru
 
+## 0.8.3
+
+### Patch Changes
+
+-   documentation ([#46](https://github.com/ghostdevv/neru/pull/46))
+
+*   update docs ([#42](https://github.com/ghostdevv/neru/pull/42))
+
+-   add documentation and discord information ([`b00e000`](https://github.com/ghostdevv/neru/commit/b00e0001b25daa44cba74eddc0b45c6cdad305a8))
+
 ## 0.8.2
 
 ### Patch Changes

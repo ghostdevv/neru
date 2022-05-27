@@ -1,5 +1,18 @@
 # @nerujs/hapi
 
+## 0.1.3
+
+### Patch Changes
+
+-   documentation ([#46](https://github.com/ghostdevv/neru/pull/46))
+
+*   export NeruHapiServerRoute type ([#46](https://github.com/ghostdevv/neru/pull/46))
+
+-   add documentation and discord information ([`b00e000`](https://github.com/ghostdevv/neru/commit/b00e0001b25daa44cba74eddc0b45c6cdad305a8))
+
+-   Updated dependencies [[`c7947f2`](https://github.com/ghostdevv/neru/commit/c7947f2298c992f52620c0b2f6cdc01004500a90), [`44043db`](https://github.com/ghostdevv/neru/commit/44043dbaa2e4f09de7025f4d2121eb2ba226d08c), [`b00e000`](https://github.com/ghostdevv/neru/commit/b00e0001b25daa44cba74eddc0b45c6cdad305a8)]:
+    -   neru@0.8.3
+
 ## 0.1.2
 
 ### Patch Changes
