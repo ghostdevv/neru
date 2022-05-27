@@ -18,17 +18,17 @@ npm init neru my-project
 
 | Package                                       | Documentation                                    | Changelog                                                                   |
 |-----------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
-| [neru](packages/neru)                         | [Documentation](packages/neru/README.md)         | [Changelog](packages/neru/CHANGELOG.md)                                     |
+| [neru](packages/neru)                         | [Documentation](https://neru.dev)                | [Changelog](packages/neru/CHANGELOG.md)                                     |
 | [create-neru](packages/create-neru)           | [Documentation](packages/create-neru/README.md)  | [Changelog](packages/create-neru/CHANGELOG.md)                              |
 
 ## Adapters:
 
 [Suggest a new adapter](https://github.com/ghostdevv/neru/issues/new)
 
-| Adapter | Package                                             | Documentation                                       | Changelog                                          |
-|---------|-----------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
-| Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](packages/adapter-hapi/README.md)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
-| Express | [@nerujs/adapter-express](packages/adapter-express) | [Documentation](packages/adapter-express/README.md) | [Changelog](packages/adapter-express/CHANGELOG.md) |
+| Adapter | Package                                             | Documentation                                               | Changelog                                          |
+|---------|-----------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------|
+| Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](https://www.neru.dev/adapters/hapi.html)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
+| Express | [@nerujs/adapter-express](packages/adapter-express) | [Documentation](https://www.neru.dev/adapters/express.html) | [Changelog](packages/adapter-express/CHANGELOG.md) |
 
 ## Misc:
 
