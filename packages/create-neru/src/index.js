@@ -87,7 +87,7 @@ export const run = async () => {
     await cpy(templateGlob, target);
 
     console.log(
-        `${logSymbols.success} ${kleur.green('Your project has been created!')}`,
+        `\n${logSymbols.success} ${kleur.green('Your project has been created!')}`,
     );
 
     console.log();
@@ -104,4 +104,22 @@ export const run = async () => {
         .forEach((item, index) =>
             console.log(`  ${kleur.gray(index + 1)}) ${item}`),
         );
+
+    console.log();
+
+    // prettier-ignore
+    console.log(kleur.underline().bold().yellow('Documentation:'));
+
+    // prettier-ignore
+    console.log(` - If you haven't used Neru before take a look at the ${kleur.yellow().bold('guide')}:`, kleur.underline('https://www.neru.dev/guide/'));
+
+    // prettier-ignore
+    console.log(` - Documentation for the ${kleur.yellow().bold(`${framework} adapter`)}:`, kleur.underline(`https://www.neru.dev/adapters/${framework}.html`));
+
+    console.log();
+
+    console.log(
+        kleur.blue(`Discord:`),
+        kleur.underline('https://discord.gg/2Vd4wAjJnm'),
+    );
 };

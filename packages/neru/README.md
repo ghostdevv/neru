@@ -12,9 +12,12 @@ You can get started by creating your Neru project:
 npm init neru my-project
 ```
 
-# Documentation
+Checkout our [guide](https://www.neru.dev/guide/) which will show you how neru works!
 
-https://neru.dev/
+# Documentation & Discord Help
+
+- [Documentation](https://neru.dev/)
+- [Discord](https://discord.gg/2Vd4wAjJnm)
 
 # Adapters
 

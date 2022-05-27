@@ -12,3 +12,7 @@ npm init neru my-project
 
 - [Neru Documentation](https://neru.dev)
 - [Express Adapter Documentation](https://www.neru.dev/adapters/express.html)
+
+# Discord
+
+https://discord.gg/2Vd4wAjJnm

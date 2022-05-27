@@ -12,3 +12,7 @@ npm init neru my-project
 
 - [Neru Documentation](https://neru.dev)
 - [Hapi Adapter Documentation](https://www.neru.dev/adapters/hapi.html)
+
+# Discord
+
+https://discord.gg/2Vd4wAjJnm
