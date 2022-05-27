@@ -7,8 +7,9 @@
         "@svitejs/changesets-changelog-github-compact": "^0.1.1",
         "@types/node": "^16.11.36",
         "tsm": "^2.2.1",
-        "tsup": "^5.12.8",
-        "typescript": "^4.6.4"
+        "tsup": "^5.12.5",
+        "typescript": "^4.6.3",
+        "vitepress": "^0.22.3"
     },
     "scripts": {
         "dev": "pnpm --parallel -r dev",
@@ -16,7 +17,9 @@
         "dev-dev": "pnpm --filter dev -r dev",
         "build": "pnpm -r build",
         "test": "pnpm -r test",
-        "release": "changeset publish"
+        "release": "changeset publish",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs"
     },
     "homepage": "https://github.com/ghostdevv/neru",
     "repository": {

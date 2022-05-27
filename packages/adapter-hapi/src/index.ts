@@ -1,7 +1,7 @@
 import type { ServerRoute, Server } from '@hapi/hapi';
 import type { Adapter } from 'neru';
 
-type NeruHapiServerRoute = Omit<ServerRoute, 'path' | 'method'>;
+export type NeruHapiServerRoute = Omit<ServerRoute, 'path' | 'method'>;
 
 export const adapter: Adapter<Server, NeruHapiServerRoute> = {
     name: 'hapi',

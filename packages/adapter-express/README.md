@@ -8,4 +8,7 @@ You can get started by creating your neru & express project:
 npm init neru my-project
 ```
 
-**to be documented fully**
+# Documentation
+
+- [Neru Documentation](https://neru.dev)
+- [Express Adapter Documentation](https://www.neru.dev/adapters/express.html)
