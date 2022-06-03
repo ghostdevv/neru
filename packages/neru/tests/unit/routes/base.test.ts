@@ -13,7 +13,7 @@ const adapter: Adapter<{}, {}> = {
 };
 
 test('adds a base correctly', () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/test/[id]/[...slug].js',
         directory: '/home/ghost/routes',
         base: '/api',
@@ -24,7 +24,7 @@ test('adds a base correctly', () => {
 });
 
 test('fixes wonky base', () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/test/[id]/[...slug].js',
         directory: '/home/ghost/routes',
         base: 'api/',
@@ -35,7 +35,7 @@ test('fixes wonky base', () => {
 });
 
 test("doesn't format base", () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/test/[id]/[...slug].js',
         directory: '/home/ghost/routes',
         base: '/[...a]/index',
@@ -46,7 +46,7 @@ test("doesn't format base", () => {
 });
 
 test("doesn't break on / base", () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/test/[id]/[...slug].js',
         directory: '/home/ghost/routes',
         base: '/',
@@ -57,7 +57,7 @@ test("doesn't break on / base", () => {
 });
 
 test("doesn't break on root", () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/',
         directory: '/home/ghost/routes',
         base: '/api',

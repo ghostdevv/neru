@@ -53,14 +53,14 @@ export const neru = async <AdapterType extends Adapter>(
             );
 
             // Construct the route
-            const route = constructRoute({
+            const { route, neruRoute } = constructRoute({
                 path,
                 directory,
                 adapter,
                 base: options.base,
             });
 
-            logger.debug(`Found route ${blue(route)}`);
+            logger.debug(`Found route ${blue(neruRoute)} -> ${blue(route)}`);
 
             // Promises array for the add handler promises
             const addHandlerPromises = [];
