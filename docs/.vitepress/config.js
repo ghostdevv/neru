@@ -57,6 +57,10 @@ export default defineConfig({
                             text: 'Routes',
                             link: '/guide/routes',
                         },
+                        {
+                            text: 'Configure Neru',
+                            link: '/guide/config',
+                        },
                     ],
                 },
             ],
