@@ -10,7 +10,6 @@ const server = Hapi.server({
 await neru({
     adapter,
     server,
-    routes: 'src/routes',
 
     debug: true,
 });
