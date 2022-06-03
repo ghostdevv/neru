@@ -12,26 +12,32 @@ import { existsSync } from 'fs';
 export const neru = async <AdapterType extends Adapter>(
     options: NeruOptions<AdapterType>,
 ) => {
-    const { routes, adapter, server } = options;
-
     // Set debug
     if (options.debug) {
         process.env.NERU_DEBUG = '1';
         logger.level = 4;
     }
 
-    // Check if routes are given and valid
-    if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
+    
+    // Add default to routes
+    if (!options.routes) {
+        options.routes = 'src/routes';
+    }
+
+    // Check if routes are valid
+    if (!(typeof options.routes == 'string' || Array.isArray(options.routes)))
         throw new TypeError(
             'Please give a valid routes directory or array of directories',
         );
 
     // Check if adapter is given and valid
-    if (!adapter || !validateAdapter(adapter))
+    if (!options.adapter || !validateAdapter(options.adapter))
         throw new TypeError('Please give a valid adapter');
 
     // Check if server exists
-    if (!server) throw new Error('Please give a valid server');
+    if (!options.server) throw new Error('Please give a valid server');
+
+    const { routes, adapter, server } = options;
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
 
