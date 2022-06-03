@@ -13,7 +13,7 @@ const adapter: Adapter<{}, {}> = {
 };
 
 test('resolves complex route correctly', () => {
-    const route = constructRoute({
+    const { route } = constructRoute({
         path: '/home/ghost/routes/test/[id]/[...slug].js',
         directory: '/home/ghost/routes',
         adapter,
@@ -21,5 +21,16 @@ test('resolves complex route correctly', () => {
 
     assert.equal(route, '/test/(id)/{slug}');
 });
+
+test('includes neru format copy of route string', () => {
+    const { route, neruRoute } = constructRoute({
+        path: '/home/ghost/routes/test/[id]/',
+        directory: '/home/ghost/routes',
+        adapter,
+    });
+
+    assert.equal(route, '/test/(id)');
+    assert.equal(neruRoute, '/test/[id]');
+})
 
 test.run();

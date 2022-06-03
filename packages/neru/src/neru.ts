@@ -2,10 +2,10 @@ import type { Adapter, GetHandlerType } from './adapters/adapter';
 import { importRouteHandlers } from './handlers/import';
 import { validateAdapter } from './adapters/validate';
 import { constructRoute } from './routes/routes';
+import { blue, bold, gray } from 'kleur/colors';
 import type { NeruOptions } from './options';
 import { normalize, resolve } from 'path';
 import { totalist } from 'totalist';
-import { blue } from 'kleur/colors';
 import { logger } from './logger';
 import { existsSync } from 'fs';
 
@@ -18,13 +18,15 @@ export const neru = async <AdapterType extends Adapter>(
         logger.level = 4;
     }
 
-    
-    // Add default to routes
-    if (!options.routes) {
+    // Sets the default of routes to src/routes
+    if (!options.routes)
         options.routes = 'src/routes';
-    }
 
-    // Check if routes are valid
+    // Set the default of options.announce to true
+    if (typeof options.announce != 'boolean')
+        options.announce = true;
+
+    // Check if routes are and valid
     if (!(typeof options.routes == 'string' || Array.isArray(options.routes)))
         throw new TypeError(
             'Please give a valid routes directory or array of directories',
@@ -40,6 +42,7 @@ export const neru = async <AdapterType extends Adapter>(
     const { routes, adapter, server } = options;
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
+    const toAnnounce: string[] = [];
 
     // Loop over all route directories
     for (const rawDir of routeDirectoryArray) {
@@ -59,20 +62,20 @@ export const neru = async <AdapterType extends Adapter>(
             );
 
             // Construct the route
-            const route = constructRoute({
+            const { route, neruRoute } = constructRoute({
                 path,
                 directory,
                 adapter,
                 base: options.base,
             });
 
-            logger.debug(`Found route ${blue(route)}`);
+            logger.debug(`Found route ${blue(neruRoute)} -> ${blue(route)}`);
 
             // Promises array for the add handler promises
             const addHandlerPromises = [];
 
             // Loop over all handlers and use adapter to add to server
-            for (const [method, handler] of handlers.handlers)
+            for (const [method, handler] of handlers.handlers) {
                 addHandlerPromises.push(
                     adapter.addHandler({
                         method,
@@ -81,6 +84,9 @@ export const neru = async <AdapterType extends Adapter>(
                         route,
                     }),
                 );
+
+                toAnnounce.push(`${blue(method.toUpperCase())} ~ ${bold(neruRoute)}`);
+            }
 
             // Wait for all handlers to be added
             await Promise.all(addHandlerPromises);
@@ -99,5 +105,14 @@ export const neru = async <AdapterType extends Adapter>(
                 });
             }
         });
+    }
+
+    if (options.announce) {
+        console.log();
+
+        for (const line of toAnnounce)
+            console.log(`  ${gray(line)}`);
+
+        console.log()
     }
 };
