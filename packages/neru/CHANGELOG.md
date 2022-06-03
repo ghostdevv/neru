@@ -1,5 +1,17 @@
 # neru
 
+## 0.8.4
+
+### Patch Changes
+
+-   neru announcer ([#50](https://github.com/ghostdevv/neru/pull/50))
+
+*   fix routes not having default ([#51](https://github.com/ghostdevv/neru/pull/51))
+
+-   construct route returns neru formatted copy ([#50](https://github.com/ghostdevv/neru/pull/50))
+
+*   set the default of options.announce to true ([#50](https://github.com/ghostdevv/neru/pull/50))
+
 ## 0.8.3
 
 ### Patch Changes

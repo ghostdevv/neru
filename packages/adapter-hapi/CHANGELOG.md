@@ -1,5 +1,12 @@
 # @nerujs/hapi
 
+## 0.1.4
+
+### Patch Changes
+
+-   Updated dependencies [[`26f05a4`](https://github.com/ghostdevv/neru/commit/26f05a40f1bdc042549869f90965e6efe3283931), [`d8031c8`](https://github.com/ghostdevv/neru/commit/d8031c82c6024eebd5b643540db907ec317f54da), [`9b3827b`](https://github.com/ghostdevv/neru/commit/9b3827b11a82fd1cfc554ac28e079309a64cf736), [`bc2a032`](https://github.com/ghostdevv/neru/commit/bc2a032a1be0b657515412a273ac496691b68485)]:
+    -   neru@0.8.4
+
 ## 0.1.3
 
 ### Patch Changes
