@@ -13,7 +13,6 @@ await neru({
     routes: 'src/routes',
 
     debug: true,
-    announce: true,
 });
 
 await server.start();

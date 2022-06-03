@@ -20,6 +20,10 @@ export const neru = async <AdapterType extends Adapter>(
         logger.level = 4;
     }
 
+    // Set the default of options.announce to true
+    if (typeof options.announce != 'boolean')
+        options.announce = true;
+
     // Check if routes are given and valid
     if (!routes || !(typeof routes == 'string' || Array.isArray(routes)))
         throw new TypeError(
@@ -34,7 +38,6 @@ export const neru = async <AdapterType extends Adapter>(
     if (!server) throw new Error('Please give a valid server');
 
     const routeDirectoryArray = Array.isArray(routes) ? routes : [routes];
-
     const toAnnounce: string[] = [];
 
     // Loop over all route directories

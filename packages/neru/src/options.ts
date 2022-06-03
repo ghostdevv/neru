@@ -36,6 +36,7 @@ export interface NeruOptions<AdapterType extends Adapter> {
 
     /**
      * Whether or not to announce the routes loaded
+     * @default true
      */
     announce?: boolean;
 }
