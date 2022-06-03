@@ -33,4 +33,10 @@ export interface NeruOptions<AdapterType extends Adapter> {
      * Ignore files that match this regex
      */
     ignore?: RegExp;
+
+    /**
+     * Whether or not to announce the routes loaded
+     * @default true
+     */
+    announce?: boolean;
 }
