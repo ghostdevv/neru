@@ -18,6 +18,7 @@ export default defineConfig({
 
         nav: [
             { text: 'Guide', link: '/guide/' },
+            { text: 'Config', link: '/config/' },
             { text: 'Adapters', link: '/adapters/' },
         ],
 
@@ -41,6 +42,8 @@ export default defineConfig({
                     ],
                 },
             ],
+
+            '/config': 'auto',
 
             '/': [
                 {
