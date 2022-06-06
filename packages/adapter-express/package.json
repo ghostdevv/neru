@@ -31,8 +31,9 @@
     "bugs": {
         "url": "https://github.com/ghostdevv/neru"
     },
-    "dependencies": {
-        "neru": "workspace:*"
+    "peerDependencies": {
+        "neru": "workspace:*",
+        "express": "^4.17.0"
     },
     "devDependencies": {
         "@types/express": "4.17.0",

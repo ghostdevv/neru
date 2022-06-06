@@ -31,12 +31,12 @@
     "bugs": {
         "url": "https://github.com/ghostdevv/neru"
     },
-    "dependencies": {
-        "@hapi/hapi": "^20.2.2",
-        "@types/hapi__hapi": "^20.0.10",
-        "neru": "workspace:*"
+    "peerDependencies": {
+        "neru": "workspace:*",
+        "@hapi/hapi": "^20.2.2"
     },
     "devDependencies": {
+        "@types/hapi__hapi": "^20.0.10",
         "axios": "^0.26.1",
         "neru": "workspace:*",
         "uvu": "^0.5.3"
