@@ -1,5 +1,11 @@
 # neru
 
+## 0.8.5
+
+### Patch Changes
+
+-   tweak style of announcer ([`0c0c88d`](https://github.com/ghostdevv/neru/commit/0c0c88d2738e30d561aafb37f73edbb788dd802b))
+
 ## 0.8.4
 
 ### Patch Changes
