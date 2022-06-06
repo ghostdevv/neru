@@ -85,7 +85,8 @@ export const neru = async <AdapterType extends Adapter>(
                     }),
                 );
 
-                toAnnounce.push(`${blue(method.toUpperCase())} ~ ${bold(neruRoute)}`);
+                // prettier-ignore
+                toAnnounce.push(`${blue(method.toUpperCase())}${' '.repeat(12 - method.length)}${bold(neruRoute)}`);
             }
 
             // Wait for all handlers to be added
@@ -111,7 +112,7 @@ export const neru = async <AdapterType extends Adapter>(
         console.log();
 
         for (const line of toAnnounce)
-            console.log(`  ${gray(line)}`);
+            console.log(` ${gray(line)}`);
 
         console.log()
     }
