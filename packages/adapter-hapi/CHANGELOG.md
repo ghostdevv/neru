@@ -1,5 +1,14 @@
 # @nerujs/hapi
 
+## 0.1.5
+
+### Patch Changes
+
+-   fix odd dependancies ([`3adb542`](https://github.com/ghostdevv/neru/commit/3adb54273a1f3bf728c6d57fdc68490b8229c8f0))
+
+-   Updated dependencies [[`0c0c88d`](https://github.com/ghostdevv/neru/commit/0c0c88d2738e30d561aafb37f73edbb788dd802b)]:
+    -   neru@0.8.5
+
 ## 0.1.4
 
 ### Patch Changes
