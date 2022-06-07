@@ -37,6 +37,7 @@
     },
     "devDependencies": {
         "@types/hapi__hapi": "^20.0.10",
+        "@hapi/hapi": "^20.2.2",
         "axios": "^0.26.1",
         "neru": "workspace:*",
         "uvu": "^0.5.3"
