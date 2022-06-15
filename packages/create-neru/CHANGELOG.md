@@ -1,5 +1,11 @@
 # create-neru
 
+## 0.0.5
+
+### Patch Changes
+
+-   fix dev script ([`b23ff44`](https://github.com/ghostdevv/neru/commit/b23ff44ca54f5c642335b37ca8d777bae113d6ee))
+
 ## 0.0.4
 
 ### Patch Changes
