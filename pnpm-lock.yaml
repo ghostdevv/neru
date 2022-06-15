@@ -52,11 +52,13 @@ importers:
 
   packages/adapter-hapi:
     specifiers:
+      '@hapi/hapi': ^20.2.2
       '@types/hapi__hapi': ^20.0.10
       axios: ^0.26.1
       neru: workspace:*
       uvu: ^0.5.3
     devDependencies:
+      '@hapi/hapi': 20.2.2
       '@types/hapi__hapi': 20.0.12
       axios: 0.26.1
       neru: link:../neru
