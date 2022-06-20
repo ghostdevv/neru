@@ -115,5 +115,7 @@ export const neru = async <AdapterType extends Adapter>(
             console.log(` ${gray(line)}`);
 
         console.log()
+        console.log(gray(`Found ${blue(toAnnounce.length)} routes`));
+        console.log()
     }
 };
