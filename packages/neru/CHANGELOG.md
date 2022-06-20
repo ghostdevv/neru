@@ -1,5 +1,11 @@
 # neru
 
+## 0.9.0
+
+### Minor Changes
+
+-   annouce how many routes found ([`1a392de`](https://github.com/ghostdevv/neru/commit/1a392de4e733a87bba254917657a1c0ffa6c8198))
+
 ## 0.8.5
 
 ### Patch Changes

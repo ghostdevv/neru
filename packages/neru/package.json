@@ -1,6 +1,6 @@
 {
     "name": "neru",
-    "version": "0.8.5",
+    "version": "0.9.0",
     "description": "Neru is a small and lightweight file router for your favourite backends",
     "author": "GHOST",
     "license": "MIT",
