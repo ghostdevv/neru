@@ -1,8 +1,6 @@
 # Getting Started
 
-## Creating your project
-
-### Neru CLI
+## Create a project with the Neru CLI
 
 The best way to get started with Neru is our cli. You can run the command to boostrap a project with any of our adapters:
 
@@ -10,7 +8,7 @@ The best way to get started with Neru is our cli. You can run the command to boo
 npm init neru@latest my-project
 ```
 
-### Add Neru to an existing project
+## Add Neru to an existing project
 
 1. Install Neru and the adapter of your choice, for this demo we will be using `@nerujs/express`
 
