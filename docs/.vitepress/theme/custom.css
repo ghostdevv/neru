@@ -1,4 +1,8 @@
 :root {
-    --c-brand: #ffc710;
-    --c-brand-light: #fbd24d;
+    --vp-c-brand: #ffc710;
+    --vp-c-brand-light: #fbd24d;
+    --vp-c-brand-lighter: #f8d86d;
+    --vp-c-brand-dark: #e4b008;
+    --vp-c-brand-darker: #d8a603;
+    --vp-c-brand-dimm: #363636;
 }

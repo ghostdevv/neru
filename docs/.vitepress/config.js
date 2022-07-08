@@ -13,6 +13,11 @@ export default defineConfig({
         docsBranch: 'main',
         logo: '/logo.svg',
 
+        footer: {
+            message: 'MIT Licensed',
+            copyright: 'Copyright © 2021-present Willow (GHOST) & Contributors',
+        },
+
         editLinks: true,
         editLinkText: 'Suggest changes to this page',
 
@@ -30,7 +35,7 @@ export default defineConfig({
                 },
                 {
                     text: 'Official Adapters',
-                    children: [
+                    items: [
                         {
                             text: 'Express',
                             link: '/adapters/express',
@@ -43,12 +48,17 @@ export default defineConfig({
                 },
             ],
 
-            '/config': 'auto',
+            '/config': [
+                {
+                    text: 'Configuring Neru',
+                    link: '/config/',
+                },
+            ],
 
             '/': [
                 {
                     text: 'Guide',
-                    children: [
+                    items: [
                         {
                             text: 'Getting Started',
                             link: '/guide/',
