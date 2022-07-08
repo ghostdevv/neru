@@ -33,12 +33,12 @@
     },
     "dependencies": {
         "@nerujs/methods": "workspace:*",
-        "consolite": "^0.2.10",
+        "consolite": "^0.3.10",
         "ghoststools": "^0.6.3",
-        "kleur": "^4.1.4",
+        "kleur": "^4.1.5",
         "totalist": "^3.0.0"
     },
     "devDependencies": {
-        "uvu": "^0.5.3"
+        "uvu": "^0.5.6"
     }
 }

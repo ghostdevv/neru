@@ -12,6 +12,6 @@
     },
     "devDependencies": {
         "@hapi/hapi": "^20.2.2",
-        "nodemon": "^2.0.16"
+        "nodemon": "^2.0.19"
     }
 }
