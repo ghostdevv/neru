@@ -30,8 +30,12 @@ export default defineConfig({
         sidebar: {
             '/adapters': [
                 {
-                    text: 'Home',
-                    link: '/adapters/',
+                    items: [
+                        {
+                            text: 'Home',
+                            link: '/adapters/',
+                        },
+                    ],
                 },
                 {
                     text: 'Official Adapters',
@@ -51,7 +55,12 @@ export default defineConfig({
             '/config': [
                 {
                     text: 'Configuring Neru',
-                    link: '/config/',
+                    items: [
+                        {
+                            text: 'Config',
+                            link: '/config/',
+                        },
+                    ],
                 },
             ],
 
