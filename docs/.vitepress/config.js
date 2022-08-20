@@ -14,7 +14,7 @@ export default defineConfig({
         logo: '/logo.svg',
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/ghostdevv/jellycommands' },
+            { icon: 'github', link: 'https://github.com/ghostdevv/neru' },
             { icon: 'discord', link: 'https://discord.gg/2Vd4wAjJnm' },
         ],
 
