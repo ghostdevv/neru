@@ -38,6 +38,10 @@ export const get = {
 }
 ```
 
+:::tip NOTE
+Because `delete` is a reserved word in JavaScript you must use `del` if you want a `DELETE` route
+:::
+
 ## Handler Type Saftey
 
 In the previous example our route handlers aren't type safe, all Neru provided Adapters should export a function that adds type saftey and intellisense.
