@@ -6,3 +6,14 @@
     --vp-c-brand-darker: #d8a603;
     --vp-c-brand-dimm: #363636;
 }
+
+:root {
+    --vp-custom-block-tip-border: var(--vp-c-brand);
+    --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+    --vp-custom-block-tip-bg: rgba(255, 199, 16, 0.1);
+}
+
+.dark {
+    --vp-custom-block-tip-text: var(--vp-c-brand-light);
+    --vp-custom-block-tip-bg: rgba(255, 199, 16, 0.1);
+}
