@@ -28,7 +28,7 @@ export const del = (req, res) => {
 
 ## Type Saftey
 
-In the previous example our route handlers aren't type safe, we could easily add a type like this:
+In our previous example, our route handlers aren't type safe. We can easily add a type like this:
 
 ```js
 /** @type {import('express').RequestHandler} */
