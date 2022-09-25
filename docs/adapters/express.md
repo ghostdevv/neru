@@ -67,9 +67,8 @@ export const get = (req, res) => {
 If you want to be type safe but not use the provided tools, here is how you can do that:
 
 ```ts
-import type { RequestHandler } from 'express'
-
-export const get: RequestHandler = (req, res) => {
+/** @type {import('express').RequestHandler} */
+export const get = (req, res) => {
     res.send('Hello World')
 }
 ```

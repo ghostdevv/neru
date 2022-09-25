@@ -85,8 +85,7 @@ export const get: Omit<ServerRoute, 'path' | 'method'> = {
 You can skip the `Omit` type helper by using the import from neru:
 
 ```ts
-import type { NeruHapiServerRoute } from '@nerujs/hapi'
-
+/** @type {import('@nerujs/hapi').NeruHapiServerRoute} */
 export const get: NeruHapiServerRoute = {
     handler() {
         return 'Hello world!';

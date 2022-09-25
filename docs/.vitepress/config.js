@@ -41,9 +41,10 @@ export default defineConfig({
         sidebar: {
             '/adapters': [
                 {
+                    text: 'Home',
                     items: [
                         {
-                            text: 'Home',
+                            text: 'List of Adapters',
                             link: '/adapters/',
                         },
                     ],
@@ -77,19 +78,32 @@ export default defineConfig({
 
             '/': [
                 {
-                    text: 'Guide',
+                    text: 'Get Started',
                     items: [
                         {
-                            text: 'Getting Started',
+                            text: 'Quick Start',
                             link: '/guide/',
                         },
                         {
-                            text: 'Routes',
-                            link: '/guide/routes',
+                            text: 'Add to existing project',
+                            link: '/guide/existing-project',
+                        },
+                    ],
+                },
+                {
+                    text: 'Routes',
+                    items: [
+                        {
+                            text: 'Route Files',
+                            link: '/guide/routes/files',
                         },
                         {
-                            text: 'Configure Neru',
-                            link: '/guide/config',
+                            text: 'Route Parameters',
+                            link: '/guide/routes/parameters',
+                        },
+                        {
+                            text: 'Handlers',
+                            link: '/guide/routes/handlers',
                         },
                     ],
                 },
