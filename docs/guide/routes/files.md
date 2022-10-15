@@ -1,6 +1,6 @@
 # Route Files
 
-In Neru a route is a JavaScript (or TypeScript!) file that exports [route handlers](/routes/handlers).
+In Neru a route is a JavaScript (or TypeScript!) file that exports [route handlers](/guide/routes/handlers).
 
 ## File Names and Structure
 

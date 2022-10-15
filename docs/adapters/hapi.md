@@ -42,7 +42,7 @@ npm install @hapi/hapi neru @nerujs/hapi
 
 ## Routes
 
-> Before you read how to make routes using the hapi adapter make sure you read [how route files work in neru](/guide/routes).
+> Before you read how to make routes using the hapi adapter make sure you read [how route files work in neru](/guide/routes/files).
 
 The hapi adapter exports the `route` function and we recommend you use this for type saftey, though it's not required.
 

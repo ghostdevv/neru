@@ -1,6 +1,6 @@
 # Handlers
 
-Every route file will export route handlers, these correspond to http verbs such as `get`, `post`, `put`, etc. The shape of a route handler varies by framework, all these examples will use express but you can refer to the page on your framework in the [Adapters Section](/adapters).
+Every route file will export route handlers, these correspond to http verbs such as `get`, `post`, `put`, etc. The shape of a route handler varies by framework, all these examples will use express but you can refer to the page on your framework in the [Adapters Section](/adapters/).
 
 :::tip NOTE
 Because the word `delete` in JavaScript is reserved, if you want to use a `delete` handler it must be named `del`
