@@ -16,4 +16,4 @@ export const adapter: Adapter<Express, RequestHandler> = {
     },
 };
 
-export const route = (route: RequestHandler) => route;
+export const route = (route: RequestHandler): RequestHandler => route;

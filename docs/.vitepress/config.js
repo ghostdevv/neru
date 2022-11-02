@@ -13,6 +13,17 @@ export default defineConfig({
         docsBranch: 'main',
         logo: '/logo.svg',
 
+        algolia: {
+            indexName: 'neru',
+            appId: 'C6K7BB34V4',
+            apiKey: '025910a10a4517b52d56fab6f5117437',
+        },
+
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/ghostdevv/neru' },
+            { icon: 'discord', link: 'https://discord.gg/2Vd4wAjJnm' },
+        ],
+
         footer: {
             message: 'MIT Licensed',
             copyright: 'Copyright © 2021-present Willow (GHOST) & Contributors',

@@ -4,7 +4,7 @@
 
 The way you write your file & folder names corresponds to what route they are. Below you can see an example of this.
 
-![file name to route mapping](./file-tree.png)
+![file name to route mapping](/file-tree.png)
 
 ## Route Params
 
@@ -37,6 +37,10 @@ export const get = {
     }
 }
 ```
+
+:::tip NOTE
+Because `delete` is a reserved word in JavaScript you must use `del` if you want a `DELETE` route
+:::
 
 ## Handler Type Saftey
 
