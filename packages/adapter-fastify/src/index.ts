@@ -7,13 +7,13 @@ export const adapter: Adapter<FastifyInstance, RouteHandler> = {
     formatParamRoute: (slug) => `:${slug}`,
 
     // WIP
-    formatSpreadRoute: (slug) => `{${slug}*}`,
+    formatSpreadRoute: (slug) => `:${slug}`,
 
     addHandler: ({ server, route, handler, method }) =>
         void server.route({
+            ...handler,
             // @ts-ignore - fastify doesn't like the method string type currently
-            method,
-            handler,
+            method: method.toUpperCase(),
             url: route,
         }),
 };
