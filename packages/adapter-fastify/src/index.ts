@@ -6,9 +6,6 @@ export const adapter: Adapter<FastifyInstance, RouteHandler> = {
 
     formatParamRoute: (slug) => `:${slug}`,
 
-    // WIP
-    formatSpreadRoute: (slug) => `:${slug}`,
-
     addHandler: ({ server, route, handler, method }) =>
         void server.route({
             ...handler,
