@@ -1,4 +1,4 @@
-import { route } from '@nerujs/hapi';
+import { route } from '@nerujs/fastify';
 
 export const get = route({
     handler: (req, h) => {
