@@ -1,5 +1,15 @@
-import type { RouteOptions, FastifyInstance } from 'fastify';
+import type { RouteOptions, FastifyInstance, HTTPMethods } from 'fastify';
 import type { Adapter } from 'neru';
+
+const methods: HTTPMethods[] = [
+    'DELETE',
+    'GET',
+    'HEAD',
+    'PATCH',
+    'POST',
+    'PUT',
+    'OPTIONS',
+];
 
 export const adapter: Adapter<FastifyInstance, RouteOptions> = {
     name: 'fastify',
@@ -12,6 +22,13 @@ export const adapter: Adapter<FastifyInstance, RouteOptions> = {
             // @ts-ignore - fastify doesn't like the method string type currently
             method: method.toUpperCase(),
             url: route,
+        }),
+
+    addAllHandler: ({ server, route, handler }) =>
+        void server.route({
+            ...handler,
+            url: route,
+            method: methods,
         }),
 };
 

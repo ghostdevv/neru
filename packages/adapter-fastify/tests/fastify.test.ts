@@ -20,4 +20,16 @@ test('gets param route', async () => {
     await server.close();
 });
 
+test('gets all route', async () => {
+    const { request, server } = await createServer();
+
+    const response = await request('/all', 'DELETE');
+    const response2 = await request('/all', 'GET');
+
+    assert.equal(response.data?.message, 'Ok');
+    assert.equal(response2.data?.message, 'Ok');
+
+    await server.close();
+});
+
 test.run();
