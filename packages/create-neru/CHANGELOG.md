@@ -1,5 +1,11 @@
 # create-neru
 
+## 0.1.0
+
+### Minor Changes
+
+-   add fastify ([#62](https://github.com/ghostdevv/neru/pull/62))
+
 ## 0.0.5
 
 ### Patch Changes

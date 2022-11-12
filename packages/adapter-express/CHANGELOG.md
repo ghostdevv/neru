@@ -1,5 +1,11 @@
 # @nerujs/express
 
+## 0.1.6
+
+### Patch Changes
+
+-   fix express types ([`20644c5`](https://github.com/ghostdevv/neru/commit/20644c5097a361b3f675b3ef251a996e249980d2))
+
 ## 0.1.5
 
 ### Patch Changes
