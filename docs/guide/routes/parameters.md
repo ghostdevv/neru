@@ -40,11 +40,13 @@ A request for the url `/sveltejs/kit/tree/master/documentation/docs/04-advanced-
   file: 'documentation/docs/04-advanced-routing.md'
 }
 ```
+:::tip NOTE
+Not all frameworks support spread params, please check the [documentation for your specific adapter](/adapters/)
+:::
 
 :::tip Attribution
 Thanks to the [SvelteKit documention](https://kit.svelte.dev/) for the above example
 :::
-
 
 ## Accessing params
 
