@@ -26,7 +26,7 @@ export const del = (req, res) => {
 
 ## All Handlers
 
-Some frameworks support an `all` handler which will respond to any type of HTTP request. To see if your framework supports this check it's [adapter documentation](/adapters).
+Some frameworks support an `all` handler which will respond to any type of HTTP request. To see if your framework supports this check it's [adapter documentation](/adapters/).
 
 ```js
 export const all = (req, res) => {
