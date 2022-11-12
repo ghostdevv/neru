@@ -8,7 +8,7 @@ This is the official adapter for hapi and neru, you can find the code for that a
 |-----------------------------------------------------------------|-----------|
 | [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
 | [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
-| ALL Handler                                                     | ✅        |
+| [All Handler](/guide/routes/handlers#all-handlers)              | ✅        |
 
 ## Creating your project
 
