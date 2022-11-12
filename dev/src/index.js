@@ -13,6 +13,6 @@ await neru({
     debug: true,
 });
 
-server.listen({ port: 3000 }, (error, address) => {
-    console.log('Online', { error, address });
+server.listen({ port: 4000 }, (error, address) => {
+    console.log(error ? `Error: ${error}` : `Online: ${address}`);
 });
