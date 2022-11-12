@@ -29,6 +29,7 @@ npm init neru my-project
 |---------|-----------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------|
 | Hapi    | [@nerujs/adapter-hapi](packages/adapter-hapi)       | [Documentation](https://www.neru.dev/adapters/hapi.html)    | [Changelog](packages/adapter-hapi/CHANGELOG.md)    |
 | Express | [@nerujs/adapter-express](packages/adapter-express) | [Documentation](https://www.neru.dev/adapters/express.html) | [Changelog](packages/adapter-express/CHANGELOG.md) |
+| Fastify | [@nerujs/adapter-fastify](packages/adapter-fastify) | [Documentation](https://www.neru.dev/adapters/fastify.html) | [Changelog](packages/adapter-fastify/CHANGELOG.md) |
 
 ## Misc:
 
