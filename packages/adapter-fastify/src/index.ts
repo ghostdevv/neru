@@ -2,7 +2,7 @@ import type { RouteHandler, FastifyInstance } from 'fastify';
 import type { Adapter } from 'neru';
 
 export const adapter: Adapter<FastifyInstance, RouteHandler> = {
-    name: 'hapi',
+    name: 'fastify',
 
     formatParamRoute: (slug) => `:${slug}`,
 
