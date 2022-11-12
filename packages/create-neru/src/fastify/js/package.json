@@ -1,0 +1,16 @@
+{
+    "type": "module",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node ."
+    },
+    "dependencies": {
+        "fastify": "^4.3.0",
+        "@nerujs/fastify": "^0.1.0",
+        "neru": "^0.8.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+}

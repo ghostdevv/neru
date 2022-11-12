@@ -4,10 +4,11 @@ This page shows a list of all the adapters in the neru ecosystem, not all commun
 
 # Official Adapters
 
-| Adapter | Package           | Documentation                      | Github                                                                         |
-|---------|-------------------|------------------------------------|--------------------------------------------------------------------------------|
-| Express | `@nerujs/express` | [Documentation](/adapters/express) | [Github](https://github.com/ghostdevv/neru/tree/main/packages/adapter-express) |
-| Hapi    | `@nerujs/hapi`    | [Documentation](/adapters/hapi)    | [Github](https://github.com/ghostdevv/neru/tree/main/packages/adapter-hapi)    |
+| Adapter    | Package              | Documentation                         | Github                                                                         |
+|------------|----------------------|---------------------------------------|--------------------------------------------------------------------------------|
+| Express    | `@nerujs/express`    | [Documentation](/adapters/express)    | [Github](https://github.com/ghostdevv/neru/tree/main/packages/adapter-express) |
+| Hapi       | `@nerujs/hapi`       | [Documentation](/adapters/hapi)       | [Github](https://github.com/ghostdevv/neru/tree/main/packages/adapter-hapi)    |
+| Fastify    | `@nerujs/fastify`    | [Documentation](/adapters/fastify)    | [Github](https://github.com/ghostdevv/neru/tree/main/packages/adapter-fastify) |
 
 # Community Adapters
 

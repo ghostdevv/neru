@@ -1,7 +1,7 @@
 import { route } from '@nerujs/fastify';
 
 export const get = route({
-    handler: (request, reply) => {
-        return 'Hello World';
+    handler(request, reply) {
+        return 'Hello world!';
     },
 });
