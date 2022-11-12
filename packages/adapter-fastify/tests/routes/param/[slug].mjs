@@ -1,7 +1,7 @@
 import { route } from '../../../src/index';
 
 export const get = route({
-    handler(request, h) {
+    handler(request, reply) {
         return {
             message: request.params.slug,
         };
