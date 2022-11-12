@@ -27,5 +27,3 @@ export const createServer = async () => {
             }),
     };
 };
-
-createServer();
