@@ -6,9 +6,7 @@ Every route file will export route handlers, these correspond to http verbs such
 Because the word `delete` in JavaScript is reserved, if you want to use a `delete` handler it must be named `del`
 :::
 
-## Example
-
-If we had a file called `test.js` and wanted a `GET`, `POST`, and `DELETE` method we could do:
+For example, if we had a file called `test.js` and wanted a `GET`, `POST`, and `DELETE` method we could do:
 
 ```js
 // test.js
@@ -23,6 +21,16 @@ export const post = (req, res) => {
 
 export const del = (req, res) => {
     res.send('DELETE Hello World');
+}
+```
+
+## All Handlers
+
+Some frameworks support an `all` handler which will respond to any type of HTTP request. To see if your framework supports this check it's [adapter documentation](/adapters).
+
+```js
+export const all = (req, res) => {
+    res.send(`${req.method} Hello World`)
 }
 ```
 
