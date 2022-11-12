@@ -60,6 +60,10 @@ export default defineConfig({
                             text: 'Hapi',
                             link: '/adapters/hapi',
                         },
+                        {
+                            text: 'Fastify',
+                            link: '/adapters/fastify',
+                        },
                     ],
                 },
             ],
