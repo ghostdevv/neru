@@ -6,11 +6,12 @@
         "start": "node ."
     },
     "dependencies": {
-        "fastify": "^4.3.0",
-        "@nerujs/fastify": "^0.1.0",
-        "neru": "^0.8.0"
+        "@nerujs/fastify": "^0.1.1",
+        "fastify": "^4.9.2",
+        "neru": "^0.9.0"
     },
     "devDependencies": {
-        "nodemon": "^2.0.19"
+        "@types/node": "^18.11.9",
+        "nodemon": "^2.0.20"
     }
 }
