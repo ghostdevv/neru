@@ -28,14 +28,18 @@ importers:
   dev:
     specifiers:
       '@hapi/hapi': ^20.2.2
+      '@nerujs/fastify': workspace:*
       '@nerujs/hapi': workspace:*
+      fastify: ^4.3.0
       neru: workspace:*
       nodemon: ^2.0.19
     dependencies:
+      '@nerujs/fastify': link:../packages/adapter-fastify
       '@nerujs/hapi': link:../packages/adapter-hapi
       neru: link:../packages/neru
     devDependencies:
       '@hapi/hapi': 20.2.2
+      fastify: 4.3.0
       nodemon: 2.0.19
 
   packages/adapter-express:

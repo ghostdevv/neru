@@ -1,10 +1,9 @@
-import { adapter } from '@nerujs/hapi';
-import Hapi from '@hapi/hapi';
+import { adapter } from '@nerujs/fastify';
+import fastify from 'fastify';
 import { neru } from 'neru';
 
-const server = Hapi.server({
-    host: 'localhost',
-    port: 35309,
+const server = fastify({
+    logger: true,
 });
 
 await neru({
@@ -14,6 +13,6 @@ await neru({
     debug: true,
 });
 
-await server.start();
-
-console.log(`Online on ${server.info.uri}`);
+server.listen({ port: 3000 }, (error, address) => {
+    console.log('Online', { error, address });
+});
