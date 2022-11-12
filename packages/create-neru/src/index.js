@@ -16,6 +16,10 @@ const frameworks = [
         name: 'Express',
         folder: 'express',
     },
+    {
+        name: 'Fastify',
+        folder: 'fastify'
+    }
 ];
 
 const onCancel = () => {

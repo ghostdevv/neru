@@ -9,8 +9,6 @@ const server = fastify({
 await neru({
     adapter,
     server,
-
-    debug: true,
 });
 
 server.listen({ port: 4000 }, (error, address) => {

@@ -1,5 +1,23 @@
 # create-neru
 
+## 0.1.1
+
+### Patch Changes
+
+-   include @types/node for fastify js ([#65](https://github.com/ghostdevv/neru/pull/65))
+
+-   update hapi template ([#65](https://github.com/ghostdevv/neru/pull/65))
+
+-   update fastify templates ([#65](https://github.com/ghostdevv/neru/pull/65))
+
+-   update express template ([#65](https://github.com/ghostdevv/neru/pull/65))
+
+## 0.1.0
+
+### Minor Changes
+
+-   add fastify ([#62](https://github.com/ghostdevv/neru/pull/62))
+
 ## 0.0.5
 
 ### Patch Changes
