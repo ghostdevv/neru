@@ -1,0 +1,19 @@
+{
+    "type": "module",
+    "main": "src/index.ts",
+    "scripts": {
+        "dev": "nodemon -e js,ts --loader tsm .",
+        "start": "tsm ."
+    },
+    "dependencies": {
+        "fastify": "^4.3.0",
+        "@nerujs/fastify": "^0.1.0",
+        "neru": "^0.8.0"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.25",
+        "typescript": "^4.6.3",
+        "nodemon": "^2.0.19",
+        "tsm": "^2.2.1"
+    }
+}
