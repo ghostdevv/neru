@@ -1,7 +1,7 @@
-import type { RouteHandler, FastifyInstance } from 'fastify';
+import type { RouteOptions, FastifyInstance } from 'fastify';
 import type { Adapter } from 'neru';
 
-export const adapter: Adapter<FastifyInstance, RouteHandler> = {
+export const adapter: Adapter<FastifyInstance, RouteOptions> = {
     name: 'fastify',
 
     formatParamRoute: (slug) => `:${slug}`,
@@ -15,4 +15,4 @@ export const adapter: Adapter<FastifyInstance, RouteHandler> = {
         }),
 };
 
-export const route = (route: RouteHandler) => route;
+export const route = (route: RouteOptions) => route;
