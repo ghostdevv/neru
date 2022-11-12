@@ -8,7 +8,11 @@ This is the official adapter for fastify and neru, you can find the code for tha
 |-----------------------------------------------------------------|-----------|
 | [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
 | [Spread Parameters](/guide/routes/parameters#spread-parameters) | ❌        |
-| [All Handler](/guide/routes/handlers#all-handlers)              | ❌        |
+| [All Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+
+:::tip NOTE
+The All Handler uses the following HTTP verbs: `DELETE`, `GET`, `HEAD`, `PATCH`, `POST`, `PUT`, and `OPTIONS`
+:::
 
 ## Creating your project
 

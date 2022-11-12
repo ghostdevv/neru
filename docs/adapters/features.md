@@ -5,5 +5,5 @@ Not all frameworks support all the features Neru provides. This page shows every
 | Adapter | [Params](/guide/routes/parameters#regular-parameters) | [Spread Params](/guide/routes/parameters#spread-parameters) | [All Handler](/guide/routes/handlers#all-handlers) |
 |---------|-------------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------|
 | Express | ✅                                                    | ✅                                                         | ✅                                                 |
-| Fastify | ✅                                                    | ❌                                                         | ❌                                                 |
+| Fastify | ✅                                                    | ❌                                                         | ✅                                                 |
 | Hapi    | ✅                                                    | ✅                                                         | ✅                                                 |
