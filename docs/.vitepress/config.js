@@ -47,6 +47,10 @@ export default defineConfig({
                             text: 'List of Adapters',
                             link: '/adapters/',
                         },
+                        {
+                            text: 'Feature Support',
+                            link: '/adapters/features'
+                        }
                     ],
                 },
                 {

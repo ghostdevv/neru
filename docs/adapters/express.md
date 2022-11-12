@@ -2,6 +2,14 @@
 
 This is the official adapter for express and neru, you can find the code for that at [packages/adapter-express](https://github.com/ghostdevv/neru/tree/main/packages/adapter-express)
 
+## Feature Support
+
+| Feature                                                         | Supported |
+|-----------------------------------------------------------------|-----------|
+| [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
+| [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
+| ALL Handler                                                     | ✅        |
+
 ## Creating your project
 
 ### Neru CLI
