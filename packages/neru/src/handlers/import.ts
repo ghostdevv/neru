@@ -5,11 +5,11 @@ import { pathToFileURL } from 'url';
 const isValidMethod = (method: string): method is Method =>
     methods.includes(method as Method);
 
-export const importRouteHandlers = async <HanlderType>(path: string) => {
+export const importRouteHandlers = async <HandlerType>(path: string) => {
     const { href: pathUrl } = pathToFileURL(path);
-    
-    const rawHandlers: RawRouteHandlers<HanlderType> = await import(pathUrl);
-    const handlers: RouteHandlers<HanlderType> = new Map();
+
+    const rawHandlers: RawRouteHandlers<HandlerType> = await import(pathUrl);
+    const handlers: RouteHandlers<HandlerType> = new Map();
 
     for (const [method, value] of Object.entries(rawHandlers)) {
         if (!isValidMethod(method)) continue;
