@@ -1,19 +1,11 @@
-import type { LowercaseMethod } from '@nerujs/methods';
+import type { Method } from '@nerujs/methods';
 
-export type RouteHandlers<HandlerType = unknown> = Map<
-    LowercaseMethod,
-    HandlerType
->;
+export type RouteHandlers<HandlerType = unknown> = Map<Method, HandlerType>;
 
 export interface RawRouteHandlers<HandlerType = unknown>
-    extends Record<Exclude<LowercaseMethod, 'delete'>, HandlerType> {
-    /**
-     * This is a alias for the delete method
-     */
-    del?: HandlerType;
-
+    extends Partial<Record<Method, HandlerType>> {
     /**
      * Special all handler
      */
-    all: HandlerType;
+    all?: HandlerType;
 }
