@@ -56,7 +56,7 @@ This depends on what framework you are using with Neru, for example express woul
 // routes/posts/[id].js
 import { route } from '@nerujs/express';
 
-export const get = route((req, res) => {
+export const GET = route((req, res) => {
     const { id } = req.params;
 })
 ```

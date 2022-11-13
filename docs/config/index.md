@@ -1,6 +1,6 @@
 # Configuring Neru
 
-Neru ships with a few required options and a bunch of optional features that are configurable. All config options are passed into the neru function which you will have added from the [Neru CLI](/guide/#quick-start) or the [Manual Installation](/guide/existing-project).
+Neru ships with a few required options and a bunch of optional features that are configurable. ALL config options are passed into the neru function which you will have added from the [Neru CLI](/guide/#quick-start) or the [Manual Installation](/guide/existing-project).
 
 ## Options
 
