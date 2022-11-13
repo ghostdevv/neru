@@ -49,8 +49,8 @@ export default defineConfig({
                         },
                         {
                             text: 'Feature Support',
-                            link: '/adapters/features'
-                        }
+                            link: '/adapters/features',
+                        },
                     ],
                 },
                 {
@@ -84,7 +84,7 @@ export default defineConfig({
                 },
             ],
 
-            '/': [
+            '/guide': [
                 {
                     text: 'Get Started',
                     items: [
