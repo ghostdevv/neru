@@ -29,6 +29,6 @@ export const importRouteHandlers = async <HandlerType>(path: string) => {
 
     return {
         handlers,
-        all: rawHandlers.all,
+        all: rawHandlers.ALL,
     };
 };

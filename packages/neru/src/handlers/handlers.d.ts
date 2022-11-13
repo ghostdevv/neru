@@ -7,5 +7,5 @@ export interface RawRouteHandlers<HandlerType = unknown>
     /**
      * Special all handler
      */
-    all?: HandlerType;
+    ALL?: HandlerType;
 }
