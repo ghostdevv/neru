@@ -7,7 +7,7 @@ test("imported handlers don't have incorrect properties", async () => {
         'tests/unit/handlers/general.mjs',
     );
 
-    if (handlers['test']) throw Error('Has test property');
+    if (handlers.get('test')) throw Error('Has test property');
 });
 
 test.run();

@@ -8,7 +8,7 @@ test('imported handlers with del contain delete property', async () => {
         'tests/unit/handlers/delete.mjs',
     );
 
-    assert.ok(handlers.delete, 'Has delete property');
+    assert.ok(handlers.get('DELETE'), 'Has delete property');
 });
 
 test.run();
