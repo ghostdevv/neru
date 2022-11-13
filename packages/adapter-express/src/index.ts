@@ -9,7 +9,7 @@ export const adapter: Adapter<Express, RequestHandler> = {
 
     addHandler: ({ server, handler, method, route }) =>
         // @ts-ignore
-        server[method](route, handler),
+        server[method.toLowerCase()](route, handler),
 
     addAllHandler: ({ handler, route, server }) => {
         server.all(route, handler);
