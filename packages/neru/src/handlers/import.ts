@@ -1,5 +1,5 @@
+import { type Method, methods, lowercaseMethods } from '@nerujs/methods';
 import type { RouteHandlers, RawRouteHandlers } from './handlers';
-import { type Method, methods } from '@nerujs/methods';
 import { pathToFileURL } from 'url';
 
 const isValidMethod = (method: string): method is Method =>
@@ -12,7 +12,16 @@ export const importRouteHandlers = async <HandlerType>(path: string) => {
     const handlers: RouteHandlers<HandlerType> = new Map();
 
     for (const [method, value] of Object.entries(rawHandlers)) {
-        if (!isValidMethod(method)) continue;
+        if (!isValidMethod(method)) {
+            // * TEMPORARY - If using old lowercase methods warn
+            if (lowercaseMethods.includes(method.toLowerCase() as any)) {
+                throw new Error(
+                    `Lowercase HTTP verbs not supported, SEE (@TODO LINK)`,
+                );
+            }
+
+            continue;
+        }
 
         // Method is valid so assign the handler to it
         handlers.set(method, value);
