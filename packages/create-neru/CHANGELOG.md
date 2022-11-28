@@ -1,5 +1,11 @@
 # create-neru
 
+## 0.2.0
+
+### Minor Changes
+
+-   add gitignore ([#75](https://github.com/ghostdevv/neru/pull/75))
+
 ## 0.1.1
 
 ### Patch Changes
