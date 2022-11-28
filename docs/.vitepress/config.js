@@ -115,6 +115,10 @@ export default defineConfig({
                         },
                     ],
                 },
+                {
+                    text: 'Migrate',
+                    items: [{ text: 'v1.0.0', link: '/guide/migrate/version-one' }],
+                },
             ],
         },
     },
