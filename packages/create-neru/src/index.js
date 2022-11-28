@@ -90,7 +90,7 @@ export const run = async () => {
 
     await cpy(templateGlob, target, {
         rename: (basename) =>
-            basename.startsWith('*') ? `.${basename.slice(1)}` : basename,
+            basename.startsWith('_') ? `.${basename.slice(1)}` : basename,
     });
 
     console.log(
