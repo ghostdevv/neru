@@ -2,8 +2,8 @@ import { type Method, methods, lowercaseMethods } from '@nerujs/methods';
 import type { RouteHandlers, RawRouteHandlers } from './handlers';
 import { pathToFileURL } from 'url';
 
-const isValidMethod = (method: string): method is Method =>
-    methods.includes(method as Method);
+const isValidMethod = (method: any): method is Method =>
+    methods.includes(method);
 
 export const importRouteHandlers = async <HandlerType>(path: string) => {
     const { href: pathUrl } = pathToFileURL(path);
