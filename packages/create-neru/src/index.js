@@ -18,8 +18,8 @@ const frameworks = [
     },
     {
         name: 'Fastify',
-        folder: 'fastify'
-    }
+        folder: 'fastify',
+    },
 ];
 
 const onCancel = () => {
@@ -88,7 +88,10 @@ export const run = async () => {
         '/**',
     );
 
-    await cpy(templateGlob, target);
+    await cpy(templateGlob, target, {
+        rename: (basename) =>
+            basename.startsWith('*') ? `.${basename.slice(1)}` : basename,
+    });
 
     console.log(
         `\n${logSymbols.success} ${kleur.green('Your project has been created!')}`,
