@@ -16,7 +16,7 @@ export const importRouteHandlers = async <HandlerType>(path: string) => {
             // * TEMPORARY - If using old lowercase methods warn
             if (lowercaseMethods.includes(method.toLowerCase() as any)) {
                 throw new Error(
-                    `Lowercase HTTP verbs not supported, SEE (@TODO LINK)`,
+                    `Lowercase HTTP verbs not supported, SEE https://neru.dev/guide/migrate/version-one.html`,
                 );
             }
 
