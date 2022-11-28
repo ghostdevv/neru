@@ -1,6 +1,6 @@
 # Neru
 
-The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi) and [Express](https://github.com/expressjs/express) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love.
+The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi), [Express](https://github.com/expressjs/express), and [Fastify](https://www.fastify.io/) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love.
 
 # Quick Start
 

@@ -2,6 +2,14 @@
 
 This is the official adapter for hapi and neru, you can find the code for that at [packages/adapter-hapi](https://github.com/ghostdevv/neru/tree/main/packages/adapter-hapi)
 
+## Feature Support
+
+| Feature                                                         | Supported |
+|-----------------------------------------------------------------|-----------|
+| [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
+| [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
+| [All Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+
 ## Creating your project
 
 ### Neru CLI
@@ -42,7 +50,7 @@ npm install @hapi/hapi neru @nerujs/hapi
 
 ## Routes
 
-> Before you read how to make routes using the hapi adapter make sure you read [how route files work in neru](/guide/routes).
+> Before you read how to make routes using the hapi adapter make sure you read [how route files work in neru](/guide/routes/files).
 
 The hapi adapter exports the `route` function and we recommend you use this for type saftey, though it's not required.
 
@@ -85,8 +93,7 @@ export const get: Omit<ServerRoute, 'path' | 'method'> = {
 You can skip the `Omit` type helper by using the import from neru:
 
 ```ts
-import type { NeruHapiServerRoute } from '@nerujs/hapi'
-
+/** @type {import('@nerujs/hapi').NeruHapiServerRoute} */
 export const get: NeruHapiServerRoute = {
     handler() {
         return 'Hello world!';
