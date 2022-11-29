@@ -29,6 +29,10 @@ export interface Adapter<ServerType = any, HandlerType = any> {
         data: AdapterAddHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;
 
+    /**
+     * This function should add a ALL handler, if your framework supports it
+     * Some frameworks don't support it natively but it can still be achieved
+     */
     addAllHandler?: (
         data: AdapterAddAllHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;
