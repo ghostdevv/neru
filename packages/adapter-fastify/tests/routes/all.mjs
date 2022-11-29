@@ -1,6 +1,6 @@
 import { route } from '../../src/index';
 
-export const all = route({
+export const ALL = route({
     handler(request, reply) {
         return {
             message: 'Ok',

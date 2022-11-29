@@ -8,7 +8,7 @@ This is the official adapter for hapi and neru, you can find the code for that a
 |-----------------------------------------------------------------|-----------|
 | [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
 | [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
-| [All Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+| [ALL Handler](/guide/routes/handlers#all-handlers)              | ✅        |
 
 ## Creating your project
 
@@ -59,7 +59,7 @@ The hapi adapter exports the `route` function and we recommend you use this for 
 ```js
 import { route } from '@nerujs/hapi';
 
-export const get = route({
+export const GET = route({
     handler() {
         return 'Hello world!';
     },
@@ -69,7 +69,7 @@ export const get = route({
 ### Basic
 
 ```js
-export const get = {
+export const GET = {
     handler() {
         return 'Hello world!';
     },
@@ -83,7 +83,7 @@ If you want to be type safe but not use the provided tools, here is how you can 
 ```ts
 import type { ServerRoute } from '@hapi/hapi'
 
-export const get: Omit<ServerRoute, 'path' | 'method'> = {
+export const GET: Omit<ServerRoute, 'path' | 'method'> = {
     handler() {
         return 'Hello world!';
     },
@@ -94,7 +94,7 @@ You can skip the `Omit` type helper by using the import from neru:
 
 ```ts
 /** @type {import('@nerujs/hapi').NeruHapiServerRoute} */
-export const get: NeruHapiServerRoute = {
+export const GET: NeruHapiServerRoute = {
     handler() {
         return 'Hello world!';
     },

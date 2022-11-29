@@ -1,1 +1,1 @@
-export const del = () => {};
+export const DELETE = () => {};

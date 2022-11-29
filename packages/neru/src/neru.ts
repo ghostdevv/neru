@@ -98,7 +98,7 @@ export const neru = async <AdapterType extends Adapter>(
                 if (!adapter.addAllHandler)
                     throw new TypeError('Adapter does not support "all" handlers');
 
-                // All all handler
+                // Add all handler
                 await adapter.addAllHandler({
                     handler: handlers.all,
                     server,

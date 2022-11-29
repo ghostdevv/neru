@@ -63,7 +63,7 @@ server.listen(3000, () => console.log('Online on port 3000'));
 In our `src/routes` directory, we can create an index route.  This will correspond to `/` on our server. In that file we can export an express route handler.
 
 ```js
-export const get = (req, res) => {
+export const GET = (req, res) => {
     res.send('Hello World');
 }
 ```
@@ -73,7 +73,7 @@ There's also an optional `route` function exported by most adapters that provide
 ```js
 import { route } from '@nerujs/express';
 
-export const get = route((req, res) => {
+export const GET = route((req, res) => {
     res.send('Hello World');
 })
 ```

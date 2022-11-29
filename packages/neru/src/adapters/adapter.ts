@@ -1,11 +1,11 @@
-import { LowercaseMethod } from '@nerujs/methods';
+import { Method } from '@nerujs/methods';
 
 export type GetHandlerType<AdapterType extends Adapter> =
     AdapterType extends Adapter<infer T, infer U> ? U : unknown;
 
 export interface AdapterAddHandlerData<ServerType, HandlerType> {
     server: ServerType;
-    method: LowercaseMethod;
+    method: Method;
     handler: HandlerType;
     route: string;
 }
