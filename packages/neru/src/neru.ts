@@ -9,6 +9,11 @@ import { totalist } from 'totalist';
 import { logger } from './logger';
 import { existsSync } from 'fs';
 
+function routeHandlerToString(method: string, route: string) {
+    // prettier-ignore
+    return `${blue(method.toUpperCase())}${' '.repeat(12 - method.length)}${bold(route)}`
+}
+
 export const neru = async <AdapterType extends Adapter>(
     options: NeruOptions<AdapterType>,
 ) => {
@@ -83,8 +88,7 @@ export const neru = async <AdapterType extends Adapter>(
                     }),
                 );
 
-                // prettier-ignore
-                toAnnounce.push(`${blue(method.toUpperCase())}${' '.repeat(12 - method.length)}${bold(neruRoute)}`);
+                toAnnounce.push(routeHandlerToString(method, neruRoute));
             }
 
             // Wait for all handlers to be added
@@ -102,6 +106,8 @@ export const neru = async <AdapterType extends Adapter>(
                     server,
                     route,
                 });
+
+                toAnnounce.push(routeHandlerToString('ALL', neruRoute));
             }
         });
     }

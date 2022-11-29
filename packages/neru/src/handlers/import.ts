@@ -2,8 +2,7 @@ import { type Method, methods, lowercaseMethods } from '@nerujs/methods';
 import type { RouteHandlers, RawRouteHandlers } from './handlers';
 import { pathToFileURL } from 'url';
 
-const isValidMethod = (method: any): method is Method =>
-    methods.includes(method);
+const isValidMethod = (method: any): method is Method => methods.includes(method);
 
 export const importRouteHandlers = async <HandlerType>(path: string) => {
     const { href: pathUrl } = pathToFileURL(path);
@@ -25,6 +24,12 @@ export const importRouteHandlers = async <HandlerType>(path: string) => {
 
         // Method is valid so assign the handler to it
         handlers.set(method, value);
+    }
+
+    if (rawHandlers.ALL && handlers.size > 0) {
+        throw new Error(
+            'A file that contains an ALL handler can not contain other handlers',
+        );
     }
 
     return {
