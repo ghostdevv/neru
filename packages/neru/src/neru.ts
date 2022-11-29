@@ -19,12 +19,10 @@ export const neru = async <AdapterType extends Adapter>(
     }
 
     // Sets the default of routes to src/routes
-    if (!options.routes)
-        options.routes = 'src/routes';
+    if (!options.routes) options.routes = 'src/routes';
 
     // Set the default of options.announce to true
-    if (typeof options.announce != 'boolean')
-        options.announce = true;
+    if (typeof options.announce != 'boolean') options.announce = true;
 
     // Check if routes are and valid
     if (!(typeof options.routes == 'string' || Array.isArray(options.routes)))
