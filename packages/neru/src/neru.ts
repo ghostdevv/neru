@@ -109,11 +109,10 @@ export const neru = async <AdapterType extends Adapter>(
     if (options.announce) {
         console.log();
 
-        for (const line of toAnnounce)
-            console.log(` ${gray(line)}`);
+        for (const line of toAnnounce) console.log(` ${gray(line)}`);
 
-        console.log()
+        console.log();
         console.log(gray(`Found ${blue(toAnnounce.length)} routes`));
-        console.log()
+        console.log();
     }
 };
