@@ -4,8 +4,13 @@ import { pathToFileURL } from 'url';
 
 const isValidMethod = (method: any): method is Method => methods.includes(method);
 
-export const importRouteHandlers = async <HandlerType>(path: string) => {
-    const { href: pathUrl } = pathToFileURL(path);
+interface ImportOptions {
+    path: string;
+    restrictAllHandler: boolean;
+}
+
+export const importRouteHandlers = async <HandlerType>(options: ImportOptions) => {
+    const { href: pathUrl } = pathToFileURL(options.path);
 
     const rawHandlers: RawRouteHandlers<HandlerType> = await import(pathUrl);
     const handlers: RouteHandlers<HandlerType> = new Map();
@@ -26,7 +31,7 @@ export const importRouteHandlers = async <HandlerType>(path: string) => {
         handlers.set(method, value);
     }
 
-    if (rawHandlers.ALL && handlers.size > 0) {
+    if (options.restrictAllHandler && rawHandlers.ALL && handlers.size > 0) {
         throw new Error(
             'A file that contains an ALL handler can not contain other handlers',
         );

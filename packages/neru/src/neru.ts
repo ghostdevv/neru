@@ -61,7 +61,10 @@ export const neru = async <AdapterType extends Adapter>(
 
             // Import the handlers
             const handlers = await importRouteHandlers<GetHandlerType<AdapterType>>(
-                path,
+                {
+                    restrictAllHandler: adapter.restrictAllHandler,
+                    path,
+                },
             );
 
             // Construct the route

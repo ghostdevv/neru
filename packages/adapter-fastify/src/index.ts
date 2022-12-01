@@ -14,6 +14,8 @@ const methods: HTTPMethods[] = [
 export const adapter: Adapter<FastifyInstance, RouteOptions> = {
     name: 'fastify',
 
+    restrictAllHandler: true,
+
     formatParamRoute: (slug) => `:${slug}`,
 
     addHandler: ({ server, route, handler, method }) =>

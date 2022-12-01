@@ -30,10 +30,24 @@ test("must have an addHandler param that's a function", () => {
     assert.throws(() => validateAdapter(adapter));
 });
 
+test('restrictAllHandler must be true or false', () => {
+    const adapter: GenericAdapter = {
+        name: 'test',
+        addHandler: () => {},
+
+        // @ts-ignore
+        restrictAllHandler: '',
+    };
+
+    assert.throws(() => validateAdapter(adapter));
+});
+
 test('if has formatParamRoute it must be a function', () => {
     const adapter: GenericAdapter = {
         name: 'test',
         addHandler: () => {},
+        restrictAllHandler: false,
+
         // @ts-ignore
         formatParamRoute: true,
     };
@@ -45,6 +59,8 @@ test('if has formatSpreadRoute it must be a function', () => {
     const adapter: GenericAdapter = {
         name: 'test',
         addHandler: () => {},
+        restrictAllHandler: false,
+
         // @ts-ignore
         formatSpreadRoute: true,
     };
@@ -57,6 +73,8 @@ test('formatParamRoute is optional', () => {
         name: 'test',
         addHandler: () => {},
 
+        restrictAllHandler: false,
+
         formatSpreadRoute: () => '',
     };
 
@@ -68,6 +86,8 @@ test('formatSpreadRoute is optional', () => {
         name: 'test',
         addHandler: () => {},
 
+        restrictAllHandler: false,
+
         formatParamRoute: () => '',
     };
 
@@ -78,6 +98,8 @@ test('valid adapter works', () => {
     const adapter: GenericAdapter = {
         name: 'test',
         addHandler: () => {},
+
+        restrictAllHandler: false,
 
         formatParamRoute: () => '',
         formatSpreadRoute: () => '',
