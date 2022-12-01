@@ -7,3 +7,11 @@ export const ALL = route({
         };
     },
 });
+
+export const GET = route({
+    handler() {
+        return {
+            message: 'Ok GET',
+        };
+    },
+});

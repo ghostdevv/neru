@@ -5,3 +5,9 @@ export const ALL = route((req, res) => {
         message: 'Ok',
     });
 });
+
+export const GET = route((req, res) => {
+    res.json({
+        message: 'Ok GET',
+    });
+});
