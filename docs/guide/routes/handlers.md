@@ -24,6 +24,10 @@ export const DELETE = (req, res) => {
 
 Some frameworks support an `ALL` handler which will respond to any type of HTTP request. To see if your framework supports this check it's [adapter documentation](/adapters/).
 
+:::tip NOTE
+An `ALL` handler can be the only handler in a route file.
+:::
+
 ```js
 export const ALL = (req, res) => {
     res.send(`${req.method} Hello World`)
