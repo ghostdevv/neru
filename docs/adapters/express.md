@@ -9,6 +9,7 @@ This is the official adapter for express and neru, you can find the code for tha
 | [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
 | [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
 | [ALL Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+| [Restricted ALL Handler](/guide/routes/handlers#all-handlers)   | ❌        |
 
 ## Creating your project
 

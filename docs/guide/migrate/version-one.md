@@ -29,3 +29,5 @@ import { route } from '@nerujs/express';
 ## ALL Handlers
 
 Some adapters no longer allow for a route that contains an `ALL` handler to have other handlers. This shouldn't effect you since it was only added to prevent hard to debug errors from frameworks that don't support this feature.
+
+Adapeters must now specify a `restrictAllHandler` property to control this behaviour.
