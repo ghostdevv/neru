@@ -4,6 +4,8 @@ import type { Adapter } from 'neru';
 export const adapter: Adapter<Express, RequestHandler> = {
     name: 'express',
 
+    restrictAllHandler: false,
+
     formatParamRoute: (slug) => `:${slug}`,
     formatSpreadRoute: (slug) => `:${slug}([^]+)`,
 

@@ -23,12 +23,22 @@ export interface Adapter<ServerType = any, HandlerType = any> {
     name: string;
 
     /**
+     * Can you have an ALL handler and other handlers in the same file
+     * For Example: some frameworks will error if a route has an ALL and a GET handler
+     */
+    restrictAllHandler: boolean;
+
+    /**
      * This function should add the given handler to the server by it's route and method
      */
     addHandler: (
         data: AdapterAddHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;
 
+    /**
+     * This function should add a ALL handler, if your framework supports it
+     * Some frameworks don't support it natively but it can still be achieved
+     */
     addAllHandler?: (
         data: AdapterAddAllHandlerData<ServerType, HandlerType>,
     ) => Promise<void> | void;

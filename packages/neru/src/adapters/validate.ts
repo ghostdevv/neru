@@ -29,6 +29,9 @@ export const validateAdapter = <AdapterType extends Adapter>(
             'Type of adapter.formatSpreadRoute must be a function',
         );
 
+    if (![true, false].includes(adapter.restrictAllHandler!))
+        throw new TypeError('Type of adapter.restrictAllHandler must be a boolean');
+
     logger.debug(`Loaded adapter`);
 
     if (!adapter.formatParamRoute)

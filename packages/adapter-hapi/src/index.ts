@@ -6,6 +6,8 @@ export type NeruHapiServerRoute = Omit<ServerRoute, 'path' | 'method'>;
 export const adapter: Adapter<Server, NeruHapiServerRoute> = {
     name: 'hapi',
 
+    restrictAllHandler: false,
+
     formatParamRoute: (slug) => `{${slug}}`,
     formatSpreadRoute: (slug) => `{${slug}*}`,
 

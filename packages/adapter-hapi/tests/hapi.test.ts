@@ -29,11 +29,20 @@ test('gets spread route', async () => {
     await server.stop();
 });
 
-test('gets all route', async () => {
+test('gets all route (POST)', async () => {
     const { request, server } = await createServer();
-    const response = await request('/all');
+    const response = await request('/all', 'POST');
 
     assert.equal(response.data?.message, 'Ok');
+
+    await server.stop();
+});
+
+test('gets all route (GET)', async () => {
+    const { request, server } = await createServer();
+    const response = await request('/all', 'GET');
+
+    assert.equal(response.data?.message, 'Ok GET');
 
     await server.stop();
 });
