@@ -51,7 +51,7 @@ npm install express neru @nerujs/express
 
 > Before you read how to make routes using the express adapter make sure you read [how route files work in neru](/guide/routes/files).
 
-The express adapter exports the `route` function and we recommend you use this for type saftey, though it's not required.
+The express adapter exports the `route` function and we recommend you use this for type safety, though it's not required.
 
 ### Type Safe
 

@@ -30,7 +30,7 @@ export const ALL = (req, res) => {
 }
 ```
 
-## Type Saftey
+## Type Safety
 
 In our previous example, our route handlers aren't type safe. We can easily add a type like this:
 
@@ -41,7 +41,7 @@ export const GET = (req, res) => {
 }
 ```
 
-However to make it easier, all official Neru adapters (and most unofficial!) provide a `route` function that adds Type Saftey:
+However to make it easier, all official Neru adapters (and most unofficial!) provide a `route` function that adds Type Safety:
 
 ```js
 import { route } from '@nerujs/express';
