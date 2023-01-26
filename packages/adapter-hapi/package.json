@@ -32,13 +32,13 @@
         "url": "https://github.com/ghostdevv/neru"
     },
     "peerDependencies": {
-        "@hapi/hapi": "^20.2.2",
+        "@hapi/hapi": "^20.2.2 || ^21.0.0",
         "neru": "workspace:*"
     },
     "devDependencies": {
-        "@hapi/hapi": "^20.2.2",
-        "@types/hapi__hapi": "^20.0.12",
-        "axios": "^0.27.2",
+        "@hapi/hapi": "^21.2.0",
+        "@types/hapi__hapi": "^21.0.0",
+        "axios": "^1.2.4",
         "neru": "workspace:*",
         "uvu": "^0.5.6"
     }
