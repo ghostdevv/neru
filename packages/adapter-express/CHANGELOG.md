@@ -1,5 +1,11 @@
 # @nerujs/express
 
+## 1.0.1
+
+### Patch Changes
+
+-   fix broken release ([`6c10c88`](https://github.com/ghostdevv/neru/commit/6c10c88c53d00277ce5332faf76b1d659a9d7ca1))
+
 ## 1.0.0
 
 ### Major Changes
