@@ -71,13 +71,11 @@ importers:
   packages/adapter-hapi:
     specifiers:
       '@hapi/hapi': ^21.2.0
-      '@types/hapi__hapi': ^21.0.0
       axios: ^1.2.4
       neru: workspace:*
       uvu: ^0.5.6
     devDependencies:
       '@hapi/hapi': 21.2.0
-      '@types/hapi__hapi': 21.0.0
       axios: 1.2.4
       neru: link:../neru
       uvu: 0.5.6
@@ -1084,13 +1082,6 @@ packages:
       '@types/express-serve-static-core': 4.17.33
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.0
-    dev: true
-
-  /@types/hapi__hapi/21.0.0:
-    resolution: {integrity: sha512-urNzL9HQgOp4QbeEOG/Y/XIcU1pB6skGh7LKMd0hGkxb8oRmWe083x5LAuLjZNtuhRU6yKhiSjjqQEJ+3pWjpQ==}
-    deprecated: This is a stub types definition. @hapi/hapi provides its own type definitions, so you do not need this installed.
-    dependencies:
-      '@hapi/hapi': 21.2.0
     dev: true
 
   /@types/http-cache-semantics/4.0.1:
