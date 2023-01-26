@@ -12,10 +12,12 @@ export const createServer = async () => {
         routes: 'tests/routes',
     });
 
-    const uri = await server.listen({ port: 3000 });
+    await server.listen({
+        port: 3000,
+    });
 
     const request = axios.create({
-        baseURL: uri,
+        baseURL: 'http://localhost:3000',
     });
 
     return {
