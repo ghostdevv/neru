@@ -8,7 +8,7 @@
     "dependencies": {
         "@hapi/hapi": "^20.2.2",
         "@nerujs/hapi": "^1.0.0",
-        "neru": "^0.9.0"
+        "neru": "^1.0.0"
     },
     "devDependencies": {
         "@types/hapi__hapi": "^20.0.13",
