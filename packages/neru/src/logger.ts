@@ -8,7 +8,7 @@ const prefixes: Record<string, string> = {
 };
 
 const createLogger = (debug = false) => {
-    const logger = consolite((method) => prefixes[method] || '');
+    const logger = consolite((method) => prefixes[method.toString()] || '');
 
     if (debug) {
         logger.level = 4;

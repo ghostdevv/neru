@@ -1,3 +1,3 @@
 export const test = () => {};
 
-export const get = () => {};
+export const GET = () => {};

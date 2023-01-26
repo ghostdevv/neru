@@ -1,6 +1,6 @@
 import { route } from '@nerujs/hapi';
 
-export const get = route({
+export const GET = route({
     handler() {
         return 'Hello world!';
     },

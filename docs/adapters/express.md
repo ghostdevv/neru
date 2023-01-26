@@ -8,7 +8,8 @@ This is the official adapter for express and neru, you can find the code for tha
 |-----------------------------------------------------------------|-----------|
 | [Parameters](/guide/routes/parameters#regular-parameters)       | ✅        |
 | [Spread Parameters](/guide/routes/parameters#spread-parameters) | ✅        |
-| [All Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+| [ALL Handler](/guide/routes/handlers#all-handlers)              | ✅        |
+| [Restricted ALL Handler](/guide/routes/handlers#all-handlers)   | ❌        |
 
 ## Creating your project
 
@@ -50,14 +51,14 @@ npm install express neru @nerujs/express
 
 > Before you read how to make routes using the express adapter make sure you read [how route files work in neru](/guide/routes/files).
 
-The express adapter exports the `route` function and we recommend you use this for type saftey, though it's not required.
+The express adapter exports the `route` function and we recommend you use this for type safety, though it's not required.
 
 ### Type Safe
 
 ```js
 import { route } from '@nerujs/express';
 
-export const get = route((req, res) => {
+export const GET = route((req, res) => {
     res.send('Hello World');
 });
 ```
@@ -65,7 +66,7 @@ export const get = route((req, res) => {
 ### Basic
 
 ```js
-export const get = (req, res) => {
+export const GET = (req, res) => {
     res.send('Hello World');
 };
 ```
@@ -76,7 +77,7 @@ If you want to be type safe but not use the provided tools, here is how you can 
 
 ```ts
 /** @type {import('express').RequestHandler} */
-export const get = (req, res) => {
+export const GET = (req, res) => {
     res.send('Hello World')
 }
 ```

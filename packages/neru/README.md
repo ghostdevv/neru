@@ -1,7 +1,5 @@
 # Neru
 
-> Neru is still a work in progress!
-
 The fast and lightweight **file-based router** for [Hapi](https://github.com/hapijs/hapi), [Express](https://github.com/expressjs/express), and [Fastify](https://www.fastify.io/) (more coming soon!). Neru allows you to easily organise and manage your project by it's file system whilst keeping the framework you love.
 
 # Quick Start
@@ -65,7 +63,7 @@ server.listen(3000, () => console.log('Online on port 3000'));
 In our `src/routes` directory, we can create an index route.  This will correspond to `/` on our server. In that file we can export an express route handler.
 
 ```js
-export const get = (req, res) => {
+export const GET = (req, res) => {
     res.send('Hello World');
 }
 ```
@@ -75,7 +73,7 @@ There's also an optional `route` function exported by most adapters that provide
 ```js
 import { route } from '@nerujs/express';
 
-export const get = route((req, res) => {
+export const GET = route((req, res) => {
     res.send('Hello World');
 })
 ```

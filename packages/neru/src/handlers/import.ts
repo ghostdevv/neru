@@ -1,37 +1,44 @@
-import { LowercaseMethod, lowercaseMethods } from '@nerujs/methods';
+import { type Method, methods, lowercaseMethods } from '@nerujs/methods';
 import type { RouteHandlers, RawRouteHandlers } from './handlers';
 import { pathToFileURL } from 'url';
-import { logger } from '../logger';
 
-export const importRouteHandlers = async <HanlderType>(path: string) => {
-    const rawHandlers: Partial<RawRouteHandlers<HanlderType>> = await import(
-        pathToFileURL(path).href
-    );
+const isValidMethod = (method: any): method is Method => methods.includes(method);
 
-    // If delete is found warn that it will be ignored
-    if ((rawHandlers as Record<string, unknown>)['delete'])
-        logger.warn(
-            `Exported properties called "delete" are ignored, please use "del" - ${path}`,
-        );
+interface ImportOptions {
+    path: string;
+    restrictAllHandler: boolean;
+}
 
-    const handlers: RouteHandlers<HanlderType> = new Map();
+export const importRouteHandlers = async <HandlerType>(options: ImportOptions) => {
+    const { href: pathUrl } = pathToFileURL(options.path);
 
-    for (const [key, value] of Object.entries(rawHandlers)) {
-        // If the key is del we need to map it to delete
-        if (key == 'del') {
-            handlers.set('delete', value);
+    const rawHandlers: RawRouteHandlers<HandlerType> = await import(pathUrl);
+    const handlers: RouteHandlers<HandlerType> = new Map();
+
+    for (const [method, value] of Object.entries(rawHandlers)) {
+        if (!isValidMethod(method)) {
+            // * TEMPORARY - If using old lowercase methods warn
+            if (lowercaseMethods.includes(method.toLowerCase() as any)) {
+                throw new Error(
+                    `Lowercase HTTP verbs not supported, SEE https://neru.dev/guide/migrate/version-one.html`,
+                );
+            }
+
             continue;
         }
 
-        const method = key as LowercaseMethod;
-
-        if (method == 'delete' || !lowercaseMethods.includes(method)) continue;
-
+        // Method is valid so assign the handler to it
         handlers.set(method, value);
+    }
+
+    if (options.restrictAllHandler && rawHandlers.ALL && handlers.size > 0) {
+        throw new Error(
+            'A file that contains an ALL handler can not contain other handlers',
+        );
     }
 
     return {
         handlers,
-        all: rawHandlers.all,
+        all: rawHandlers.ALL,
     };
 };

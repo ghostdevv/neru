@@ -1,1 +1,1 @@
-export const get = {};
+export const GET = {};

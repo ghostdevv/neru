@@ -1,6 +1,6 @@
 import { route } from '../../../src/index';
 
-export const get = route((req, res) => {
+export const GET = route((req, res) => {
     res.json({
         message: req.params.slug,
     });

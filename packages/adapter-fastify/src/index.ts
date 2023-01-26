@@ -14,14 +14,16 @@ const methods: HTTPMethods[] = [
 export const adapter: Adapter<FastifyInstance, RouteOptions> = {
     name: 'fastify',
 
+    restrictAllHandler: true,
+
     formatParamRoute: (slug) => `:${slug}`,
 
     addHandler: ({ server, route, handler, method }) =>
         void server.route({
             ...handler,
-            // @ts-ignore - fastify doesn't like the method string type currently
-            method: method.toUpperCase(),
             url: route,
+            // @ts-ignore - fastify doesn't like the method string type currently
+            method,
         }),
 
     addAllHandler: ({ server, route, handler }) =>

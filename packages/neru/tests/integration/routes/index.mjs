@@ -1,3 +1,1 @@
-export const get = {};
-
-export const all = {};
+export const GET = {};

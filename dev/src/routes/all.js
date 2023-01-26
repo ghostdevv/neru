@@ -1,7 +1,7 @@
 import { route } from '@nerujs/fastify';
 
-export const GET = route({
+export const ALL = route({
     handler: (request, reply) => {
-        return `Param: ${request.params.param}`;
+        return 'Hello World';
     },
 });

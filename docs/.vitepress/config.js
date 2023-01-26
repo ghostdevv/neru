@@ -49,8 +49,8 @@ export default defineConfig({
                         },
                         {
                             text: 'Feature Support',
-                            link: '/adapters/features'
-                        }
+                            link: '/adapters/features',
+                        },
                     ],
                 },
                 {
@@ -84,7 +84,7 @@ export default defineConfig({
                 },
             ],
 
-            '/': [
+            '/guide': [
                 {
                     text: 'Get Started',
                     items: [
@@ -114,6 +114,10 @@ export default defineConfig({
                             link: '/guide/routes/handlers',
                         },
                     ],
+                },
+                {
+                    text: 'Migrate',
+                    items: [{ text: 'v1.0.0', link: '/guide/migrate/version-one' }],
                 },
             ],
         },

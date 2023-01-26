@@ -13,7 +13,7 @@ test('picks up routes correctly', async () => {
         routes: 'tests/integration/routes',
     });
 
-    const route = server.get('/');
+    const route = server.get('/all');
 
     assert.ok(route, 'Route was not found');
     assert.ok(route.all, 'Route did not have all prop');
