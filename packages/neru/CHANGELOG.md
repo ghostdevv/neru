@@ -1,5 +1,17 @@
 # neru
 
+## 1.0.0
+
+### Major Changes
+
+-   v1 ([#60](https://github.com/ghostdevv/neru/pull/60))
+
+-   only support all handler on it's own in a route handler ([#78](https://github.com/ghostdevv/neru/pull/78))
+
+-   adapters must specify a restrictAllHandler property ([#78](https://github.com/ghostdevv/neru/pull/78))
+
+-   make route handlers have to be uppercase ([#74](https://github.com/ghostdevv/neru/pull/74))
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # create-neru
 
+## 1.0.0
+
+### Major Changes
+
+-   v1 ([#60](https://github.com/ghostdevv/neru/pull/60))
+
+### Minor Changes
+
+-   use new uppercase route handlers ([#74](https://github.com/ghostdevv/neru/pull/74))
+
+### Patch Changes
+
+-   update dependencies ([`e663577`](https://github.com/ghostdevv/neru/commit/e663577a9abd8f505bb69312a1bf3cfb1332f43b))
+
 ## 0.2.0
 
 ### Minor Changes
