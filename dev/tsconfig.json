@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "lib": ["ESNext"],
+        "module": "ESNext",
+        "target": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "checkJs": true
+    },
+    "include": ["src/**/*.ts","src/**/*.js"],
+    "exclude": ["node_modules/**"]
+}
