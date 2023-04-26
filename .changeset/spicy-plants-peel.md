@@ -2,4 +2,4 @@
 'neru': patch
 ---
 
-fix routes option not be optional
+fix routes option not being optional
