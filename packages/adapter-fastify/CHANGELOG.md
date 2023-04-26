@@ -1,5 +1,14 @@
 # @nerujs/fastify
 
+## 1.0.1
+
+### Patch Changes
+
+-   fix types for route options ([#82](https://github.com/ghostdevv/neru/pull/82))
+
+-   Updated dependencies [[`505ea25`](https://github.com/ghostdevv/neru/commit/505ea25125d687cc4eb9354a7f57f734b8f30ccc)]:
+    -   neru@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

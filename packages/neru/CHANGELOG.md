@@ -1,5 +1,11 @@
 # neru
 
+## 1.0.1
+
+### Patch Changes
+
+-   fix routes option not being optional ([#82](https://github.com/ghostdevv/neru/pull/82))
+
 ## 1.0.0
 
 ### Major Changes

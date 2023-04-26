@@ -1,5 +1,12 @@
 # @nerujs/express
 
+## 1.0.2
+
+### Patch Changes
+
+-   Updated dependencies [[`505ea25`](https://github.com/ghostdevv/neru/commit/505ea25125d687cc4eb9354a7f57f734b8f30ccc)]:
+    -   neru@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes
