@@ -15,7 +15,7 @@ export interface NeruOptions<AdapterType extends Adapter> {
      * The route files neru should read
      * @default "src/routes"
      */
-    routes: string | string[];
+    routes?: string | string[];
 
     /**
      * Enable debug messages, you can also set the NERU_DEBUG environment variable to any value for this to be enabled
