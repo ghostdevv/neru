@@ -11,7 +11,9 @@ const methods: HTTPMethods[] = [
     'OPTIONS',
 ];
 
-export const adapter: Adapter<FastifyInstance, RouteOptions> = {
+export type NeruFastifyRoute = Omit<RouteOptions, 'url' | 'method'>;
+
+export const adapter: Adapter<FastifyInstance, NeruFastifyRoute> = {
     name: 'fastify',
 
     restrictAllHandler: true,
@@ -34,4 +36,4 @@ export const adapter: Adapter<FastifyInstance, RouteOptions> = {
         }),
 };
 
-export const route = (route: RouteOptions) => route;
+export const route = (route: NeruFastifyRoute) => route;
