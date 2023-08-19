@@ -1,5 +1,14 @@
 # neru
 
+## 1.0.2
+
+### Patch Changes
+
+-   fix: add types export ([#85](https://github.com/ghostdevv/neru/pull/85))
+
+-   Updated dependencies [[`62cc809`](https://github.com/ghostdevv/neru/commit/62cc8095d44a4e62ebc96996e4fde99b44df2991)]:
+    -   @nerujs/methods@1.0.3
+
 ## 1.0.1
 
 ### Patch Changes

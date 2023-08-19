@@ -1,6 +1,6 @@
 {
     "name": "@nerujs/methods",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A typed http.METHODS",
     "author": "GHOST",
     "license": "MIT",
