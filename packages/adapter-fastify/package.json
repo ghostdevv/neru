@@ -1,6 +1,6 @@
 {
     "name": "@nerujs/fastify",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "The fastify adapter for neru",
     "author": "GHOST",
     "license": "MIT",
